@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { BookOpen, ChevronDown, ExternalLink, Filter, GitBranch, Globe, Hash, Languages, Menu, RefreshCw, Search, Star, Tag, X } from 'lucide-react'
+import { BookOpen, ChevronDown, ExternalLink, Filter, GitBranch, Globe, Hash, Languages, Menu, Network, RefreshCw, Search, Star, Tag, X } from 'lucide-react'
 import { siteConfig } from './config'
 import { categoryMeta, categoryOrder } from './category-engine'
 import { translations } from './i18n'
@@ -62,6 +62,9 @@ function RepoCard({ repo, t, locale, onTopic }) {
 
 export default function App() {
   const [locale, setLocale] = useState(() => localStorage.getItem('gitstar-language') || siteConfig.defaultLanguage)
+  const [networkEnabled, setNetworkEnabled] = useState(() => localStorage.getItem('gitstar-network-background') !== 'off')
+  const [guideOpen, setGuideOpen] = useState(() => localStorage.getItem('gitstar-guide-hidden') !== 'true')
+  const [dontShowAgain, setDontShowAgain] = useState(false)
   const [data, setData] = useState({ repositories: [] })
   const [meta, setMeta] = useState({})
   const [status, setStatus] = useState({})
@@ -76,6 +79,15 @@ export default function App() {
   const [mobile, setMobile] = useState(false)
   const t = translations[locale]
   const repos = data.repositories || []
+  const dismissGuide = () => {
+    if (dontShowAgain) localStorage.setItem('gitstar-guide-hidden', 'true')
+    setGuideOpen(false)
+  }
+  const toggleNetworkBackground = () => {
+    const next = !networkEnabled
+    localStorage.setItem('gitstar-network-background', next ? 'on' : 'off')
+    setNetworkEnabled(next)
+  }
 
   const load = async () => {
     setLoading(true); setError('')
@@ -112,6 +124,15 @@ export default function App() {
     addEventListener('keydown', onKeyDown)
     return () => removeEventListener('keydown', onKeyDown)
   }, [])
+  useEffect(() => {
+    if (!guideOpen) return
+    const onKeyDown = (event) => { if (event.key === 'Escape') dismissGuide() }
+    addEventListener('keydown', onKeyDown)
+    return () => removeEventListener('keydown', onKeyDown)
+  }, [guideOpen, dontShowAgain])
+  useEffect(() => {
+    if (guideOpen) document.getElementById('guide-start')?.focus()
+  }, [guideOpen])
 
   const languages = useMemo(() => ['all', ...new Set(repos.map((repo) => repo.language).filter(Boolean))], [repos])
   const filtered = useMemo(() => repos.filter((repo) => {
@@ -128,17 +149,19 @@ export default function App() {
   const totalStars = repos.reduce((total, repo) => total + repo.stars, 0)
   const isStale = meta.syncedAt && Date.now() - new Date(meta.syncedAt) > siteConfig.staleAfterHours * 3600000
 
-  return <>
+  return <div className="app">
+    <div className={`network-background${networkEnabled ? ' is-on' : ''}`} aria-hidden="true" />
+    <div className="app-content">
     <a className="skip" href="#main">Skip to content</a>
     <header>
       <div className="bar">
         <button className="icon-btn menu" aria-label="Menu" aria-expanded={mobile} onClick={() => setMobile(!mobile)}><Menu /></button>
         <a className="brand" href="#top">GitStar</a>
         <div className="global-search"><Search size={16} aria-hidden="true" /><input id="global-search" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => event.key === 'Escape' && setQuery('')} placeholder={t.search} /><kbd>⌘K</kbd></div>
-        <nav className={mobile ? 'open' : ''}>
-          <button className={view === 'browse' ? 'active' : ''} onClick={() => { setView('browse'); setMobile(false) }}>{t.browse}</button>
-        </nav>
         <button className="language-toggle" onClick={() => setLocale(locale === 'ar' ? 'en' : 'ar')} aria-label={t.language}><Languages size={15} />{t.language}</button>
+        <button className="network-toggle" type="button" aria-pressed={networkEnabled} aria-label={networkEnabled ? t.networkOff : t.networkOn} title={networkEnabled ? t.networkOff : t.networkOn} onClick={toggleNetworkBackground}>
+          <Network size={15} aria-hidden="true" /><span className="network-toggle-label">{t.networkLines}</span><span className="toggle-track" aria-hidden="true"><i /></span>
+        </button>
       </div>
     </header>
 
@@ -163,5 +186,22 @@ export default function App() {
       </main>
     </div>
     <footer>{t.footer} · {t.lastSync}: {formatDate(meta.syncedAt, locale)}</footer>
-  </>
+    </div>
+    {guideOpen && <div className="guide-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) dismissGuide() }}>
+      <section className="guide-dialog" role="dialog" aria-modal="true" aria-labelledby="guide-title" aria-describedby="guide-intro">
+        <button className="guide-close" type="button" aria-label={t.guideClose} onClick={dismissGuide}><X size={18} /></button>
+        <p className="guide-kicker">GitStar · {t.guideLabel}</p>
+        <h2 id="guide-title">{t.guideTitle}</h2>
+        <p className="guide-intro" id="guide-intro">{t.guideIntro}</p>
+        <ol className="guide-steps">
+          <li><span className="guide-icon"><Search size={17} /></span><div><strong>{t.guideSearchTitle}</strong><p>{t.guideSearchBody}</p></div></li>
+          <li><span className="guide-icon"><Filter size={17} /></span><div><strong>{t.guideCategoriesTitle}</strong><p>{t.guideCategoriesBody}</p></div></li>
+          <li><span className="guide-icon"><GitBranch size={17} /></span><div><strong>{t.guideCardsTitle}</strong><p>{t.guideCardsBody}</p></div></li>
+        </ol>
+        <p className="guide-tip"><Network size={15} aria-hidden="true" />{t.guideNetworkTip}</p>
+        <label className="guide-preference"><input type="checkbox" checked={dontShowAgain} onChange={(event) => setDontShowAgain(event.target.checked)} />{t.dontShowAgain}</label>
+        <button className="guide-start" id="guide-start" type="button" onClick={dismissGuide}>{t.guideStart}</button>
+      </section>
+    </div>}
+  </div>
 }
