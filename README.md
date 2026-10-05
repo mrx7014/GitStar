@@ -77,7 +77,7 @@ If step 3 is missing, the workflow stops at its first step with a message tellin
 | `pinned_repos` | No | Repos shown first, e.g. `owner/repo, owner/repo2`. |
 | `featured_repos` | No | Repos with a *Featured* badge. |
 | `manual_categories` | No | Force a category: `owner/repo=security, owner/x=mobile`. |
-| `stale_after_hours` | No | Hours before the site warns that data is old. Since builds are manual, `720` (30 days) is a good value. |
+| `stale_after_hours` | No | Hours before the site warns that data is old. With hourly sync, `3`–`6` hours is a sensible threshold; use `720` only for intentionally infrequent builds. |
 | `save_config` | No (on) | Commit the values you typed into `src/config.js`, so the next run remembers them. |
 | `create_release` | No (on) | Publish a GitHub Release with the live link. |
 
@@ -91,7 +91,7 @@ When the run turns green, the link is in three places: the **Release** notes, th
 https://<your-username>.github.io/<repo-name>/
 ```
 
-To refresh your stars later, run **Build** again. Typing the username again is the only thing you must do.
+The scheduled updater refreshes repository data at minute **00** of each hour in **UTC** (GitHub may queue a scheduled run slightly after its nominal start). You can still run **Build** manually at any time.
 
 ## The config file
 
@@ -123,7 +123,8 @@ Everything the site shows lives in `public/data/`:
 
 | File | Content |
 |---|---|
-| `repos.json` | Compact list: name, owner, description, language, topics, stars, forks, `starred_at`, `pushed_at`, category, archived. |
+| `repos.json` | Compact list: name, owner, description, language, topics, stars, forks, `starred_at`, `pushed_at`, category, archived and GitHub Open Graph preview URL. |
+| `contributors.json` | Cached contributor totals, refreshed for new/changed repos and at least every 30 days. |
 | `meta.json` | Username, repo count, content hash, last real change (`syncedAt`), last check (`checkedAt`). |
 | `status.json` | `ok`, `rate_limited` or `error`, with message and timestamps. A failed sync only updates this file. |
 | `history.json` | Up to 500 added / removed events retained by the sync workflow; they are not displayed in the site. |
