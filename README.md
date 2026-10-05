@@ -14,6 +14,10 @@ Fork it, run **one** GitHub Action, and your site is live.
 
 </div>
 
+<p align="center">
+  <img src="public/banner.svg" alt="GitStar — Your starred repos, with a point of view." width="100%" />
+</p>
+
 ---
 
 ## What it is

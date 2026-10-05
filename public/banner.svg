@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500" role="img" aria-labelledby="title desc">
+  <title id="title">GitStar — Your starred repos, with a point of view.</title>
+  <desc id="desc">A monochrome project banner showing a focused collection of starred repositories.</desc>
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#191919"/>
+      <stop offset="1" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity=".055"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="500" fill="url(#fade)"/>
+  <rect width="1600" height="500" fill="url(#grid)"/>
+  <path d="M0 414H1600" stroke="#ffffff" stroke-opacity=".14"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="2">
+    <path d="M1120 96L1264 190L1412 106L1518 198"/>
+    <path d="M1264 190L1324 344L1518 198"/>
+  </g>
+  <g fill="#f5f5f5">
+    <circle cx="1120" cy="96" r="6"/><circle cx="1264" cy="190" r="8"/><circle cx="1412" cy="106" r="5"/><circle cx="1518" cy="198" r="7"/><circle cx="1324" cy="344" r="6"/>
+  </g>
+  <g transform="translate(1160 248)" fill="none" stroke="#f5f5f5" stroke-width="4" stroke-linejoin="round">
+    <path d="M0-46L11-14L45-14L18 6L28 39L0 20L-28 39L-18 6L-45-14L-11-14Z"/>
+  </g>
+  <g fill="#f5f5f5" font-family="Inter, Arial, sans-serif">
+    <text x="112" y="180" font-size="28" letter-spacing="7" fill="#999999">A FOCUSED SHELF FOR YOUR</text>
+    <text x="106" y="302" font-size="112" font-weight="700" letter-spacing="-6">GitStar</text>
+    <text x="116" y="362" font-size="29" fill="#bdbdbd">Your starred repos, with a point of view.</text>
+  </g>
+  <g fill="#8d8d8d" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">
+    <text x="116" y="448">SEARCH  ·  FILTER  ·  REVISIT</text>
+    <text x="1370" y="448">v2.0</text>
+  </g>
+</svg>
