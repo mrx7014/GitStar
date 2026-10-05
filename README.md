@@ -91,7 +91,7 @@ When the run turns green, the link is in three places: the **Release** notes, th
 https://<your-username>.github.io/<repo-name>/
 ```
 
-The scheduled updater checks for repository changes every **5 minutes** in **UTC** (GitHub may queue a scheduled run slightly after its nominal start). You can still run **Build** manually at any time.
+The scheduled updater checks for repository changes every **10 minutes** in **UTC** (GitHub may queue a scheduled run slightly after its nominal start). You can still run **Build** manually at any time.
 
 ## The config file
 
