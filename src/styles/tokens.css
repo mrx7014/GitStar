@@ -1,0 +1,48 @@
+:root {
+  --bg: #0f161d;
+  --surface-1: #151f29;
+  --surface-2: #1b2733;
+  --surface-3: #233140;
+  --line: #2b3b49;
+  --line-strong: #3a4d5e;
+  --text: #f1f5f4;
+  --text-2: #c5d3d6;
+  --text-3: #9aabb5;
+  --text-4: #7f919c;
+  --accent: #f2c66d;
+  --accent-ink: #1a1405;
+  --accent-soft: rgba(242, 198, 109, .12);
+  --accent-line: rgba(242, 198, 109, .35);
+  --success: #74e0ad;
+  --danger: #ff938d;
+  --info: #7cc4ff;
+  --font-ui: 'Inter', 'Noto Sans Arabic', system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-md: 15px;
+  --fs-lg: 17px;
+  --fs-xl: 22px;
+  --fs-2xl: 30px;
+  --fs-3xl: 38px;
+  --lh-tight: 1.2;
+  --lh-body: 1.55;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --shadow-1: 0 1px 0 rgba(255,255,255,.03) inset, 0 8px 24px rgba(0,0,0,.25);
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  --header-h: 60px;
+  --sidebar-w: 248px;
+  --content-max: 1280px;
+}
+:lang(ar) { --font-ui: 'Noto Sans Arabic', 'Inter', system-ui, sans-serif; }
+:lang(ar) body { line-height: 1.7; }

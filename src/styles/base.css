@@ -1,0 +1,17 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/noto-sans-arabic/400.css';
+@import '@fontsource/noto-sans-arabic/500.css';
+@import '@fontsource/noto-sans-arabic/700.css';
+@import '@fontsource/dm-mono/400.css';
+@import '@fontsource/dm-mono/500.css';
+
+html { background: var(--bg); }
+body { font-family: var(--font-ui); background: radial-gradient(600px 300px at 10% -10%, rgba(242,198,109,.06), transparent), var(--bg); color: var(--text); }
+*, *::before, *::after { transition: background-color 140ms ease-out, border-color 140ms ease-out, color 140ms ease-out; }
+:focus-visible { outline: none; box-shadow: var(--focus); }
+button, a, input, select { min-height: 36px; }
+@media (max-width: 700px) { button, a, select { min-height: 44px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

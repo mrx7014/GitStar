@@ -7,8 +7,31 @@
   "repository": "https://github.com/mrx7014/GitStar",
   "homepage": "https://mrx7014.github.io/GitStar/",
   "bugs": "https://github.com/mrx7014/GitStar/issues",
-  "keywords": ["github", "stars", "portfolio", "react", "rtl"],
-  "engines": { "node": ">=20" },
-  "scripts": { "dev": "vite --host 0.0.0.0 --port 3000 --strictPort", "build": "vite build", "preview": "vite preview --host 0.0.0.0", "sync": "node scripts/sync-stars.mjs", "test": "node --test scripts/*.test.mjs scripts/classify-test.mjs" },
-  "dependencies": { "@vitejs/plugin-react": "6.1.1", "lucide-react": "1.52.0", "react": "19.3.0", "react-dom": "19.3.0", "vite": "8.3.2" }
+  "keywords": [
+    "github",
+    "stars",
+    "portfolio",
+    "react",
+    "rtl"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "sync": "node scripts/sync-stars.mjs",
+    "test": "node --test scripts/*.test.mjs scripts/classify-test.mjs"
+  },
+  "dependencies": {
+    "@fontsource/dm-mono": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/noto-sans-arabic": "5.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "lucide-react": "1.52.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "vite": "8.3.2"
+  }
 }

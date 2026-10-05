@@ -1,40 +1,16 @@
-# خطة GitStar
+# GitStar design notes
 
-## النطاق والقرارات
-GitStar قالب Public مفتوح المصدر يعرض starred repositories لأي مستخدم GitHub. بعد عمل Fork، يغيّر المستخدم اسم الحساب في `src/config.js` ثم يشغّل المزامنة ويبني وينشر نسخة static خاصة به. الاستضافة الافتراضية الموصى بها GitHub Pages، مع دعم Vercel.
+## Identity
+GitStar is a calm developer directory: dark charcoal-navy surfaces, one amber brand/action accent, mint for fresh or successful states, and red only for errors or removed events. The page uses a subtle amber radial glow and no decorative gradients in the UI.
 
-لا يحتاج الموقع إلى خادم خاص أو مفاتيح سرية: GitHub Actions يستدعي GitHub REST API العام كل ساعة ويحفظ آخر snapshot في `public/data/*.json`. الواجهة تعرض آخر بيانات ناجحة حتى عند فشل المزامنة.
+## Tokens and type
+Shared values live in `src/styles/tokens.css`. The spacing scale is 4, 8, 12, 16, 24, 32, and 48px. UI text starts at 12px, body copy uses 15px, titles use 17–38px, and metadata uses DM Mono. Inter, Noto Sans Arabic, and DM Mono are self-hosted through Fontsource with `font-display: swap`.
 
-## التصميم
-- **الحركة البصرية:** Dark developer editorial؛ لوحة تحكم عملية ممزوجة بإحساس terminal هادئ.
-- **المبادئ:** كثافة معلومات مقروءة، تسلسل بصري واضح، تباين قوي، وواجهات صغيرة قابلة للتخصيص.
-- **فلسفة الألوان:** خلفية فحمية عميقة للتركيز، طبقات رمادية زرقاء لفصل المحتوى، وmint/teal كلون ثقة وحركة بدل البنفسجي الشائع.
-- **نمط التخطيط:** شريط علوي ثابت ومقدمة split-layout؛ الإحصائيات في شريط أفقي؛ النتائج في شبكة مرنة مع فلاتر sticky على الشاشات الكبيرة.
-- **العناصر المميزة:** علامة نجمة داخل إطار شبكي، شريط accent mint، ووسوم topics ذات حدود رفيعة.
-- **التفاعل والحركة:** تحديثات فورية للبحث والفلاتر، hover lift خفيف للبطاقات، وtransition قصير 160ms؛ لا توجد حركة زخرفية تعيق القراءة.
-- **الخطوط:** Inter للعناوين والإنجليزية، Noto Sans Arabic للعربية، مع monospace للـ metadata والـ username.
-- **جوهر العلامة:** "رف شخصي ذكي لكل ما يستحق نجمة على GitHub"؛ الشخصية: منظم، هادئ، مفتوح.
-- **صوت العلامة:** مباشر وتقني دون تعقيد. أمثلة: "Your starred repos, with a point of view." و"كل نجمة لها مكان." 
-- **الشعار:** نجمة مكوّنة من خمس وحدات مربعة حول نقطة مركزية، بجانب wordmark `GitStar`.
-- **لون العلامة:** `#74f0c0` mint أخضر مميز.
+## Layout
+Desktop uses a 248px sticky category rail beside a fluid content column. At tablet widths the rail becomes a horizontal category bar; on mobile it becomes a menu drawer and content uses a 14px page gutter. Logical properties and runtime `dir` keep Arabic native. Mobile controls have 44px touch targets and safe-area footer padding.
 
-## بنية المشروع
-- `src/`: تطبيق الواجهة، المكونات، الترجمة، وخوارزمية التصنيف.
-- `public/data/`: snapshot وhistory الناتجان من المزامنة.
-- `scripts/sync-stars.mjs`: جلب starred repos، التصنيف، diff، وكتابة JSON.
-- `.github/workflows/sync.yml`: تشغيل المزامنة كل ساعة وعلى الطلب.
-- `README.md`: شرح عربي/إنجليزي للفورك والإعداد والبناء والنشر.
-- `public/manus-routes.json`: manifest للمسارات.
+## Components
+The browse page has a compact hero, freshness pill, start-here context, four stat tiles, pure CSS insight bars, filters, and grouped results. Repository rows keep a compact directory rhythm: initial tile, identity, two-line description, topic chips, language dot, stars/forks, and safe external links. Every interactive control has a visible focus ring and an accessible name.
 
-## التنفيذ
-1. تطبيق static React/Vite خفيف يعمل على port 3000 في Preview.
-2. إعداد مركزي في `src/config.js` يحدد `githubUsername`, `siteName`, `defaultLanguage`, `featuredRepos`, و`manualCategories`.
-3. الواجهة تقرأ البيانات من JSON محليًا وتدعم حالة تحميل/خطأ وSync Now عبر إعادة جلب snapshot.
-4. المزامنة في Node script تستخدم REST API pagination، وتدعم `GITHUB_TOKEN` اختياريًا لتحسين limits في Actions دون إلزام المستخدم به.
-5. التصنيف التلقائي deterministically من topics والاسم والوصف واللغة، مع override يدوي.
-6. بناء GitHub Pages عبر Actions، وVercel عبر `vercel.json` وbuild command.
-
-## قيود
-- لا نضع token في الواجهة أو المستودع.
-- GitHub API public قد يعيد rate limit؛ نعرض آخر snapshot ونوضح وقت آخر مزامنة.
-- الزر Sync Now يعيد تحميل آخر snapshot من الموقع؛ التحديث الفعلي يتم عبر workflow أو تشغيل script محليًا.
+## Motion and accessibility
+Hover, focus, drawer, and state transitions use short 140–160ms ease-out motion. `prefers-reduced-motion` disables animation and smooth scrolling. Color is paired with text for freshness and error states. Arabic copy uses the self-hosted Noto Sans Arabic family and keeps repository names readable in LTR isolation.
