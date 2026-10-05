@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "nykooi1/vibe-wise",
+      "html_url": "https://github.com/nykooi1/vibe-wise",
+      "description": "A Claude Code plugin that helps you learn how to build while AI writes the code.",
+      "category": "other",
+      "at": "2026-10-05T13:15:55.127Z"
+    },
+    {
+      "type": "added",
       "full_name": "DesktopECHO/trixie.apk",
       "html_url": "https://github.com/DesktopECHO/trixie.apk",
       "description": "Debian 13 (Trixie) Server/Desktop container for rooted Android 5.0+ devices",
@@ -3989,14 +3997,6 @@
       "full_name": "kimocoder/qualcomm_android_monitor_mode",
       "html_url": "https://github.com/kimocoder/qualcomm_android_monitor_mode",
       "description": "Qualcomm QCACLD WiFi monitor mode for Android",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Tornaco/Thanox",
-      "html_url": "https://github.com/Tornaco/Thanox",
-      "description": "I am thanos! 😈 👌",
       "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }

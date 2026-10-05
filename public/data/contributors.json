@@ -37,13 +37,13 @@
     },
     "storytold/photocraft": {
       "count": 11,
-      "pushedAt": "2026-10-05T12:51:45Z",
-      "checkedAt": "2026-10-05T13:01:52.475Z"
+      "pushedAt": "2026-10-05T13:02:29Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "morluto/rea": {
       "count": 5,
-      "pushedAt": "2026-10-05T12:20:00Z",
-      "checkedAt": "2026-10-05T12:28:54.375Z"
+      "pushedAt": "2026-10-05T13:15:41Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "fmhy/FMHY": {
       "count": 4,
@@ -467,8 +467,8 @@
     },
     "QwenLM/qwen-code": {
       "count": 594,
-      "pushedAt": "2026-10-05T12:56:59Z",
-      "checkedAt": "2026-10-05T13:01:52.475Z"
+      "pushedAt": "2026-10-05T13:14:21Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "termux/proot-distro": {
       "count": 45,
@@ -937,8 +937,8 @@
     },
     "microsoft/vscode": {
       "count": 3256,
-      "pushedAt": "2026-10-05T13:00:59Z",
-      "checkedAt": "2026-10-05T13:01:52.475Z"
+      "pushedAt": "2026-10-05T13:07:04Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "atom/atom": {
       "count": 641,
@@ -1022,8 +1022,8 @@
     },
     "n8n-io/n8n": {
       "count": 809,
-      "pushedAt": "2026-10-05T12:59:33Z",
-      "checkedAt": "2026-10-05T13:01:52.475Z"
+      "pushedAt": "2026-10-05T13:11:06Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "AtlanPrime/customromguide": {
       "count": 3,
@@ -1052,8 +1052,8 @@
     },
     "EKA2L1/EKA2L1": {
       "count": 23,
-      "pushedAt": "2026-10-04T04:56:47Z",
-      "checkedAt": "2026-10-05T12:28:54.375Z"
+      "pushedAt": "2026-10-05T13:08:29Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "nozwock/packet": {
       "count": 27,
@@ -1457,8 +1457,8 @@
     },
     "actions/runner-images": {
       "count": 369,
-      "pushedAt": "2026-10-05T09:26:23Z",
-      "checkedAt": "2026-10-05T12:28:54.375Z"
+      "pushedAt": "2026-10-05T13:11:00Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "xroche/httrack": {
       "count": 25,
@@ -1752,8 +1752,8 @@
     },
     "warpdotdev/warp": {
       "count": 169,
-      "pushedAt": "2026-10-05T12:28:20Z",
-      "checkedAt": "2026-10-05T12:44:43.849Z"
+      "pushedAt": "2026-10-05T13:06:50Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "florisboard/florisboard": {
       "count": 132,
@@ -1807,8 +1807,8 @@
     },
     "OpenHands/OpenHands": {
       "count": 567,
-      "pushedAt": "2026-10-05T13:00:59Z",
-      "checkedAt": "2026-10-05T13:01:52.475Z"
+      "pushedAt": "2026-10-05T13:15:42Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "mrx7014/android_device_samsung_a23-twrp": {
       "count": 1,
@@ -2682,8 +2682,8 @@
     },
     "The-Vibe-Company/quivr": {
       "count": 119,
-      "pushedAt": "2026-10-05T12:56:21Z",
-      "checkedAt": "2026-10-05T13:01:52.475Z"
+      "pushedAt": "2026-10-05T13:10:37Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "Minionguyjpro/Samsung-Game-Services-Installer": {
       "count": 2,
@@ -3452,8 +3452,8 @@
     },
     "beefproject/beef": {
       "count": 222,
-      "pushedAt": "2026-10-04T17:39:43Z",
-      "checkedAt": "2026-10-05T12:28:54.375Z"
+      "pushedAt": "2026-10-05T13:03:33Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     },
     "urbanadventurer/Android-PIN-Bruteforce": {
       "count": 2,
@@ -4004,6 +4004,11 @@
       "count": 3,
       "pushedAt": "2021-04-29T09:53:15Z",
       "checkedAt": "2026-10-05T12:28:54.375Z"
+    },
+    "nykooi1/vibe-wise": {
+      "count": 1,
+      "pushedAt": "2026-10-01T11:26:14Z",
+      "checkedAt": "2026-10-05T13:16:37.313Z"
     }
   }
 }
