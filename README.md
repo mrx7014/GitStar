@@ -5,7 +5,7 @@
 **Your starred repos, with a point of view.**
 
 A static, bilingual (English / العربية, RTL) shelf for your public GitHub stars.
-Fork it, set your username, let GitHub Actions keep it fresh every hour.
+Fork it, set your username, run the GitHub Actions manually whenever you want to refresh or deploy it.
 
 [![Sync](https://github.com/mrx7014/GitStar/actions/workflows/sync.yml/badge.svg)](https://github.com/mrx7014/GitStar/actions/workflows/sync.yml)
 [![Deploy](https://github.com/mrx7014/GitStar/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/mrx7014/GitStar/actions/workflows/deploy-pages.yml)
@@ -23,7 +23,7 @@ Fork it, set your username, let GitHub Actions keep it fresh every hour.
 GitHub's Stars page is a flat list that is hard to search and revisit. GitStar turns it into a categorized, searchable directory:
 
 - **No backend, no database, no secrets.** A Node script reads the public GitHub API, writes JSON into the repo, and a static React site renders it.
-- **Everything runs on GitHub Actions** (sync + build + deploy). You never run a server.
+- **Everything runs on GitHub Actions** (manual sync + manual build/deploy). You never run a server.
 - **Failure-safe.** If GitHub rate-limits a sync, the last good snapshot stays on the site and a banner explains what happened.
 
 ## How it works
@@ -91,7 +91,7 @@ The job fetches your stars, commits `public/data/*.json`, and triggers the deplo
 https://<your-username>.github.io/<repo-name>/
 ```
 
-From now on it refreshes itself every hour. You do not need to touch anything else.
+Run the sync workflow manually whenever you want to refresh the snapshot, then run the deploy workflow manually to publish it.
 
 ## Configuration
 
@@ -178,7 +178,7 @@ The output is plain static files, so any host works: run `npm run build` and pub
 | Site shows sample repos (`demo`) | The first sync has not run, or the username is not set. Set `GITSTAR_USERNAME` (or `githubUsername`) and run **Sync GitHub Stars**. |
 | Shows someone else's stars | `githubUsername` still points to another account. |
 | Sync job is red: *push rejected* | Settings → Actions → General → Workflow permissions → **Read and write**. |
-| Nothing happens hourly | Actions are disabled on the copy, or GitHub paused schedules after 60 days of no activity. Re-enable in the Actions tab. The monthly keep-alive commit prevents the second case. |
+| Nothing happens after a change | The workflows are manual-only. Open the Actions tab and select the workflow, then click **Run workflow**. |
 | Data updated but site is old | Settings → Pages → Source must be **GitHub Actions**; check the *Deploy* run. |
 | 404 on Pages | Same as above, then re-run *Deploy GitStar to Pages*. |
 | Banner says *rate limited* | GitHub API limit hit. The old data stays online; the next hourly run recovers it. |
