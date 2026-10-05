@@ -62,11 +62,9 @@ function RepoCard({ repo, t, locale, onTopic }) {
 
 export default function App() {
   const [locale, setLocale] = useState(() => localStorage.getItem('gitstar-language') || siteConfig.defaultLanguage)
-  const [view, setView] = useState(() => new URLSearchParams(location.search).get('view') || 'browse')
   const [data, setData] = useState({ repositories: [] })
   const [meta, setMeta] = useState({})
   const [status, setStatus] = useState({})
-  const [history, setHistory] = useState({ events: [] })
   const [query, setQuery] = useState(() => new URLSearchParams(location.search).get('q') || '')
   const [category, setCategory] = useState(() => new URLSearchParams(location.search).get('cat') || 'all')
   const [language, setLanguage] = useState(() => new URLSearchParams(location.search).get('lang') || 'all')
@@ -82,12 +80,11 @@ export default function App() {
   const load = async () => {
     setLoading(true); setError('')
     try {
-      const [reposResponse, metaResponse, statusResponse, historyResponse] = await Promise.all(['repos.json', 'meta.json', 'status.json', 'history.json'].map((file) => fetch(`${root}${file}`, { cache: 'no-cache' })))
+      const [reposResponse, metaResponse, statusResponse] = await Promise.all(['repos.json', 'meta.json', 'status.json'].map((file) => fetch(`${root}${file}`, { cache: 'no-cache' })))
       if (!reposResponse.ok) throw Error('repos')
       setData(await reposResponse.json())
       if (metaResponse.ok) setMeta(await metaResponse.json())
       if (statusResponse.ok) setStatus(await statusResponse.json())
-      if (historyResponse.ok) setHistory(await historyResponse.json())
     } catch { setError('load') } finally { setLoading(false) }
   }
 
@@ -105,9 +102,8 @@ export default function App() {
     if (language !== 'all') params.set('lang', language)
     if (topic) params.set('topic', topic)
     if (sort !== 'newest') params.set('sort', sort)
-    if (view !== 'browse') params.set('view', view)
     window.history.replaceState(null, '', `${location.pathname}${params.toString() ? `?${params}` : ''}`)
-  }, [query, category, language, topic, sort, view])
+  }, [query, category, language, topic, sort])
   useEffect(() => {
     const onKeyDown = (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') { event.preventDefault(); document.querySelector('#global-search')?.focus() }
@@ -141,8 +137,6 @@ export default function App() {
         <div className="global-search"><Search size={16} aria-hidden="true" /><input id="global-search" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => event.key === 'Escape' && setQuery('')} placeholder={t.search} /><kbd>⌘K</kbd></div>
         <nav className={mobile ? 'open' : ''}>
           <button className={view === 'browse' ? 'active' : ''} onClick={() => { setView('browse'); setMobile(false) }}>{t.browse}</button>
-          <button className={view === 'changes' ? 'active' : ''} onClick={() => { setView('changes'); setMobile(false) }}>{t.changes}</button>
-          <button className={view === 'how' ? 'active' : ''} onClick={() => { setView('how'); setMobile(false) }}>{t.how}</button>
         </nav>
         <button className="language-toggle" onClick={() => setLocale(locale === 'ar' ? 'en' : 'ar')} aria-label={t.language}><Languages size={15} />{t.language}</button>
       </div>
@@ -161,13 +155,11 @@ export default function App() {
         <section className="hero"><div><p className="eyebrow">{siteConfig.siteName} / {t.browse}</p><h1>{t.hero}</h1><p>{t.tagline}</p></div><div className="hero-actions"><span className={`freshness ${status.status === 'error' ? 'failed' : !isStale ? 'fresh' : ''}`}><span>●</span>{status.status === 'error' ? t.syncFailed : isStale ? t.stale : t.synced}</span><button className="refresh" onClick={load} disabled={loading}><RefreshCw className={loading ? 'spin' : ''} size={15} />{loading ? t.loading : t.refresh}</button></div></section>
         {(status.status === 'rate_limited' || status.status === 'error' || isStale) && <div className={`notice ${status.status === 'error' ? 'danger' : 'warning'}`} role="status">{status.status === 'rate_limited' ? t.rateLimited : status.status === 'error' ? `${t.syncError} ${status.message || ''}` : `${t.stale} ${formatDate(meta.syncedAt, locale === 'ar' ? 'ar-EG' : 'en-US')}.`}</div>}
 
-        {view === 'browse' && <>
+        <>
           <div className="summary"><span><strong>{repos.length.toLocaleString()}</strong> {t.repos}</span><span><strong>{totalStars.toLocaleString()}</strong> {t.stars}</span><span><strong>{filtered.length.toLocaleString()}</strong> {query || category !== 'all' || language !== 'all' || topic ? t.all : t.repos}</span></div>
           <div className="toolbar"><Select label={t.allCategories} icon={Filter} value={category} onChange={setCategory} options={categories} /><Select label={t.allLanguages} icon={Tag} value={language} onChange={setLanguage} options={languages} /><Select label={t.newest} icon={Star} value={sort} onChange={(value) => { setSort(value); localStorage.setItem('gitstar-sort', value) }} options={[{ value: 'newest', label: t.newest }, { value: 'pushed', label: t.pushed }, { value: 'stars', label: t.stars }, { value: 'alpha', label: t.alpha }]} /><label className="check"><input type="checkbox" checked={archived} onChange={(event) => setArchived(event.target.checked)} />{t.archived}</label>{(query || category !== 'all' || language !== 'all' || topic || archived) && <button className="clear" onClick={clear}><X size={15} />{t.clear}</button>}</div>
           {loading ? <div className="skeleton">{[1, 2, 3].map((item) => <div key={item} />)}</div> : error ? <div className="empty"><p>Unable to load data</p><button onClick={load}>{t.refresh}</button></div> : filtered.length === 0 ? <div className="empty"><p>{t.noResults}</p><button onClick={clear}>{t.clear}</button></div> : <div className="groups">{grouped.map(([id, items]) => <section key={id}><div className="section-title"><h2>{id === 'other' ? t.categoryOther : t[categoryMeta[id]?.i18nKey]}</h2><span>{items.length}</span></div>{items.map((repo) => <RepoCard key={repo.full_name} repo={repo} t={t} locale={locale === 'ar' ? 'ar-EG' : 'en-US'} onTopic={setTopic} />)}</section>)}</div>}
-        </>}
-        {view === 'changes' && <section className="page"><h1>{t.changes}</h1>{history.events?.length ? history.events.map((event, index) => <article className="event" key={index}><b>{event.type === 'added' ? t.added : t.removed} <a href={event.html_url}>{event.full_name}</a></b><time>{formatDate(event.at, locale)}</time><p>{event.description}</p></article>) : <div className="empty">{t.noChanges}</div>}</section>}
-        {view === 'how' && <section className="page"><h1>{t.howTitle}</h1><p>{t.howBody}</p><div className="steps">{t.steps.map((step, index) => <article key={step}><b>0{index + 1}</b><h2>{step}</h2></article>)}</div><pre><code>githubUsername: '{siteConfig.githubUsername}',</code></pre></section>}
+        </>
       </main>
     </div>
     <footer>{t.footer} · {t.lastSync}: {formatDate(meta.syncedAt, locale)}</footer>

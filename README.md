@@ -126,7 +126,7 @@ Everything the site shows lives in `public/data/`:
 | `repos.json` | Compact list: name, owner, description, language, topics, stars, forks, `starred_at`, `pushed_at`, category, archived. |
 | `meta.json` | Username, repo count, content hash, last real change (`syncedAt`), last check (`checkedAt`). |
 | `status.json` | `ok`, `rate_limited` or `error`, with message and timestamps. A failed sync only updates this file. |
-| `history.json` | Up to 500 added / removed events for the **Changes** page. |
+| `history.json` | Up to 500 added / removed events retained by the sync workflow; they are not displayed in the site. |
 
 ## Local development
 
