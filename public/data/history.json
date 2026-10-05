@@ -1,3 +1,4004 @@
 {
-  "events": []
+  "events": [
+    {
+      "type": "added",
+      "full_name": "DesktopECHO/trixie.apk",
+      "html_url": "https://github.com/DesktopECHO/trixie.apk",
+      "description": "Debian 13 (Trixie) Server/Desktop container for rooted Android 5.0+ devices",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "HanSoBored/Auto-Linux",
+      "html_url": "https://github.com/HanSoBored/Auto-Linux",
+      "description": "A TUI application to install and manage Linux (chroot) environments on rooted Android devices. Fast, lightweight, and has zero dependencies (No Termux/Busybox required).",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "lz4/lz4",
+      "html_url": "https://github.com/lz4/lz4",
+      "description": "Extremely Fast Compression algorithm",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "aleixrodriala/newtube",
+      "html_url": "https://github.com/aleixrodriala/newtube",
+      "description": "SmartTube for phones, unofficial: an open-source YouTube client for Android. Background play, PiP, SponsorBlock, DeArrow, save for offline, code sign-in.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "cswl/tsu",
+      "html_url": "https://github.com/cswl/tsu",
+      "description": "Gain root shell on Termux.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "UserJoo9/QuotaManager",
+      "html_url": "https://github.com/UserJoo9/QuotaManager",
+      "description": "Split your metered internet bundle fairly across every person in the house. Each user gets an allowance (fixed GB, or an equal share of what's left), their devices all share it, and the moment the allowance runs out every device they own is cut at once.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sidex15/deviceidchanger",
+      "html_url": "https://github.com/sidex15/deviceidchanger",
+      "description": "A simple WebUI Module to change SSAID/DeviceID on Rooted Android Devices with Apatch, KSU (And its forks), or Magisk.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "diabl0w/DFRoot",
+      "html_url": "https://github.com/diabl0w/DFRoot",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "storytold/photocraft",
+      "html_url": "https://github.com/storytold/photocraft",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "morluto/rea",
+      "html_url": "https://github.com/morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "fmhy/FMHY",
+      "html_url": "https://github.com/fmhy/FMHY",
+      "description": "https://fmhy.net/",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "anthropics/claude-code",
+      "html_url": "https://github.com/anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DietrichGebert/ponytail",
+      "html_url": "https://github.com/DietrichGebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "guillaumemeyer/watermarks-remover",
+      "html_url": "https://github.com/guillaumemeyer/watermarks-remover",
+      "description": "A privacy-first app that strips AI watermarks from content you own.",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "SimoneAvogadro/android-reverse-engineering-skill",
+      "html_url": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+      "description": "Claude Code skill to support Android app's reverse engineering",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "NelloKudo/Apple-Mobile-Drivers-Installer",
+      "html_url": "https://github.com/NelloKudo/Apple-Mobile-Drivers-Installer",
+      "description": "Powershell script to easily install Apple USB and Mobile Device Ethernet (USB Tethering) drivers on Windows!",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sounddrill31/crave_aosp_builder",
+      "html_url": "https://github.com/sounddrill31/crave_aosp_builder",
+      "description": "Build android ROMs using github actions! Also automatically releases them here for easy OTA setup",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "NarYuki/Dextop",
+      "html_url": "https://github.com/NarYuki/Dextop",
+      "description": "Unlock the hidden Samsung DeX and desktop capabilities of Android, and run a desktop environment directly on your device.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "robbietilton/Compositor",
+      "html_url": "https://github.com/robbietilton/Compositor",
+      "description": "The Photoshop alternative for Mac",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "evoker0/AlwaysStrong",
+      "html_url": "https://github.com/evoker0/AlwaysStrong",
+      "description": "Always Strong: Strong Play Integrity in one drop in module TEESimulator-RS + PlayIntegrityFork bundled.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Louis-CFM/coucou",
+      "html_url": "https://github.com/Louis-CFM/coucou",
+      "description": "A tiny friend that lives in your notch (macOS) or at the top of your screen (Windows, Linux) and keeps an eye on your coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "drmakerr/DrWalls",
+      "html_url": "https://github.com/drmakerr/DrWalls",
+      "description": "Wi-Fi CSI motion detection using ESP32 — no camera or additional sensors required.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Rightcod/android_device_samsung_bengal-common",
+      "html_url": "https://github.com/Rightcod/android_device_samsung_bengal-common",
+      "description": "Common device tree for Samsung bengal platforms (SM6225) LineageOS 23.2",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Rightcod/android_device_samsung_a05s",
+      "html_url": "https://github.com/Rightcod/android_device_samsung_a05s",
+      "description": "LineageOS 23.2 device trees for Samsung Galaxy A05s (a05s) and bengal-common",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "aritraroy/UltimateAndroidReference",
+      "html_url": "https://github.com/aritraroy/UltimateAndroidReference",
+      "description": ":rocket: Ultimate Android Reference - Your Road to Become a Better Android Developer",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "haithamassoli/NaqiHalalVideoFilter",
+      "html_url": "https://github.com/haithamassoli/NaqiHalalVideoFilter",
+      "description": "On-device Android video filter (Kotlin): stem-based music removal + face/NSFW censoring. Fully offline.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AzimsTech/Android_Hacking",
+      "html_url": "https://github.com/AzimsTech/Android_Hacking",
+      "description": "All things Android | Happy New Year 🎉 2026️⃣",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "newliver666/apk-reverse",
+      "html_url": "https://github.com/newliver666/apk-reverse",
+      "description": "Suitable for Android APK reverse engineering analysis",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MysticGSI/mysticgsi",
+      "html_url": "https://github.com/MysticGSI/mysticgsi",
+      "description": "A tool to build a Generic System Image from (almost) any stock firmware",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "techjarves/Mobile-Harness",
+      "html_url": "https://github.com/techjarves/Mobile-Harness",
+      "description": "Claude Code on Android:  AI-powered mobile coding IDE for Android — chat with a coding agent, run Linux commands, edit files, review diffs, and preview web apps directly from your phone. No root required.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "standardnotes/app",
+      "html_url": "https://github.com/standardnotes/app",
+      "description": "Think fearlessly with end-to-end encrypted notes and files. For issues, visit https://standardnotes.com/forum or https://standardnotes.com/help.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "drmakerr/DrPasswords",
+      "html_url": "https://github.com/drmakerr/DrPasswords",
+      "description": "Open-source physical password manager built with ESP32-S3 with HID typing and TOTP support.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dttzyjw0012/AospXpert",
+      "html_url": "https://github.com/dttzyjw0012/AospXpert",
+      "description": "AOSP rom's version of the PixelXpert. Mixed Xposed+Magisk module for customization of AOSP rom of Android 12+",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "boykopovar/AnyPS5",
+      "html_url": "https://github.com/boykopovar/AnyPS5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "category": "design-creative",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "BuSung-dev/Root-My-Galaxy",
+      "html_url": "https://github.com/BuSung-dev/Root-My-Galaxy",
+      "description": "KSU installer for supported Samsung Galaxy firmware with CVE-2026-43499",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "darkreader/darkreader",
+      "html_url": "https://github.com/darkreader/darkreader",
+      "description": "Dark Reader Chrome and Firefox extension",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "7jari/proprietary_vendor_samsung_a05s",
+      "html_url": "https://github.com/7jari/proprietary_vendor_samsung_a05s",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "PickleHik3/termux-launcher",
+      "html_url": "https://github.com/PickleHik3/termux-launcher",
+      "description": "Personal proof-of-concept Termux-based Android launcher, built from Termux-Monet + TEL ideas.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hibonesu/Termux-dotfiles",
+      "html_url": "https://github.com/hibonesu/Termux-dotfiles",
+      "description": "teemux + shizuku",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DerGoogler/powershell",
+      "html_url": "https://github.com/DerGoogler/powershell",
+      "description": "The Windows PowerShell Module is a tool that integrates PowerShell functionality into Android devices via the Magisk framework, allowing users to run PowerShell scripts and commands directly on their rooted devices.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sabamdarif/chroot-distro",
+      "html_url": "https://github.com/sabamdarif/chroot-distro",
+      "description": "A lightweight chroot based utility for managing Linux containers",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "HoolockLinux/docs",
+      "html_url": "https://github.com/HoolockLinux/docs",
+      "description": "Documentation and tools for iOS/tvOS/bridgeOS for HoolockLinux",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "aaronsb/sm-x800-linux",
+      "html_url": "https://github.com/aaronsb/sm-x800-linux",
+      "description": "Mainline Linux / postmarketOS on the Galaxy Tab S8+ (SM-X800, SM8450): native display, Adreno GPU, KDE Plasma 6. First known Tab S8 mainline port.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ayush0x1/termux-desktop",
+      "html_url": "https://github.com/ayush0x1/termux-desktop",
+      "description": "Lightweight termux desktop environment using openbox and polybar for low-end android devices",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Ethan-Ming/Reduce_Modem_Battery-Drain",
+      "html_url": "https://github.com/Ethan-Ming/Reduce_Modem_Battery-Drain",
+      "description": "Magisk module to reduce idle battery drain caused by dhdpcie_host_wake on Android devices (A15 tested), while preserving usability for discovery-based features like Chromecast and smart-home setup",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ahmedbarakat207/cotpt",
+      "html_url": "https://github.com/ahmedbarakat207/cotpt",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "GrapheneOS/AppStore",
+      "html_url": "https://github.com/GrapheneOS/AppStore",
+      "description": "",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "juxtopposed/hyprland-terminal",
+      "html_url": "https://github.com/juxtopposed/hyprland-terminal",
+      "description": "config files for fastfetch and starship",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Droid-VM/DroidVM",
+      "html_url": "https://github.com/Droid-VM/DroidVM",
+      "description": "Run virtual machine on Android Phones",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "aorumbayev/awesome-omarchy",
+      "html_url": "https://github.com/aorumbayev/awesome-omarchy",
+      "description": "⚡A curated list of awesome omarchy resources",
+      "category": "learning-resources",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "omacom/try-omarchy",
+      "html_url": "https://github.com/omacom/try-omarchy",
+      "description": "Run Omarchy on MacOS without any setup.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "BlackFireAlex/omarchy-android",
+      "html_url": "https://github.com/BlackFireAlex/omarchy-android",
+      "description": "Unofficial rootless Omarchy port for ARM64 Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "fahadalijaved/SamFonts",
+      "html_url": "https://github.com/fahadalijaved/SamFonts",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ahmedbarakat207/lamda32",
+      "html_url": "https://github.com/ahmedbarakat207/lamda32",
+      "description": "a Custom 32 Bit CPU that I built",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "bilawalsidhu/gods-eye-view",
+      "html_url": "https://github.com/bilawalsidhu/gods-eye-view",
+      "description": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+      "category": "design-creative",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "scanaislop/aislop",
+      "html_url": "https://github.com/scanaislop/aislop",
+      "description": "Catch and fix the code-quality issues AI coding agents leave behind - dead code, unsafe casts, swallowed errors, duplication, security risks, and more. 50+ deterministic rules across 10 language targets, with CLI, CI, and GitHub Actions. No LLM at runtime. MIT.",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MrxSiN/PixelLauncherEvolved",
+      "html_url": "https://github.com/MrxSiN/PixelLauncherEvolved",
+      "description": "The controls the Android 17 Pixel Launcher does not ship — put where you already go to change how home behaves.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Dev4Mod/WaEnhancer",
+      "html_url": "https://github.com/Dev4Mod/WaEnhancer",
+      "description": "WhatsApp tools for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Xposed-Modules-Repo/one.dot.rex",
+      "html_url": "https://github.com/Xposed-Modules-Repo/one.dot.rex",
+      "description": "Re:X (ReX) - Tweaks for the new X / Twitter",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hxreborn/PixelInjector",
+      "html_url": "https://github.com/hxreborn/PixelInjector",
+      "description": "Opinionated Xposed module of some tweaks, specially for Pixel phones so I can avoid having twenty modules installed",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "s1ddhants1/SwiftBackupPrem",
+      "html_url": "https://github.com/s1ddhants1/SwiftBackupPrem",
+      "description": "Swift Backup Premium LSPosed module",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "soranerai/vpnhide_next",
+      "html_url": "https://github.com/soranerai/vpnhide_next",
+      "description": "VPNHide Next (VPNHide with many improvements)",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "JingMatrix/Vector",
+      "html_url": "https://github.com/JingMatrix/Vector",
+      "description": "Modern Xposed Framework",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Xposed-Modules-Repo/com.sal.privacykit",
+      "html_url": "https://github.com/Xposed-Modules-Repo/com.sal.privacykit",
+      "description": "Privacy Kit - per-app Android identifier spoofing for LSPosed",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DUpdateSystem/UpgradeAll",
+      "html_url": "https://github.com/DUpdateSystem/UpgradeAll",
+      "description": "Check updates for Android apps, Magisk modules and more!",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Xposed-Modules-Repo/com.fuck.iab",
+      "html_url": "https://github.com/Xposed-Modules-Repo/com.fuck.iab",
+      "description": "FKIAB - f**ks in app billing",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "rushiranpise/xposed-modules",
+      "html_url": "https://github.com/rushiranpise/xposed-modules",
+      "description": "",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sameerasw/essentials",
+      "html_url": "https://github.com/sameerasw/essentials",
+      "description": "Essential tools and mods for Android nerds",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dragonked2/alphacode",
+      "html_url": "https://github.com/dragonked2/alphacode",
+      "description": "Free MIT AI coding agent — no API key needed. Built-in free model, or bring Claude, GPT, Gemini, DeepSeek, Ollama +50 more. Swarm mode, 40+ tools, browser & desktop automation, built in Rust.",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Hope2333/opencode-termux",
+      "html_url": "https://github.com/Hope2333/opencode-termux",
+      "description": "OpenCode on Termux: native bionic builds (v2 mainline) + v1 maintenance line",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Rove24/EnhanceGooglePhone",
+      "html_url": "https://github.com/Rove24/EnhanceGooglePhone",
+      "description": "一款专为 Google 电话 (Google Dialer) 打造的现代化 Xposed / LSPosed 增强模块。免 Root 修改系统文件，原生解锁全功能通话录音（支持未存号码与指定号码自动录音），并将设置二级页面深度重构为 Material Design 3 (MD3 Expressive) 分组圆角卡片与现代 Switch 开关，联系人列表像素级对齐，尽享纯净优雅的原生体验。",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "WildKernels/GKI_KernelSU_SUSFS",
+      "html_url": "https://github.com/WildKernels/GKI_KernelSU_SUSFS",
+      "description": "GKI2 5.10+ Kernels built with KernelSU & SUSFS",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ahmedbarakat207/iris-model",
+      "html_url": "https://github.com/ahmedbarakat207/iris-model",
+      "description": "a from scratch frontier model",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ahmedbarakat207/Iris-AI",
+      "html_url": "https://github.com/ahmedbarakat207/Iris-AI",
+      "description": "a fine tuning for a Iris AI (an open weight model)",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "p0deje/Maccy",
+      "html_url": "https://github.com/p0deje/Maccy",
+      "description": "Lightweight clipboard manager for macOS",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "GeneralKaos666/flutter-for-termux",
+      "html_url": "https://github.com/GeneralKaos666/flutter-for-termux",
+      "description": "Run Flutter on Termux! (Flutter Channel Stable)",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "timschneeb/RootlessJamesDSP",
+      "html_url": "https://github.com/timschneeb/RootlessJamesDSP",
+      "description": "An implementation of the system-wide JamesDSP audio processing engine for non-rooted Android devices",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/estock-pharmacy-mobile",
+      "html_url": "https://github.com/mrx7014/estock-pharmacy-mobile",
+      "description": "A mobile pharmacy inventory and operations app built from the e-Stock data dictionary and backup dataset, with products, stock, sales, purchasing, and branch-aware workflows. · Built with Manus",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/DOOMeKERNEL",
+      "html_url": "https://github.com/mrx7014/DOOMeKERNEL",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/nomount",
+      "html_url": "https://github.com/mrx7014/nomount",
+      "description": "NoMount is a VFS (Virtual File System) path redirection framework for Android kernels.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/SuperMario-Tweaker",
+      "html_url": "https://github.com/mrx7014/SuperMario-Tweaker",
+      "description": "A tweaker module that can improve any device performance and stability (Gaming, Daily Useage, etc....)",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/OneUFy",
+      "html_url": "https://github.com/mrx7014/OneUFy",
+      "description": "Take OneUI to another level",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/OneUISpoofer",
+      "html_url": "https://github.com/mrx7014/OneUISpoofer",
+      "description": "Spoof your OneUI version",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Magisk-Modules-Alt-Repo/abootloop",
+      "html_url": "https://github.com/Magisk-Modules-Alt-Repo/abootloop",
+      "description": "Bootloop protection",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "maxsteeel/nomount",
+      "html_url": "https://github.com/maxsteeel/nomount",
+      "description": "NoMount is a VFS (Virtual File System) path redirection framework for Android kernels.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "steelbrain/RDPeek",
+      "html_url": "https://github.com/steelbrain/RDPeek",
+      "description": "A native macOS remote desktop client",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Rove24/Enable-MD3E-UI-For-Google-Digital-Wellbeing",
+      "html_url": "https://github.com/Rove24/Enable-MD3E-UI-For-Google-Digital-Wellbeing",
+      "description": "为低于 Android 16 QPR1 的设备提前开启并深度完善 Google 数字健康 Google Digital Wellbeing 的全新 Material 3 Expressive  界面",
+      "category": "design-creative",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "WessellUrdata/vbmeta-disable-verification",
+      "html_url": "https://github.com/WessellUrdata/vbmeta-disable-verification",
+      "description": ":snake: Python port of https://github.com/libxzr/vbmeta-disable-verification to patch Android vbmeta image to disable verification flags",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "SameerAlSahab/AppsPorter",
+      "html_url": "https://github.com/SameerAlSahab/AppsPorter",
+      "description": "Tool for porting OEM specific apps on every devices",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "amjiddader/windows-on-cloud",
+      "html_url": "https://github.com/amjiddader/windows-on-cloud",
+      "description": "Install windows11 on digitalocean, vultr and other cloud server.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "nicorac/bcr-gui",
+      "html_url": "https://github.com/nicorac/bcr-gui",
+      "description": "BCR-GUI is a companion app for the great BCR (Basic Call Recorder) Android application and other supported ROMs with embedded call recorders.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ahmedbarakat207/WinXP_ESP32_S3",
+      "html_url": "https://github.com/ahmedbarakat207/WinXP_ESP32_S3",
+      "description": "tiny 386 PC emulator (Windows XP Edition); running win xp on esp32",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "QwenLM/qwen-code",
+      "html_url": "https://github.com/QwenLM/qwen-code",
+      "description": "An open-source AI coding agent that lives in your terminal.",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "termux/proot-distro",
+      "html_url": "https://github.com/termux/proot-distro",
+      "description": "A utility for managing proot containers.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "BareBrowser/bare-browser",
+      "html_url": "https://github.com/BareBrowser/bare-browser",
+      "description": "Bare is a de-Googled Chromium build for Android, built for privacy, control, and freedom on the web. It strips Google tracking, telemetry, and AI integration while keeping browser extensions and uBlock Origin. It adds background video playback, saving media from sites that normally block it, your choice of download manager, and more.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hxreborn/playstore-adblock",
+      "html_url": "https://github.com/hxreborn/playstore-adblock",
+      "description": "LSPosed/Xposed module that removes ads, sponsored apps, and promoted recommendations from the Google Play Store",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "tmux/tmux",
+      "html_url": "https://github.com/tmux/tmux",
+      "description": "tmux source code",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Magisk-Modules-Repo/terminal_systemizer",
+      "html_url": "https://github.com/Magisk-Modules-Repo/terminal_systemizer",
+      "description": "terminal_systemizer",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MorpheApp/morphe-manager",
+      "html_url": "https://github.com/MorpheApp/morphe-manager",
+      "description": "Morphe app patcher for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "A-EDev/Flow",
+      "html_url": "https://github.com/A-EDev/Flow",
+      "description": "A modern, feature-rich YouTube and YouTube  Music client with local recommendation for Android built with Jetpack Compose",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "foundations/tmoe-linux",
+      "html_url": "https://github.com/foundations/tmoe-linux",
+      "description": "🍭Without any basic knowledge of linux shell,you can easily install and configure a GNU/Linux graphical desktop environment on 📱Android termux and 💻WSL .🍰You can also run VSCode on your android phone.🍹Graphical qemu manager，🐋support running docker on Android.配置WSL和安卓手机的linux容器,桌面环境,主题美化,远程桌面,音频服务,镜像源,uefi开机启动项,webdav(nginx),fcitx输入法以及qemu-system虚拟机...",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Goldzxcbug/Droidspaces-rootfs-Desktop-builder",
+      "html_url": "https://github.com/Goldzxcbug/Droidspaces-rootfs-Desktop-builder",
+      "description": "为 Droidspaces 用户打造带硬件加速的桌面环境",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Revincx/Yurigram",
+      "html_url": "https://github.com/Revincx/Yurigram",
+      "description": "An unofficial tdesktop client with more features",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "usestrix/strix",
+      "html_url": "https://github.com/usestrix/strix",
+      "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ahmedbarakat207/nano-alpine",
+      "html_url": "https://github.com/ahmedbarakat207/nano-alpine",
+      "description": "an alpine linux distro shrunk to fit inside a floppy disk",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "theori-io/copy-fail-CVE-2026-31431",
+      "html_url": "https://github.com/theori-io/copy-fail-CVE-2026-31431",
+      "description": "Copy Fail (CVE-2026-31431): 9-year-old Linux kernel LPE found by Theori's Xint Code",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Delta-Icons/android",
+      "html_url": "https://github.com/Delta-Icons/android",
+      "description": "🤖 Icon Pack for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Xposed-Modules-Repo/com.HeheJuice.OneUISettingsHook",
+      "html_url": "https://github.com/Xposed-Modules-Repo/com.HeheJuice.OneUISettingsHook",
+      "description": "OneUI-Settings-Hook ",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Xposed-Modules-Repo/qyz.onedesign",
+      "html_url": "https://github.com/Xposed-Modules-Repo/qyz.onedesign",
+      "description": "OneDesign: Samsung OneUI",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Impact-I/reFlutter",
+      "html_url": "https://github.com/Impact-I/reFlutter",
+      "description": "Flutter Reverse Engineering Framework",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "fastfetch-cli/fastfetch",
+      "html_url": "https://github.com/fastfetch-cli/fastfetch",
+      "description": "A maintained, feature-rich and performance oriented, neofetch like system information tool.",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DavidBerdik/Let-Me-Downgrade",
+      "html_url": "https://github.com/DavidBerdik/Let-Me-Downgrade",
+      "description": "Let Me Downgrade - Add support for downgrading apps on Android 12 through 17.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ravindu644/Droidspaces-OSS",
+      "html_url": "https://github.com/ravindu644/Droidspaces-OSS",
+      "description": "A lightweight, LXC-like container runtime for Android and Linux. Run full Linux distributions natively with zero performance penalty",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "SoClear/OneUIX",
+      "html_url": "https://github.com/SoClear/OneUIX",
+      "description": "Samsung One UI LSPosed Module",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Pixel-Props/BetterKnownInstalled",
+      "html_url": "https://github.com/Pixel-Props/BetterKnownInstalled",
+      "description": "Patches packages to fix DroidGuard UNKNOWN_INSTALLED issues. (Magisk/KernelSU/APatch)",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "HeheJuice/OneUI-Lockscreen-Font-EXT",
+      "html_url": "https://github.com/HeheJuice/OneUI-Lockscreen-Font-EXT",
+      "description": "Adding more fonts to OneUI Lockscreen",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "C70246247/AOSPStackingRecent",
+      "html_url": "https://github.com/C70246247/AOSPStackingRecent",
+      "description": "A Xposed module that brings the elegant iOS-style card stacking recents (multi-tasking) effect to AOSP Launcher3 and Pixel Launcher.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ReSo7200/InstaEclipse",
+      "html_url": "https://github.com/ReSo7200/InstaEclipse",
+      "description": "An Instagram Xposed module with features like Developer Options, Ghost Mode, Ad-Free browsing, and Distraction-Free Mode.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "thedjchi/Shizuku",
+      "html_url": "https://github.com/thedjchi/Shizuku",
+      "description": "Using system APIs directly with adb/root privileges from normal apps through a Java process started with app_process.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "kmille36/linuxgui-xrdp",
+      "html_url": "https://github.com/kmille36/linuxgui-xrdp",
+      "description": "Ubuntu with DE, Audio, xrdp h264 support (Docker)",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "HunxByts/GhostTrack",
+      "html_url": "https://github.com/HunxByts/GhostTrack",
+      "description": "Useful tool to track location or mobile number",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "D4Vinci/Scrapling",
+      "html_url": "https://github.com/D4Vinci/Scrapling",
+      "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "category": "backend-data",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "orailnoor/DroidDesk",
+      "html_url": "https://github.com/orailnoor/DroidDesk",
+      "description": "DroidDesk turns your Android phone into a real Linux desktop using Termux, Termux X11, TUR, and Proot. Run VS Code, Firefox, LibreOffice, Blender, and more with X11 or VNC support for monitor setup.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dpejoh/specter",
+      "html_url": "https://github.com/dpejoh/specter",
+      "description": "Unified Play Integrity and root hiding stack for Android",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Loukious/FacebookAppAdsRemover",
+      "html_url": "https://github.com/Loukious/FacebookAppAdsRemover",
+      "description": "Facebook App Ads Remover Xposed Module",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "gonzazoid/Ultimatum",
+      "html_url": "https://github.com/gonzazoid/Ultimatum",
+      "description": "Ultimatum is a chromium fork with webextensions support on Android, anti-detect browser capabilities, web3.0 support and much more",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "may215/awesome-termux-hacking",
+      "html_url": "https://github.com/may215/awesome-termux-hacking",
+      "description": "⚡️An awesome list of the best Termux hacking tools ",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Alishahryar1/free-claude-code",
+      "html_url": "https://github.com/Alishahryar1/free-claude-code",
+      "description": "Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sabamdarif/termux-desktop",
+      "html_url": "https://github.com/sabamdarif/termux-desktop",
+      "description": "Install a full Linux desktop environment on your Android device with Termux X11 ( VNC optional) and also enable hardware acceleration",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "fahrez182/AxManager",
+      "html_url": "https://github.com/fahrez182/AxManager",
+      "description": "AxManager is an Android application designed to provide deeper control over apps and the system.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "noob-hackers/mrphish",
+      "html_url": "https://github.com/noob-hackers/mrphish",
+      "description": "All In One Social Accounts Phishing With Otp Bypass In Termux.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "u8void/NESP",
+      "html_url": "https://github.com/u8void/NESP",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Mahmud0808/PixelLauncherEnhanced",
+      "html_url": "https://github.com/Mahmud0808/PixelLauncherEnhanced",
+      "description": "An Xposed module to unleash the full potential of your launcher!",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "swisskyrepo/PayloadsAllTheThings",
+      "html_url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+      "description": "A list of useful payloads and bypass for Web Application Security and Pentest/CTF",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "IslamAlorabI/ShafeeZekr",
+      "html_url": "https://github.com/IslamAlorabI/ShafeeZekr",
+      "description": "A simple Android app to send blessings upon the Prophet Muhammad ﷺ",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "zoicware/RemoveWindowsAI",
+      "html_url": "https://github.com/zoicware/RemoveWindowsAI",
+      "description": "Force Remove Copilot, Recall and More in Windows 11",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "c0pt4n/.dotermux",
+      "html_url": "https://github.com/c0pt4n/.dotermux",
+      "description": "dotfiles for termux",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Byterialab/renef",
+      "html_url": "https://github.com/Byterialab/renef",
+      "description": "mobile reverse engineering framework",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "File-New-Project/EarTrumpet",
+      "html_url": "https://github.com/File-New-Project/EarTrumpet",
+      "description": "EarTrumpet - Volume Control for Windows",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "SwiftcordApp/Swiftcord",
+      "html_url": "https://github.com/SwiftcordApp/Swiftcord",
+      "description": "A fully native Discord client for macOS built 100% in Swift!",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "A-poc/RedTeam-Tools",
+      "html_url": "https://github.com/A-poc/RedTeam-Tools",
+      "description": "Tools and Techniques for Red Team / Penetration Testing",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "NoeFabris/opencode-antigravity-auth",
+      "html_url": "https://github.com/NoeFabris/opencode-antigravity-auth",
+      "description": "Enable Opencode to authenticate against Antigravity (Google's IDE) via OAuth so you can use Antigravity rate limits and access models like gemini-3-pro and claude-opus-4-5-thinking with your Google credentials.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "abusoww/tuxmate",
+      "html_url": "https://github.com/abusoww/tuxmate",
+      "description": "THE MISSING BULK APP INSTALLER FOR LINUX",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "komi-store/komi-store",
+      "html_url": "https://github.com/komi-store/komi-store",
+      "description": "🩵 A free, open-source app store for developers' releases on GitHub, Codeberg & Forgejo — browse, discover, and install apps with one click. Formerly GitHub Store.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "WSTxda/ViperFX-RE-Releases",
+      "html_url": "https://github.com/WSTxda/ViperFX-RE-Releases",
+      "description": "ViPER4Android FX with Material 3 Expressive design and improvements.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/SpoofingCollection",
+      "html_url": "https://github.com/mrx7014/SpoofingCollection",
+      "description": "A collection of Magisk root modules and LSPosed (Xposed) modules for spoofing Android device fingerprints (manufacturer, model, build props, etc.) to appear as different devices.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "LSPosed/LSPosed.github.io",
+      "html_url": "https://github.com/LSPosed/LSPosed.github.io",
+      "description": "",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "linuxmint/cinnamon",
+      "html_url": "https://github.com/linuxmint/cinnamon",
+      "description": "A Linux desktop featuring a traditional layout, built from modern technology and introducing brand new innovative features. ",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "xoureldeen/Vectras-VM-Android",
+      "html_url": "https://github.com/xoureldeen/Vectras-VM-Android",
+      "description": "It's a Virtual Machine App for Android Which is Based on QEMU",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "i-Taylo/iUnlockerGL",
+      "html_url": "https://github.com/i-Taylo/iUnlockerGL",
+      "description": "iUnlocker GLTool is a Magisk module designed to spoof GPU information, allowing users to modify GPU informations for unlocking graphics in games and testing.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "NexAlloy/NexAlloy",
+      "html_url": "https://github.com/NexAlloy/NexAlloy",
+      "description": "ChsBuffer's LSPosed module, powered by Morphe, ReVanced, and beyond. (formerly ReVanced Xposed)",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "SleepyCatHey/CozyPixels",
+      "html_url": "https://github.com/SleepyCatHey/CozyPixels",
+      "description": "🎨 Aesthetic wallpaper collection gathered over a year! Catppuccin, Nord, One Dark themes & cozy vibes. Free for everyone to enjoy 🌟",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MMRLApp/MMRL",
+      "html_url": "https://github.com/MMRLApp/MMRL",
+      "description": "A app for managing, sharing, and exploring Magisk modules across repositories",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "skm248/BurpSuiteInstaller",
+      "html_url": "https://github.com/skm248/BurpSuiteInstaller",
+      "description": "Install and Activate your Burp Suite Professional with ase.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Jman-Github/Universal-ReVanced-Manager",
+      "html_url": "https://github.com/Jman-Github/Universal-ReVanced-Manager",
+      "description": "💊 Android manager for ReVanced and Morphe with third-party patch bundles, batch and automatic repatching, advanced installers, APK tools, and deep customization.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MobileFirstLLC/social-media-hacker-list",
+      "html_url": "https://github.com/MobileFirstLLC/social-media-hacker-list",
+      "description": "Growing list of apps and tools for enhancing social media experiences.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "spike0en/nothing_archive",
+      "html_url": "https://github.com/spike0en/nothing_archive",
+      "description": "Nothing Community Apps & Projects Index • Nothing OS Firmware Archive • OTA Updates & Changelogs for Nothing Phones & CMF By Nothing Phones • Tools for Nothing Glyph LED & Glyph Matrix • Windows, macOS & Linux Tools • Nothing Phone Unbrick • Nothing Ear & CMF Buds Tools • Official Resources • Kernel Sources • Rooting, Unrooting & Technical Guides",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "FoedusProgramme/AccordLegacy",
+      "html_url": "https://github.com/FoedusProgramme/AccordLegacy",
+      "description": "Gramophone but apple",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Swordfish90/cool-retro-term",
+      "html_url": "https://github.com/Swordfish90/cool-retro-term",
+      "description": "A good looking terminal emulator which mimics the old cathode display...",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "nyxiereal/XToolbox",
+      "html_url": "https://github.com/nyxiereal/XToolbox",
+      "description": "XToolBox - A collection of 150+ Windows 10/11 optimization and tweaking apps!",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "PranshulGG/WeatherMaster",
+      "html_url": "https://github.com/PranshulGG/WeatherMaster",
+      "description": "A Weather app for android with multiple sources 🌦🌞☔",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "nonbili/Nora",
+      "html_url": "https://github.com/nonbili/Nora",
+      "description": "SNS browser. Facebook, Instagram, Reddit, Threads, X and more in a single app. No ads.",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MDP43140/LTECleanerFOSS",
+      "html_url": "https://github.com/MDP43140/LTECleanerFOSS",
+      "description": "The last Android cleaner you'll ever need!",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "KOWX712/PlayIntegrityFix",
+      "html_url": "https://github.com/KOWX712/PlayIntegrityFix",
+      "description": "Fix Play Integrity verdicts.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "UbuntuDDE/dde-store",
+      "html_url": "https://github.com/UbuntuDDE/dde-store",
+      "description": "An app store for DDE built with DTK",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "kinguser981/OrangeFox-Recovery-Flags",
+      "html_url": "https://github.com/kinguser981/OrangeFox-Recovery-Flags",
+      "description": "",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MeowDump/Integrity-Box",
+      "html_url": "https://github.com/MeowDump/Integrity-Box",
+      "description": "A toolkit for managing Play Integrity & System Environment",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "rsuplaygrnd/crave_aosp_script",
+      "html_url": "https://github.com/rsuplaygrnd/crave_aosp_script",
+      "description": "Crave AOSP builder script",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "minimal-manifest-twrp/platform_manifest_twrp_aosp",
+      "html_url": "https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp",
+      "description": "Minimal manifest for building TWRP for devices shipped with Android 10+",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "zen-browser/desktop",
+      "html_url": "https://github.com/zen-browser/desktop",
+      "description": "Welcome to a calmer internet",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DevCat3/GSI-Flash-Tool",
+      "html_url": "https://github.com/DevCat3/GSI-Flash-Tool",
+      "description": "A simple tool to flash gsi roms without pc -> only termux",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Maplespe/ExplorerBlurMica",
+      "html_url": "https://github.com/Maplespe/ExplorerBlurMica",
+      "description": "Add background Blur effect or Acrylic (Mica for win11) effect to explorer for win10 and win11",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "winboat-org/winboat",
+      "html_url": "https://github.com/winboat-org/winboat",
+      "description": "Run Windows apps on 🐧 Linux with ✨ seamless integration",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "NickvisionApps/Parabolic",
+      "html_url": "https://github.com/NickvisionApps/Parabolic",
+      "description": "Download web video and audio",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ai-to-ai/Auto-Gmail-Creator",
+      "html_url": "https://github.com/ai-to-ai/Auto-Gmail-Creator",
+      "description": "Open Source Bulk Auto Gmail Creator Bot with Selenium & Seleniumwire ( Python ). Feel free to contact me with Django/Flask, ML, AI, GPT, Automation, Scraping.",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "frknkrc44/SmartPiXelsPosed",
+      "html_url": "https://github.com/frknkrc44/SmartPiXelsPosed",
+      "description": "A Xposed port of Smart Pixels feature with extras.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "antiden/macOS-cursors-for-Windows",
+      "html_url": "https://github.com/antiden/macOS-cursors-for-Windows",
+      "description": "Tested in Windows 10 & 11, 4K (125%, 150%, 200%). With 2 versions, 2 types and 3 different sizes!",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "keeganjk/kali-anonymous",
+      "html_url": "https://github.com/keeganjk/kali-anonymous",
+      "description": ":bust_in_silhouette: The `anonymous` script from ParrotSec OS and BackBox Linux, perfected to run on Kali Linux Rolling. Run the script with `sudo sh script.sh` and then it will install and configure Tor, `macchanger`, and the `anonymous` script.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dyad-sh/dyad",
+      "html_url": "https://github.com/dyad-sh/dyad",
+      "description": "Local, open-source AI app builder for power users ✨ v0 / Lovable / Replit / Bolt alternative 🌟 Star if you like it!",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "austintools/SFVIP-Player",
+      "html_url": "https://github.com/austintools/SFVIP-Player",
+      "description": "The best IPTV Player for Windows. ",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "videolan/vlc",
+      "html_url": "https://github.com/videolan/vlc",
+      "description": "VLC media player - plays everything, runs anywhere. Code here: https://code.videolan.org/videolan/vlc",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Mygod/VPNHotspot",
+      "html_url": "https://github.com/Mygod/VPNHotspot",
+      "description": "Share your VPN connection over hotspot or repeater! (root required)",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Xposed-Modules-Repo/com.wizpizz.reddidnt",
+      "html_url": "https://github.com/Xposed-Modules-Repo/com.wizpizz.reddidnt",
+      "description": "LSPosed Reddit Ad Blocker | Reddidn't",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "prajwalch/TorrentSearch",
+      "html_url": "https://github.com/prajwalch/TorrentSearch",
+      "description": "An Android app for searching torrents across multiple providers with fast search speed, detailed results, and packed with complete torrent actions.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mishakorzik/AllHackingTools",
+      "html_url": "https://github.com/mishakorzik/AllHackingTools",
+      "description": " All-in-One Hacking Tools For Hackers! And more hacking tools! For termux.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "PerformanC/ReZygisk",
+      "html_url": "https://github.com/PerformanC/ReZygisk",
+      "description": "Transparent implementation of Zygisk.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "v3kt0r-87/Mesa-Turnip-Builder",
+      "html_url": "https://github.com/v3kt0r-87/Mesa-Turnip-Builder",
+      "description": "Script to build Freedreno Turnip Vulkan Driver as a Module for Magisk or EMULATORS",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "noob-hackers/hacklock",
+      "html_url": "https://github.com/noob-hackers/hacklock",
+      "description": "Hack Android Pattern From Termux With This Tool",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "microsoft/vscode",
+      "html_url": "https://github.com/microsoft/vscode",
+      "description": "Visual Studio Code",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "atom/atom",
+      "html_url": "https://github.com/atom/atom",
+      "description": ":atom: The hackable text editor",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "trimstray/the-book-of-secret-knowledge",
+      "html_url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+      "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "BasGame1/Pixelify-Next",
+      "html_url": "https://github.com/BasGame1/Pixelify-Next",
+      "description": "Magisk /KSU module to enables pixel exclusive features up to android 17",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Kalyan-Deva/Hacking-Bug-Bounty-Books",
+      "html_url": "https://github.com/Kalyan-Deva/Hacking-Bug-Bounty-Books",
+      "description": "Collection of Combination of 👨🏻‍💻Ethical Hacking, 🐧Linux, Cyber security, 💰Bug Bounty, Penetration testing, Networking and more IT Related Books that are Publicly Available. ",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EKA2L1/EKA2L1",
+      "html_url": "https://github.com/EKA2L1/EKA2L1",
+      "description": "A Symbian OS/N-Gage emulator",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "polhdez/ubuntu-debullshit",
+      "html_url": "https://github.com/polhdez/ubuntu-debullshit",
+      "description": "Purges snaps, installs flatpaks, and restores vanilla GNOME",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "0xarchit/github-profile-analyzer",
+      "html_url": "https://github.com/0xarchit/github-profile-analyzer",
+      "description": "Github Profile analyzer or analyser and reviewer tool. Gives review based on first 100 repos and only includes those forks in which user has contributions to avoid fake results | #1 profile analyzer on github",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "eylenburg/linoffice",
+      "html_url": "https://github.com/eylenburg/linoffice",
+      "description": "Microsoft Office Launcher for Linux",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ieasybooks/aljam3-web-app",
+      "html_url": "https://github.com/ieasybooks/aljam3-web-app",
+      "description": "مكتبة المكتبات الإسلامية",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "flick9000/winscript",
+      "html_url": "https://github.com/flick9000/winscript",
+      "description": "Open-source tool to build your Windows script from scratch. It includes debloat, privacy, performance & app installing scripts.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "permissionlesstech/bitchat",
+      "html_url": "https://github.com/permissionlesstech/bitchat",
+      "description": "bluetooth mesh chat, IRC vibes",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AlirezaParsi/COPG",
+      "html_url": "https://github.com/AlirezaParsi/COPG",
+      "description": "Advanced per-app device / CPU / GPU spoofer for rooted Android — device profiles, per-app CPU models, prop & Android-ID spoofing, all driven by a full on-device WebUI. Zygisk module for KernelSU / Magisk / APatch.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "haithamaouati/BW11",
+      "html_url": "https://github.com/haithamaouati/BW11",
+      "description": "Bypass Windows 11 System Requirements",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "google-gemini/gemini-cli",
+      "html_url": "https://github.com/google-gemini/gemini-cli",
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EutropicAI/Final2x",
+      "html_url": "https://github.com/EutropicAI/Final2x",
+      "description": "a cross-platform image super-resolution tool",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "SyntaxSpin/progressify",
+      "html_url": "https://github.com/SyntaxSpin/progressify",
+      "description": "A tutorial for beginners how to implement Material Expressive progress Indicator in XML and Java",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "n8n-io/n8n",
+      "html_url": "https://github.com/n8n-io/n8n",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "OpenCut-app/OpenCut",
+      "html_url": "https://github.com/OpenCut-app/OpenCut",
+      "description": "The open-source CapCut alternative",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Infamousmick/Infamick-script",
+      "html_url": "https://github.com/Infamousmick/Infamick-script",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AtlanPrime/customromguide",
+      "html_url": "https://github.com/AtlanPrime/customromguide",
+      "description": "ROM Build Guide | PR's Welcome! | Technically its a blind Buildbot friendly guide | But don't be a Buildbot",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MhmRdd/NoHello",
+      "html_url": "https://github.com/MhmRdd/NoHello",
+      "description": "A Zygisk module to hide root.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "telegramdesktop/tdesktop",
+      "html_url": "https://github.com/telegramdesktop/tdesktop",
+      "description": "Telegram Desktop messaging app",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "HacxGPT-Official/HacxGPT-CLI",
+      "html_url": "https://github.com/HacxGPT-Official/HacxGPT-CLI",
+      "description": "Open-source CLI for unrestricted AI - Access powerful models without censorship",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "liquidprjkt/liquid_kernel_desktop_x86",
+      "html_url": "https://github.com/liquidprjkt/liquid_kernel_desktop_x86",
+      "description": "Yet another custom kernel for desktop. Build it with \"LLVM=1 LLVM_IAS=1\".",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ShadowHackrs/Jailbreaks-GPT-Gemini-deepseek-",
+      "html_url": "https://github.com/ShadowHackrs/Jailbreaks-GPT-Gemini-deepseek-",
+      "description": "Jailbreaks GPT, Sora, Claude, Gemini ,deepseek this prompt unlocks rage mode",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "nozwock/packet",
+      "html_url": "https://github.com/nozwock/packet",
+      "description": "Quick Share client for Linux",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "xodiosx/XoDos",
+      "html_url": "https://github.com/xodiosx/XoDos",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "NoDataFound/hackGPT",
+      "html_url": "https://github.com/NoDataFound/hackGPT",
+      "description": "I leverage OpenAI and ChatGPT to do hackerish things",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "badges/shields",
+      "html_url": "https://github.com/badges/shields",
+      "description": "Concise, consistent, and legible badges in SVG and raster format",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "kmille36/Colab-Cloud-Gaming",
+      "html_url": "https://github.com/kmille36/Colab-Cloud-Gaming",
+      "description": "Run Steam and Play Game on Gooogle Colab",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dagmawibabi/NativeChat",
+      "html_url": "https://github.com/dagmawibabi/NativeChat",
+      "description": "NativeChat is a powerful application designed to bring seamless, context-aware interactions to your mobile device. Using Gemini under the hood, it offers a wide range of features to assist with tasks like fetching system specs, analyzing call logs, summarizing SMS messages, and providing insights into your device’s status. ",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "JaKooLit/Debian-Hyprland",
+      "html_url": "https://github.com/JaKooLit/Debian-Hyprland",
+      "description": "For automated installation of Hyprland on Debian 13 Trixie (Testing) and Debian SiD (Unstable)",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mkckr0/audio-share",
+      "html_url": "https://github.com/mkckr0/audio-share",
+      "description": "Audio Share can share Windows/Linux computer's audio to Android phone over network, so your phone becomes the speaker of computer. (You needn't buy a new speaker😄.)",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Android-PowerUser/Windroid_11",
+      "html_url": "https://github.com/Android-PowerUser/Windroid_11",
+      "description": "Windroid 11 is a Windows 11 equivalent for Android.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ravindu644/LinuxRDP",
+      "html_url": "https://github.com/ravindu644/LinuxRDP",
+      "description": ":)",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mmsaeed509/OnionSearch",
+      "html_url": "https://github.com/mmsaeed509/OnionSearch",
+      "description": "OnionSearch is a script that scrapes urls on different .onion search engines. ",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ExtremeXT/ExtremeROM",
+      "html_url": "https://github.com/ExtremeXT/ExtremeROM",
+      "description": "Work-in-progress custom ROM for various Samsung Galaxy devices.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "PanXProject/awesome-certificates",
+      "html_url": "https://github.com/PanXProject/awesome-certificates",
+      "description": "Curated list of 20,000+ hours and 200+ free courses with certificates in IT, CS, Design and Business.",
+      "category": "learning-resources",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ilhan-athn7/freedreno_turnip-CI",
+      "html_url": "https://github.com/ilhan-athn7/freedreno_turnip-CI",
+      "description": "A script for building turnip driver as a magisk module from mesa repository, scheduled releases per 2 week via github actions.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "public-apis/public-apis",
+      "html_url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ravindu644/Simple-Android-Guides",
+      "html_url": "https://github.com/ravindu644/Simple-Android-Guides",
+      "description": "Learn about Android stuffs from Scratch. Useful for Newbies.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ChrisTitusTech/linutil",
+      "html_url": "https://github.com/ChrisTitusTech/linutil",
+      "description": "Chris Titus Tech's Linux Toolbox - Linutil is a distro-agnostic toolbox designed to simplify everyday Linux tasks.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mmsaeed509/AIMatrix",
+      "html_url": "https://github.com/mmsaeed509/AIMatrix",
+      "description": "Discover the future of AI tools",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "re-zero001/LSPosed-Irena",
+      "html_url": "https://github.com/re-zero001/LSPosed-Irena",
+      "description": "Useless LSPosed Framework Fork",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "quickemu-project/quickemu",
+      "html_url": "https://github.com/quickemu-project/quickemu",
+      "description": "Quickly create and run optimised Windows, macOS and Linux virtual machines",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "OxygenCobalt/Auxio",
+      "html_url": "https://github.com/OxygenCobalt/Auxio",
+      "description": "A simple, rational music player for android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "VishnuSanal/WhatsAppCleaner",
+      "html_url": "https://github.com/VishnuSanal/WhatsAppCleaner",
+      "description": "Cleaner for WhatsApp - Clean WhatsApp's Redundant Media Files from Storage",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "wtsxDev/reverse-engineering",
+      "html_url": "https://github.com/wtsxDev/reverse-engineering",
+      "description": "List of awesome reverse engineering resources",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "localsend/localsend",
+      "html_url": "https://github.com/localsend/localsend",
+      "description": "An open-source cross-platform alternative to AirDrop",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AndraxDev/speak-gpt",
+      "html_url": "https://github.com/AndraxDev/speak-gpt",
+      "description": "Your personal voice assistant based on OpenAI ChatGPT.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "samolego/Canta",
+      "html_url": "https://github.com/samolego/Canta",
+      "description": "Uninstall any Android app without root (with power of Shizuku). Debloat your device as you wish, with Android app or even from your browser!",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "rakarmp/ai-furiku",
+      "html_url": "https://github.com/rakarmp/ai-furiku",
+      "description": "system enhancement module for Android that provides advanced AI capabilities to your device. This Magisk module integrates seamlessly with your system to improve performance, extend battery life, and add intelligent features to enhance your daily Android experience.",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hdrover/discord-drover",
+      "html_url": "https://github.com/hdrover/discord-drover",
+      "description": "A DLL for forcing Discord to use a specified proxy (HTTP/SOCKS5) for TCP connections. Bypasses local restrictions on voice chats.",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "vjb-tmh/tmh-files",
+      "html_url": "https://github.com/vjb-tmh/tmh-files",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ZG089/Re-Malwack",
+      "html_url": "https://github.com/ZG089/Re-Malwack",
+      "description": "A fully-fledged adblock root/no-root suite. Contains all your needs ✨",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "LoggingNewMemory/AnyaMelfissaThermal",
+      "html_url": "https://github.com/LoggingNewMemory/AnyaMelfissaThermal",
+      "description": "Prevent Performance Drop Without Killing Thermal Services",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Mobile-Artificial-Intelligence/maid",
+      "html_url": "https://github.com/Mobile-Artificial-Intelligence/maid",
+      "description": "Maid is a free and open source application for interfacing with llama.cpp models locally, and with Anthropic, DeepSeek, Ollama, Mistral and OpenAI models remotely.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "evdenis/selinux_permissive",
+      "html_url": "https://github.com/evdenis/selinux_permissive",
+      "description": "Magisk Module that switches SELinux to permissive mode",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "NotZeetaa/YAKT",
+      "html_url": "https://github.com/NotZeetaa/YAKT",
+      "description": "Yet Another Kernel Tweaker. A Magisk module to Tweak your Kernel parameters",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "oxters168/Pluvia",
+      "html_url": "https://github.com/oxters168/Pluvia",
+      "description": "Lightweight unofficial Steam client for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hzeller/timg",
+      "html_url": "https://github.com/hzeller/timg",
+      "description": "A terminal image and video viewer.",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dockur/windows",
+      "html_url": "https://github.com/dockur/windows",
+      "description": "Windows inside a Docker container.",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dockur/macos",
+      "html_url": "https://github.com/dockur/macos",
+      "description": "MacOS inside a Docker container.",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "0xsyr0/OSCP",
+      "html_url": "https://github.com/0xsyr0/OSCP",
+      "description": "OSCP Cheat Sheet",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "tw93/Pake",
+      "html_url": "https://github.com/tw93/Pake",
+      "description": "🤱🏻 Turn any webpage into a desktop app with one command.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "SebaUbuntu/AIK-Linux-mirror",
+      "html_url": "https://github.com/SebaUbuntu/AIK-Linux-mirror",
+      "description": "AIK files from XDA thread",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "deepfakes/faceswap",
+      "html_url": "https://github.com/deepfakes/faceswap",
+      "description": "Deepfakes Software For All",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "0xfff0800/TikTok-Back",
+      "html_url": "https://github.com/0xfff0800/TikTok-Back",
+      "description": "Automate downloading of deleted archived TikTok videos",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ading2210/doompdf",
+      "html_url": "https://github.com/ading2210/doompdf",
+      "description": "A port of Doom (1993) that runs inside a PDF file",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EshginGuluzade/drive_to_telegram",
+      "html_url": "https://github.com/EshginGuluzade/drive_to_telegram",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "foxytouxxx/freeroot",
+      "html_url": "https://github.com/foxytouxxx/freeroot",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ublue-os/bazzite",
+      "html_url": "https://github.com/ublue-os/bazzite",
+      "description": "Bazzite makes gaming and everyday use smoother and simpler across desktop PCs, handhelds, tablets, and home theater PCs.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "timschneeb/awesome-shizuku",
+      "html_url": "https://github.com/timschneeb/awesome-shizuku",
+      "description": "Curated list of awesome Android apps making use of Shizuku",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "xemu-project/xemu",
+      "html_url": "https://github.com/xemu-project/xemu",
+      "description": "Original Xbox Emulator for Windows, macOS, and Linux (Active Development)",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "librepods-org/librepods",
+      "html_url": "https://github.com/librepods-org/librepods",
+      "description": "AirPods liberated from Apple's ecosystem.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "iBotPeaches/Apktool",
+      "html_url": "https://github.com/iBotPeaches/Apktool",
+      "description": "A tool for reverse engineering Android apk files",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "veeso/termscp",
+      "html_url": "https://github.com/veeso/termscp",
+      "description": "🖥  A feature rich terminal UI file transfer and explorer with support for SCP/SFTP/FTP/S3/SMB/WebDAV",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hexadecimal233/Windows-Store-Downloader",
+      "html_url": "https://github.com/hexadecimal233/Windows-Store-Downloader",
+      "description": "Download Microsoft Store items using store.rg-adguard.net API",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "almond-sh/almond",
+      "html_url": "https://github.com/almond-sh/almond",
+      "description": "A Scala kernel for Jupyter",
+      "category": "backend-data",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AnonHackerr/toolss",
+      "html_url": "https://github.com/AnonHackerr/toolss",
+      "description": "Automatic hacking tools installer for Android [ONLY FOR TERMUX]",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "pluja/awesome-privacy",
+      "html_url": "https://github.com/pluja/awesome-privacy",
+      "description": "Awesome Privacy - A curated list of services and alternatives that respect your privacy because PRIVACY MATTERS.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "zyyzyykk/kkTerminal",
+      "html_url": "https://github.com/zyyzyykk/kkTerminal",
+      "description": "A terminal for Web SSH connection",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "codecrafters-io/build-your-own-x",
+      "html_url": "https://github.com/codecrafters-io/build-your-own-x",
+      "description": "Master programming by recreating your favorite technologies from scratch.",
+      "category": "learning-resources",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "leaningtech/webvm",
+      "html_url": "https://github.com/leaningtech/webvm",
+      "description": "Virtual Machine for the Web",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "samsungexynos850/CRB-Linux",
+      "html_url": "https://github.com/samsungexynos850/CRB-Linux",
+      "description": "A WIP project to have CRB-similar interface in Linux console.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Neet-Nestor/Telegram-Media-Downloader",
+      "html_url": "https://github.com/Neet-Nestor/Telegram-Media-Downloader",
+      "description": "A script allowing you to download images and videos from Telegram web even if the group restricts downloading.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AlessandroZ/LaZagne",
+      "html_url": "https://github.com/AlessandroZ/LaZagne",
+      "description": "Credentials recovery project",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "parallelcc/MiCTS",
+      "html_url": "https://github.com/parallelcc/MiCTS",
+      "description": "Trigger Circle to Search on any Android 9–16 device",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hrydgard/ppsspp",
+      "html_url": "https://github.com/hrydgard/ppsspp",
+      "description": "A PSP emulator for Android, Windows, Mac, Linux and iOS, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "JohannesKaufmann/html-to-markdown",
+      "html_url": "https://github.com/JohannesKaufmann/html-to-markdown",
+      "description": "⚙️ Convert HTML to Markdown. Even works with entire websites and can be extended through rules.",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "tberghuis/AutoTyper",
+      "html_url": "https://github.com/tberghuis/AutoTyper",
+      "description": "",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dessant/buster",
+      "html_url": "https://github.com/dessant/buster",
+      "description": "Captcha solver extension for humans, available for Chrome, Edge and Firefox",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "tgdrive/teldrive",
+      "html_url": "https://github.com/tgdrive/teldrive",
+      "description": "Teldrive",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "jhaddix/tbhm",
+      "html_url": "https://github.com/jhaddix/tbhm",
+      "description": "The Bug Hunters Methodology",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Cyber-Dioxide/CyberPhish",
+      "html_url": "https://github.com/Cyber-Dioxide/CyberPhish",
+      "description": "A heavily armed customizable phishing tool for educational purpose only",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "WSTxda/Clippy",
+      "html_url": "https://github.com/WSTxda/Clippy",
+      "description": "Copy links from the sharing menu with automatic removal of shorteners and trackers.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Taewan-P/gpt_mobile",
+      "html_url": "https://github.com/Taewan-P/gpt_mobile",
+      "description": "Chat app for Android that supports answers from multiple LLMs at once. Bring your own API key AI client. Supports OpenAI, Anthropic, Google, and Ollama. Designed with Material3 & Compose.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Juby210/SwiftBackupPrem",
+      "html_url": "https://github.com/Juby210/SwiftBackupPrem",
+      "description": "Swift Backup Premium LSPosed module",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Micro0x00/Dark-Web-Full-Guide",
+      "html_url": "https://github.com/Micro0x00/Dark-Web-Full-Guide",
+      "description": "Your Guide to browse Onine sites  ",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "LeDragoX/Win-Debloat-Tools",
+      "html_url": "https://github.com/LeDragoX/Win-Debloat-Tools",
+      "description": "Re-imagining Windows like a minimal OS install, already debloated with minimal impact for most functionality.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "J2TEAM/idm-trial-reset",
+      "html_url": "https://github.com/J2TEAM/idm-trial-reset",
+      "description": "Use IDM forever without cracking",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "winapps-org/winapps",
+      "html_url": "https://github.com/winapps-org/winapps",
+      "description": " Run Windows apps such as Microsoft Office/Adobe in Linux (Ubuntu/Fedora) and GNOME/KDE as if they were a part of the native OS, including Nautilus integration. Hard fork of https://github.com/Fmstrat/winapps/",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "foxytouxxx/xrdp-and-ngrok-installer",
+      "html_url": "https://github.com/foxytouxxx/xrdp-and-ngrok-installer",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/Servers-Setup-Script",
+      "html_url": "https://github.com/mrx7014/Servers-Setup-Script",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "actions/runner-images",
+      "html_url": "https://github.com/actions/runner-images",
+      "description": "GitHub Actions runner images",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "awesome-android-root/awesome-android-root",
+      "html_url": "https://github.com/awesome-android-root/awesome-android-root",
+      "description": "Discover best root apps, Magisk, KernelSu & LSPosed(xposed) modules & rooting guides",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "xroche/httrack",
+      "html_url": "https://github.com/xroche/httrack",
+      "description": "HTTrack Website Copier, copy websites to your computer (Official repository)",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Julow/Unexpected-Keyboard",
+      "html_url": "https://github.com/Julow/Unexpected-Keyboard",
+      "description": "A lightweight keyboard for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "airbnb/javascript",
+      "html_url": "https://github.com/airbnb/javascript",
+      "description": "JavaScript Style Guide",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "supermarsx/magisk-samsung-dex-standalone-mode",
+      "html_url": "https://github.com/supermarsx/magisk-samsung-dex-standalone-mode",
+      "description": "A Magisk module to systemlessly enable Samsung DeX standalone mode",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ChefKissInc/Inferno",
+      "html_url": "https://github.com/ChefKissInc/Inferno",
+      "description": "Apple Silicon device emulator.",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ActionRetro/FrogFind",
+      "html_url": "https://github.com/ActionRetro/FrogFind",
+      "description": "Source for the FrogFind search engine for vintage computers",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "google-gemini/gemini-api-quickstart",
+      "html_url": "https://github.com/google-gemini/gemini-api-quickstart",
+      "description": "Get up and running with the Gemini API in under 5 minutes (with Python)",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EdenwareApps/Megacubo",
+      "html_url": "https://github.com/EdenwareApps/Megacubo",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "seevik2580/tor-ip-changer",
+      "html_url": "https://github.com/seevik2580/tor-ip-changer",
+      "description": "request new identity every X seconds interval using TOR client",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "abdullah-albanna/freecomp",
+      "html_url": "https://github.com/abdullah-albanna/freecomp",
+      "description": "A list of websites where users can access computers/terminals/browsers for FREE.",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "WassimBenzarti/colab-ssh",
+      "html_url": "https://github.com/WassimBenzarti/colab-ssh",
+      "description": "Connect to Google Colab using SSH",
+      "category": "backend-data",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "REAndroid/APKEditor",
+      "html_url": "https://github.com/REAndroid/APKEditor",
+      "description": "Powerful android apk editor - aapt/aapt2 independent",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "rushiranpise/detection",
+      "html_url": "https://github.com/rushiranpise/detection",
+      "description": "Collection of Various Root Detection Apps for Android",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Johannes4Linux/Linux_Driver_Tutorial_legacy",
+      "html_url": "https://github.com/Johannes4Linux/Linux_Driver_Tutorial_legacy",
+      "description": "A Tutorial how to get started with Linux Kernel Modules and Linux Drivers.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "3arthur6/BluetoothLibraryPatcher",
+      "html_url": "https://github.com/3arthur6/BluetoothLibraryPatcher",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "pystardust/ani-cli",
+      "html_url": "https://github.com/pystardust/ani-cli",
+      "description": "A cli tool to browse and play anime",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "zhanghai/MaterialFiles",
+      "html_url": "https://github.com/zhanghai/MaterialFiles",
+      "description": "Material Design file manager for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Aider-AI/aider",
+      "html_url": "https://github.com/Aider-AI/aider",
+      "description": "aider is AI pair programming in your terminal",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ossu/computer-science",
+      "html_url": "https://github.com/ossu/computer-science",
+      "description": "🎓 Path to a free self-taught education in Computer Science!",
+      "category": "learning-resources",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "flutter/flutter",
+      "html_url": "https://github.com/flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "LinkoraApp/Linkora",
+      "html_url": "https://github.com/LinkoraApp/Linkora",
+      "description": "Local-first multiplatform link organizer with optional self-hosted sync.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "vipulyaara/Kafka",
+      "html_url": "https://github.com/vipulyaara/Kafka",
+      "description": "Read, play, and download millions of books; served by archive.org.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sickcodes/Docker-OSX",
+      "html_url": "https://github.com/sickcodes/Docker-OSX",
+      "description": "Run macOS VM in a Docker! Run near native OSX-KVM in Docker! X11 Forwarding! CI/CD for OS X Security Research! Docker mac Containers.",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Seth0x41/awesome-egypt",
+      "html_url": "https://github.com/Seth0x41/awesome-egypt",
+      "description": "List of awesome Egyptian things for developers. 📜",
+      "category": "learning-resources",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "invinciblevenom/debloat_samsung_android",
+      "html_url": "https://github.com/invinciblevenom/debloat_samsung_android",
+      "description": "Universal debloater for Samsung OneUI 2.5 to 6.1",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "chenxiaolong/BCR",
+      "html_url": "https://github.com/chenxiaolong/BCR",
+      "description": "A Basic Call Recorder for rooted Android devices",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "fawazahmed0/Latest-adb-fastboot-installer-for-windows",
+      "html_url": "https://github.com/fawazahmed0/Latest-adb-fastboot-installer-for-windows",
+      "description": "A Simple Android Driver installer tool for windows (Always installs the latest version)",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "androidmalware/android_hid",
+      "html_url": "https://github.com/androidmalware/android_hid",
+      "description": "Use Android as Rubber Ducky against another Android device",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ethical-haquer/Galaxy-Flasher",
+      "html_url": "https://github.com/ethical-haquer/Galaxy-Flasher",
+      "description": "A GUI for Samsung Flash Tools - ARCHIVED:  Moved to Codeberg",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "StefanLobbenmeier/youtube-dl-gui",
+      "html_url": "https://github.com/StefanLobbenmeier/youtube-dl-gui",
+      "description": "A cross-platform GUI for youtube-dl made in Electron and node.js",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "salvogiangri/UN1CA",
+      "html_url": "https://github.com/salvogiangri/UN1CA",
+      "description": "Work-in-progress custom firmware for Samsung Galaxy devices.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "bunnykek/MultiUpload",
+      "html_url": "https://github.com/bunnykek/MultiUpload",
+      "description": "Telegram bot to upload your GDrive/DDL/Telegram files to 10+ free hosting services",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Live-Block/Flyme-FreeForm",
+      "html_url": "https://github.com/Live-Block/Flyme-FreeForm",
+      "description": "A FlymeOS style freeform",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Nekmo/telegram-upload",
+      "html_url": "https://github.com/Nekmo/telegram-upload",
+      "description": "Upload and download files from Telegram up to 4 GiB using your account",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "arxhr007/Aliens_eye",
+      "html_url": "https://github.com/arxhr007/Aliens_eye",
+      "description": "Hunt down 840+ social media accounts using AI",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AntonyZ89/docker-qemu-arm",
+      "html_url": "https://github.com/AntonyZ89/docker-qemu-arm",
+      "description": "Run Docker x86_64 on Arm computers or Android",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "LinuxDroidMaster/Termux-Desktops",
+      "html_url": "https://github.com/LinuxDroidMaster/Termux-Desktops",
+      "description": "Collection of scripts to launch Desktops with audio in Termux X11 and how to use hardware acceleration",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "lllyasviel/Omost",
+      "html_url": "https://github.com/lllyasviel/Omost",
+      "description": "Your image is almost there!",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mvaisakh/aosp-device-tools",
+      "html_url": "https://github.com/mvaisakh/aosp-device-tools",
+      "description": "Scripts for AOSP device trees",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "0x192/universal-android-debloater",
+      "html_url": "https://github.com/0x192/universal-android-debloater",
+      "description": "Cross-platform GUI written in Rust using ADB to debloat non-rooted android devices. Improve your privacy, the security and battery life of your device.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Lemkinator/GetIcon",
+      "html_url": "https://github.com/Lemkinator/GetIcon",
+      "description": "Get Icon of any App",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "cheadrian/termux-chroot-proot-wine-box86_64",
+      "html_url": "https://github.com/cheadrian/termux-chroot-proot-wine-box86_64",
+      "description": "Repo with instruction about how you can setup Proot / Chroot using Termux and GPU acceleration for Box86, Wine, etc.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "PangBaiWork/Dowork",
+      "html_url": "https://github.com/PangBaiWork/Dowork",
+      "description": "Run GNU/Linux on Android  (all in one)",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "xM4ddy/OFGB",
+      "html_url": "https://github.com/xM4ddy/OFGB",
+      "description": "GUI Tool To Remove Ads From Various Places Around Windows 11",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "KhanhNguyen9872/Windows10ARM64",
+      "html_url": "https://github.com/KhanhNguyen9872/Windows10ARM64",
+      "description": "Run Windows10 ARM64 on Android Device",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mikeslattery/tunic",
+      "html_url": "https://github.com/mikeslattery/tunic",
+      "description": "Install Linux from a running Windows system, without need for a live USB.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "karasevm/PrivateDNSAndroid",
+      "html_url": "https://github.com/karasevm/PrivateDNSAndroid",
+      "description": "Quick settings tile to switch active private DNS server",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "bunny-mod/BunnyManager",
+      "html_url": "https://github.com/bunny-mod/BunnyManager",
+      "description": "A manager designed to install Bunny, a mod for Discord mobile apps, on non-rooted Android devices",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "tribalfs/GalaxyMaxHzPub",
+      "html_url": "https://github.com/tribalfs/GalaxyMaxHzPub",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ChrisTitusTech/winutil",
+      "html_url": "https://github.com/ChrisTitusTech/winutil",
+      "description": "Chris Titus Tech's Windows Utility - Install Programs, Tweaks, Fixes, and Updates",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ravindu644/Android-Kernel-Tutorials",
+      "html_url": "https://github.com/ravindu644/Android-Kernel-Tutorials",
+      "description": "Kernel building tutorials for Any device for newbies..! 🎉",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ravindu644/samloader-actions",
+      "html_url": "https://github.com/ravindu644/samloader-actions",
+      "description": "Github CI script for Downloading required files for Magisk to Root any Samsung device.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mayTermux/myTermux",
+      "html_url": "https://github.com/mayTermux/myTermux",
+      "description": "Make your Termux look better",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "budtmo/docker-android",
+      "html_url": "https://github.com/budtmo/docker-android",
+      "description": "Android in docker solution with noVNC supported, video recording, mcp server and AI-agent",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "evildevill/EmptyPhish",
+      "html_url": "https://github.com/evildevill/EmptyPhish",
+      "description": "EmptyPhish is an automated phishing tool that comes with 30+ templates for various popular platforms like Instagram, Facebook, Twitter, Snapchat, GitHub, Yahoo, ProtonMail, Google, Spotify, Netflix, LinkedIn, WordPress, Origin, Steam, Microsoft, Instagram Followers, Pinterest, and more.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Sohil876/Termux-zsh",
+      "html_url": "https://github.com/Sohil876/Termux-zsh",
+      "description": "Make termux a better looking and much more functional terminal",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "florisboard/florisboard",
+      "html_url": "https://github.com/florisboard/florisboard",
+      "description": "An open-source keyboard for Android which respects your privacy. Currently in beta.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "F0x1d/LogFox",
+      "html_url": "https://github.com/F0x1d/LogFox",
+      "description": "Yet another LogCat reader for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "warpdotdev/warp",
+      "html_url": "https://github.com/warpdotdev/warp",
+      "description": "Warp is an agentic development environment, born out of the terminal.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "polodarb/GMS-Flags",
+      "html_url": "https://github.com/polodarb/GMS-Flags",
+      "description": "GMS Flags is a tool for changing parameters in Google services to activate or deactivate certain functionality in Google applications",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AndroidDumps/dumpyara",
+      "html_url": "https://github.com/AndroidDumps/dumpyara",
+      "description": "Generate a dump from an archive or image(s)",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "freeCodeCamp/freeCodeCamp",
+      "html_url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "jwasham/coding-interview-university",
+      "html_url": "https://github.com/jwasham/coding-interview-university",
+      "description": "A complete computer science study plan to become a software engineer.",
+      "category": "backend-data",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mtdvio/every-programmer-should-know",
+      "html_url": "https://github.com/mtdvio/every-programmer-should-know",
+      "description": "A collection of (mostly) technical things every software developer should know about",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EbookFoundation/free-programming-books",
+      "html_url": "https://github.com/EbookFoundation/free-programming-books",
+      "description": ":books: Freely available programming books",
+      "category": "learning-resources",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "nilbuild/developer-roadmap",
+      "html_url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EdwardLab/flyos",
+      "html_url": "https://github.com/EdwardLab/flyos",
+      "description": "Unleash your mobile phone's potential: it's not just a phone, but a pocket-sized computer.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AlfaazPlus/QuranApp",
+      "html_url": "https://github.com/AlfaazPlus/QuranApp",
+      "description": "An ad-free and privacy-focused app for exploring the Holy Qur’an.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "OpenHands/OpenHands",
+      "html_url": "https://github.com/OpenHands/OpenHands",
+      "description": "🙌 OpenHands: AI-Driven Development",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/android_device_samsung_a23-twrp",
+      "html_url": "https://github.com/mrx7014/android_device_samsung_a23-twrp",
+      "description": "Twrp Tree For Samsung A23 4G (SM-A235)",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "obsproject/obs-studio",
+      "html_url": "https://github.com/obsproject/obs-studio",
+      "description": "OBS Studio - Free and open source software for live streaming and screen recording",
+      "category": "design-creative",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/fart-it",
+      "html_url": "https://github.com/mrx7014/fart-it",
+      "description": "Find And Replace Text command line utility. New & improved version of the well-known grep command, with advanced features such as: case-adaption of the replace string; find (& replace) in filenames, auto CVS edit.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "juic3b0x/command-not-found-termux",
+      "html_url": "https://github.com/juic3b0x/command-not-found-termux",
+      "description": "Ported Kali command-not-found for Termux -- packaged in a Termux installable .deb",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Johx22/Patch-Recovery",
+      "html_url": "https://github.com/Johx22/Patch-Recovery",
+      "description": "CI service that patches recovery.img of Dynamic Samsung devices.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ravindu644/Scamsung",
+      "html_url": "https://github.com/ravindu644/Scamsung",
+      "description": "Yet another Samsung device firmware extractor. Copies output files to Google Drive, getting necessary files to root with Magisk, and provides essential device files for developers.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DerTyp7214/RboardThemeManagerV3",
+      "html_url": "https://github.com/DerTyp7214/RboardThemeManagerV3",
+      "description": "",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Mahmud0808/ColorBlendr",
+      "html_url": "https://github.com/Mahmud0808/ColorBlendr",
+      "description": "An Android app for customizing Material You colors on devices with Android 12+. It lets you tweak accent colors, background saturation, and more for a personalized look.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "albertomosconi/foss-apps",
+      "html_url": "https://github.com/albertomosconi/foss-apps",
+      "description": "a list of 100+ awesome open source android apps 📱",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "bmx666/android-appcachecleaner",
+      "html_url": "https://github.com/bmx666/android-appcachecleaner",
+      "description": "Android Cache Cleaner",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "wanam/YouTubeAdAway",
+      "html_url": "https://github.com/wanam/YouTubeAdAway",
+      "description": "Xposed module to block YouTube ads on the official YouTube Android App",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "meefik/linuxdeploy",
+      "html_url": "https://github.com/meefik/linuxdeploy",
+      "description": "Install and run GNU/Linux on Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "lissy93/web-check",
+      "html_url": "https://github.com/lissy93/web-check",
+      "description": "🕵️‍♂️ All-in-one OSINT tool for analysing any website",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/mrx7014.github.io",
+      "html_url": "https://github.com/mrx7014/mrx7014.github.io",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/SPSS_Android",
+      "html_url": "https://github.com/mrx7014/SPSS_Android",
+      "description": "A bash script to install IBM-SPSS on Android.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/Ubuntu_on_Segfault",
+      "html_url": "https://github.com/mrx7014/Ubuntu_on_Segfault",
+      "description": "A guide to install ubuntu on segfault server // \"Check this repo if you don't know it\" https://github.com/mrx7014/SSH-KaliLinux",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/android_ndk_sdk_installer",
+      "html_url": "https://github.com/mrx7014/android_ndk_sdk_installer",
+      "description": "Script to install Android NDK & SDK in Linux",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "mrx7014/WebGetter",
+      "html_url": "https://github.com/mrx7014/WebGetter",
+      "description": "A free open source tool that allow you to get any website source code in a few minutes.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "olegos2/mobox",
+      "html_url": "https://github.com/olegos2/mobox",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "FOSS-Egypt/PyShare",
+      "html_url": "https://github.com/FOSS-Egypt/PyShare",
+      "description": "Share Your Files locally With your friends and also Host web (HTML/CSSS/JS) Files !",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "FOSS-Egypt/WebGetter",
+      "html_url": "https://github.com/FOSS-Egypt/WebGetter",
+      "description": "An open-source project which allows you to get any website source code in a few minutes",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EXALAB/AnLinux-App",
+      "html_url": "https://github.com/EXALAB/AnLinux-App",
+      "description": "AnLinux allow you to run Linux on Android without root access.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "aistra0528/Hail",
+      "html_url": "https://github.com/aistra0528/Hail",
+      "description": "Disable / Hide / Suspend / Uninstall Android apps without root.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "decipher3114/Revancify",
+      "html_url": "https://github.com/decipher3114/Revancify",
+      "description": "The only revancify",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AyraHikari/SamsungMusicPort",
+      "html_url": "https://github.com/AyraHikari/SamsungMusicPort",
+      "description": "Samsung Music Port for all Non-Samsung ROM",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ukanth/afwall",
+      "html_url": "https://github.com/ukanth/afwall",
+      "description": "AFWall+ (Android Firewall +) - iptables based firewall for Android ",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "BuilderIO/gpt-crawler",
+      "html_url": "https://github.com/BuilderIO/gpt-crawler",
+      "description": "Crawl a site to generate knowledge files to create your own custom GPT from a URL",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "kgretzky/evilginx2",
+      "html_url": "https://github.com/kgretzky/evilginx2",
+      "description": "Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "T8RIN/ImageToolbox",
+      "html_url": "https://github.com/T8RIN/ImageToolbox",
+      "description": "🖼️ Image Toolbox is a powerful app for advanced image manipulation. It offers dozens of features, from basic tools like crop and draw to filters, OCR, and a wide range of image processing options",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "brunodev85/winlator",
+      "html_url": "https://github.com/brunodev85/winlator",
+      "description": "Android application for running Windows applications with Wine and Box86/Box64",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "rockz5555/NFG-Multi-Crack",
+      "html_url": "https://github.com/rockz5555/NFG-Multi-Crack",
+      "description": "Ultimate Android Toolkit",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Fadi002/unshackle",
+      "html_url": "https://github.com/Fadi002/unshackle",
+      "description": "Open-source tool to bypass windows and linux passwords from bootable usb",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "cr4sh-me/NHLauncher",
+      "html_url": "https://github.com/cr4sh-me/NHLauncher",
+      "description": "NHLauncher is an application that makes it easier and faster to launch pentesting tools",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Moustachauve/cookie-editor",
+      "html_url": "https://github.com/Moustachauve/cookie-editor",
+      "description": "A powerful browser extension to create, edit and delete cookies",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "FOSS-Egypt/egyvim",
+      "html_url": "https://github.com/FOSS-Egypt/egyvim",
+      "description": "EgyVim is not a distribution, it is just a config written by an Egyptian dev for Egyptian devs to make neovim act as IDE :) -> written by @Coptan99 and some suggestions from @Star-On-Github",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "olegos2/termux-box",
+      "html_url": "https://github.com/olegos2/termux-box",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "massgravel/Microsoft-Activation-Scripts",
+      "html_url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+      "description": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Online KMS activation methods, along with advanced troubleshooting.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "noob-hackers/infect",
+      "html_url": "https://github.com/noob-hackers/infect",
+      "description": "Infect Any Android Device With Virus From Link In Termux",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hackerschoice/gsocket",
+      "html_url": "https://github.com/hackerschoice/gsocket",
+      "description": "Connect like there is no firewall. Securely.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "stryker-project/swb",
+      "html_url": "https://github.com/stryker-project/swb",
+      "description": "SWB - it is new generation command tool to bruteforce WiFi networks via android device. ROOT Required!",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "hxrofo/hotspotphisher",
+      "html_url": "https://github.com/hxrofo/hotspotphisher",
+      "description": "Turn Your Smart Phone into a Phishing Tool ",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "HChenX/AppRetention",
+      "html_url": "https://github.com/HChenX/AppRetention",
+      "description": "Hook 系统 kill 逻辑来实现后台保活 | Hook system kill logic to implement background keep alive",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "adi1090x/termux-style",
+      "html_url": "https://github.com/adi1090x/termux-style",
+      "description": "Simple script to change color-schemes and fonts for Termux.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "CompassSecurity/Hacking_Tools_Cheat_Sheet",
+      "html_url": "https://github.com/CompassSecurity/Hacking_Tools_Cheat_Sheet",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ohmybash/oh-my-bash",
+      "html_url": "https://github.com/ohmybash/oh-my-bash",
+      "description": "A delightful community-driven framework for managing your bash configuration, and an auto-update tool so that makes it easy to keep up with the latest updates from the community.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "YadominJinta/atilo",
+      "html_url": "https://github.com/YadominJinta/atilo",
+      "description": "Linux installer for termux",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "instaloader/instaloader",
+      "html_url": "https://github.com/instaloader/instaloader",
+      "description": "Download pictures (or videos) along with their captions and other metadata from Instagram.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "vhqtvn/VHEditor-Android",
+      "html_url": "https://github.com/vhqtvn/VHEditor-Android",
+      "description": "Run Code-server on Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "BetterDiscord/BetterDiscord",
+      "html_url": "https://github.com/BetterDiscord/BetterDiscord",
+      "description": "Better Discord enhances Discord desktop app with new features.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "zoroxide/fake-credit-card-generator",
+      "html_url": "https://github.com/zoroxide/fake-credit-card-generator",
+      "description": "(GUI, CLI) fake credit card generator based on @PySimpleGUI and  https://rapidapi.com/denode/api/fake-credit-card-generator-json-api/",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "zoroxide/Server-Locator",
+      "html_url": "https://github.com/zoroxide/Server-Locator",
+      "description": "Python code Detecting any server Location By Taking The URL ",
+      "category": "backend-data",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "PizzaG/Build-Env-Setup-Scripts",
+      "html_url": "https://github.com/PizzaG/Build-Env-Setup-Scripts",
+      "description": "Automated Android Build Environment Setup",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "zacharee/Bifrost",
+      "html_url": "https://github.com/zacharee/Bifrost",
+      "description": "Cross-platform tool for downloading Samsung mobile device firmware.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "robinmoisson/staticrypt",
+      "html_url": "https://github.com/robinmoisson/staticrypt",
+      "description": "Password protect a static HTML page, decrypted in-browser in JS with no dependency. No server logic needed.",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "RandomCoderOrg/ubuntu-on-android",
+      "html_url": "https://github.com/RandomCoderOrg/ubuntu-on-android",
+      "description": "Run Ubuntu with pre-installed Desktop Environments in android/termux with ease! Everything is preinstalled so just download install and done🚀🚀",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Psyhackological/AAA",
+      "html_url": "https://github.com/Psyhackological/AAA",
+      "description": ":iphone: Curated list of THE BEST FOSS Android apps to maximize your freedom & privacy!",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "4xmen/anubias",
+      "html_url": "https://github.com/4xmen/anubias",
+      "description": "Developed mobile apps so easy and native with GUI 📱",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "psteiger/LocationFetcher",
+      "html_url": "https://github.com/psteiger/LocationFetcher",
+      "description": "Easy Location fetching for Android apps.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "jangrewe/gitlab-ci-android",
+      "html_url": "https://github.com/jangrewe/gitlab-ci-android",
+      "description": "GitLab CI image for building Android apps",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EntySec/Ghost",
+      "html_url": "https://github.com/EntySec/Ghost",
+      "description": "Ghost Framework is an Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Astrako/AstrakoBot",
+      "html_url": "https://github.com/Astrako/AstrakoBot",
+      "description": "A modular telegram group management bot based in SaitamaRobot.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sebaubuntu-python/aospdtgen",
+      "html_url": "https://github.com/sebaubuntu-python/aospdtgen",
+      "description": "LineageOS device tree generator",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DarkLycn1976/CEH-Practical-Notes-and-Tools",
+      "html_url": "https://github.com/DarkLycn1976/CEH-Practical-Notes-and-Tools",
+      "description": "My Personal Notes that I used on the Exam as a Cheatsheet",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "tiann/KernelSU",
+      "html_url": "https://github.com/tiann/KernelSU",
+      "description": "A Kernel based root solution for Android",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sweepai/sweep",
+      "html_url": "https://github.com/sweepai/sweep",
+      "description": "Sweep: AI coding assistant for JetBrains",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "thelinuxuser-choice/hidephish",
+      "html_url": "https://github.com/thelinuxuser-choice/hidephish",
+      "description": "python script that hide phishing url like a pro \"masking url technique\"",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sepandhaghighi/art",
+      "html_url": "https://github.com/sepandhaghighi/art",
+      "description": "🎨 ASCII art library for Python",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "anbox/anbox",
+      "html_url": "https://github.com/anbox/anbox",
+      "description": "Anbox is a container-based approach to boot a full Android system on a regular GNU/Linux system ",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "C0MPL3XDEV/E4GL30S1NT",
+      "html_url": "https://github.com/C0MPL3XDEV/E4GL30S1NT",
+      "description": "E4GL30S1NT - Simple Information Gathering Tool",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "wh04M1i/One-Liners",
+      "html_url": "https://github.com/wh04M1i/One-Liners",
+      "description": "A collection of awesome one-liners for bug bounty hunting.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Hackplayers/evil-winrm",
+      "html_url": "https://github.com/Hackplayers/evil-winrm",
+      "description": "The ultimate WinRM shell for hacking/pentesting",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "bromite/bromite",
+      "html_url": "https://github.com/bromite/bromite",
+      "description": "Bromite is a Chromium fork with ad blocking and privacy enhancements; take back your browser!",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "gsioteam/kinoko",
+      "html_url": "https://github.com/gsioteam/kinoko",
+      "description": "An online manga browser.",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "brarcher/video-transcoder",
+      "html_url": "https://github.com/brarcher/video-transcoder",
+      "description": "Android app for video and audio transcoder, based on FFmpeg",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "leonlatsch/Photok",
+      "html_url": "https://github.com/leonlatsch/Photok",
+      "description": "Private photo vault for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "bregman-arie/devops-exercises",
+      "html_url": "https://github.com/bregman-arie/devops-exercises",
+      "description": "Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "KieronQuinn/DarQ",
+      "html_url": "https://github.com/KieronQuinn/DarQ",
+      "description": "DarQ provides a per-app selectable force dark option for Android 10 and above",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sdras/awesome-actions",
+      "html_url": "https://github.com/sdras/awesome-actions",
+      "description": "A curated list of awesome actions to use on GitHub",
+      "category": "learning-resources",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "xct/kali-clean",
+      "html_url": "https://github.com/xct/kali-clean",
+      "description": "my kali desktop setup",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "purpl3f0xsecur1ty/useful_random_stuff",
+      "html_url": "https://github.com/purpl3f0xsecur1ty/useful_random_stuff",
+      "description": "Just some things that have some cool uses",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "fikrado-orgnasation/sweat-kali",
+      "html_url": "https://github.com/fikrado-orgnasation/sweat-kali",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "axel358/smartdock",
+      "html_url": "https://github.com/axel358/smartdock",
+      "description": "A user-friendly desktop mode launcher that offers a modern and customizable user interface",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AndronixApp/AndronixOrigin",
+      "html_url": "https://github.com/AndronixApp/AndronixOrigin",
+      "description": "Andronix: Linux distros on Android without root (Termux + proot), with desktops in Termux:X11. App 8.x scripts are on the master branch.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "aydinnyunus/Keylogger",
+      "html_url": "https://github.com/aydinnyunus/Keylogger",
+      "description": "Get Keyboard,Mouse,ScreenShot,Microphone Inputs from Target Computer and Send to your Mail.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "rclone/rclone",
+      "html_url": "https://github.com/rclone/rclone",
+      "description": "\"rsync for cloud storage\" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Azure Blob, Azure Files, Yandex Files",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "0n1cOn3/FluxER",
+      "html_url": "https://github.com/0n1cOn3/FluxER",
+      "description": "FluxER - The bash script which installs and runs the Fluxion tool inside Termux. The wireless security auditing tool used to perform WPA/WPA2 auditing and MITM auditing.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Heliwrenaid/android-tool",
+      "html_url": "https://github.com/Heliwrenaid/android-tool",
+      "description": "SAT - the unpack/repack tool for Android system images",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "yt-dlp/yt-dlp",
+      "html_url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "neovim/neovim",
+      "html_url": "https://github.com/neovim/neovim",
+      "description": "Vim-fork focused on extensibility and usability",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ShadowHackrs/instagram-autoreport",
+      "html_url": "https://github.com/ShadowHackrs/instagram-autoreport",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Neternels/AnyKernel3",
+      "html_url": "https://github.com/Neternels/AnyKernel3",
+      "description": "AnyKernel, Evolved",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "c0pt4n/Py_Pass_Generator",
+      "html_url": "https://github.com/c0pt4n/Py_Pass_Generator",
+      "description": "A strong password generator written in python",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "c0pt4n/Py_Snake_Game",
+      "html_url": "https://github.com/c0pt4n/Py_Snake_Game",
+      "description": "A simple snake game which runs in terminal written in python",
+      "category": "design-creative",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "EXALAB/Anlinux-Resources",
+      "html_url": "https://github.com/EXALAB/Anlinux-Resources",
+      "description": "Scripts, Rootfs and other content for AnLinux",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sickcodes/no-sandbox",
+      "html_url": "https://github.com/sickcodes/no-sandbox",
+      "description": "No Sandbox - Applications That Run Chromium and Chrome Without The Sandbox. TL;DR exploits in these browser based applications are already sandboxed escaped: https://no-sandbox.io/",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Mino260806/MessengerPro",
+      "html_url": "https://github.com/Mino260806/MessengerPro",
+      "description": "A mod that enhances Facebook Messenger with loads of powerful features !",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ish-app/ish",
+      "html_url": "https://github.com/ish-app/ish",
+      "description": "Linux shell for iOS",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "programminghoch10/ViPER4AndroidRepackaged",
+      "html_url": "https://github.com/programminghoch10/ViPER4AndroidRepackaged",
+      "description": "A refined ViPER4Android installer.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sileshn/ArchWSL2",
+      "html_url": "https://github.com/sileshn/ArchWSL2",
+      "description": "Archlinux for WSL2 using wsldl",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ASHWIN990/ADB-Toolkit",
+      "html_url": "https://github.com/ASHWIN990/ADB-Toolkit",
+      "description": "ADB-Toolkit V2 for easy ADB tricks with many perks in all one. ENJOY!",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "AzeemIdrisi/PhoneSploit-Pro",
+      "html_url": "https://github.com/AzeemIdrisi/PhoneSploit-Pro",
+      "description": "An all-in-one hacking tool to remotely take over Android devices.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "bahaabdelwahed/killshot",
+      "html_url": "https://github.com/bahaabdelwahed/killshot",
+      "description": "A Penetration Testing Framework, Information gathering tool & Website Vulnerability Scanner",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "joshuabragge/twrp-manual-restore",
+      "html_url": "https://github.com/joshuabragge/twrp-manual-restore",
+      "description": "Automate individual app restores from an android TWRP backup",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Mahmud0808/Iconify",
+      "html_url": "https://github.com/Mahmud0808/Iconify",
+      "description": "Iconify lets you customize your Android 12+ device easily. Change icons, colors, shapes, and even the notification panel for a personalized look that suits your style.",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "chrmhoffmann/android_kernel_samsung_sm6115",
+      "html_url": "https://github.com/chrmhoffmann/android_kernel_samsung_sm6115",
+      "description": "",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "chrmhoffmann/proprietary_vendor_samsung_gta4l",
+      "html_url": "https://github.com/chrmhoffmann/proprietary_vendor_samsung_gta4l",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "chrmhoffmann/android_device_samsung_gta4l",
+      "html_url": "https://github.com/chrmhoffmann/android_device_samsung_gta4l",
+      "description": "",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Ileriayo/markdown-badges",
+      "html_url": "https://github.com/Ileriayo/markdown-badges",
+      "description": "The largest curated collection of markdown badges for your personal developer branding, profile, and projects.",
+      "category": "developer-tools",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "CodeDroid999/CodeDroid999",
+      "html_url": "https://github.com/CodeDroid999/CodeDroid999",
+      "description": "config files for my github profile",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "rahuldkjain/github-profile-readme-generator",
+      "html_url": "https://github.com/rahuldkjain/github-profile-readme-generator",
+      "description": "🚀 Generate GitHub profile README easily with the latest add-ons like visitors count, GitHub stats, etc using minimal UI.",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "azwhikaru/Action-TWRP-Builder",
+      "html_url": "https://github.com/azwhikaru/Action-TWRP-Builder",
+      "description": "",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "affggh/Magisk_patcher",
+      "html_url": "https://github.com/affggh/Magisk_patcher",
+      "description": "Patch boot image with magisk on windows/linux/macos",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "pbatard/rufus",
+      "html_url": "https://github.com/pbatard/rufus",
+      "description": "The Reliable USB Formatting Utility",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "antoine62/android_kernel_samsung_exynos7870",
+      "html_url": "https://github.com/antoine62/android_kernel_samsung_exynos7870",
+      "description": "Halium kernel for the gtaxlwifi.",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "messede-degod/SF-UI",
+      "html_url": "https://github.com/messede-degod/SF-UI",
+      "description": "A GUI Frontend for services provided by https://thc.org/segfault",
+      "category": "backend-data",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "softprops/action-gh-release",
+      "html_url": "https://github.com/softprops/action-gh-release",
+      "description": "📦 :octocat: GitHub Action for creating GitHub Releases",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dutchcoders/transfer.sh",
+      "html_url": "https://github.com/dutchcoders/transfer.sh",
+      "description": "Easy and fast file sharing from the command-line.",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DumprX/DumprX",
+      "html_url": "https://github.com/DumprX/DumprX",
+      "description": "DumprX: A Tool to Dump Android ROMs/Firmwares",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Sushrut1101/DumprX-CI",
+      "html_url": "https://github.com/Sushrut1101/DumprX-CI",
+      "description": "Dump Android ROMs/Firmwares via a PR, for free!",
+      "category": "devops-selfhost",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "stryker-project/monitorer",
+      "html_url": "https://github.com/stryker-project/monitorer",
+      "description": "4 in 1 open-source multitool for your device wifi! ",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "CypherpunkArmory/UserLAnd",
+      "html_url": "https://github.com/CypherpunkArmory/UserLAnd",
+      "description": "Main UserLAnd Repository",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "practical-tutorials/project-based-learning",
+      "html_url": "https://github.com/practical-tutorials/project-based-learning",
+      "description": "Curated list of project-based tutorials",
+      "category": "learning-resources",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sagar040/proot-distro-nethunter",
+      "html_url": "https://github.com/sagar040/proot-distro-nethunter",
+      "description": "Install Kali NetHunter (Official Version) on Android without root. It is a bash script that enables users to deploy multiple NetHunter instances with a customized toolset in PRoot distro.",
+      "category": "linux-shell",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "scrapy/scrapy",
+      "html_url": "https://github.com/scrapy/scrapy",
+      "description": "Scrapy, a fast high-level web crawling & scraping framework for Python.",
+      "category": "web-frontend",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Keinta15/Magisk-iOS-Emoji",
+      "html_url": "https://github.com/Keinta15/Magisk-iOS-Emoji",
+      "description": "Systemlessly replaces emoji font with iOS Emoji ",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "RadwanHegazy/securiy-video",
+      "html_url": "https://github.com/RadwanHegazy/securiy-video",
+      "description": "This is a system that help your videos from download by softwares like idm",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Mahfuz-THBD/Wifi_Hack",
+      "html_url": "https://github.com/Mahfuz-THBD/Wifi_Hack",
+      "description": "You Can H@ck Wifi With Your Rooted Android Device.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Mahfuz-THBD/Wifi_Hack_Installer",
+      "html_url": "https://github.com/Mahfuz-THBD/Wifi_Hack_Installer",
+      "description": "Hack Wifi With Your Rooted Android Device.",
+      "category": "security",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "feravolt/FDE.AI-docs",
+      "html_url": "https://github.com/feravolt/FDE.AI-docs",
+      "description": "Various FDE.AI related texts",
+      "category": "ai-ml",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "GNOME/gnome-disk-utility",
+      "html_url": "https://github.com/GNOME/gnome-disk-utility",
+      "description": "Read-only mirror of https://gitlab.gnome.org/GNOME/gnome-disk-utility",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ashyx/Samsung_Galaxy_Tab_A_kernel",
+      "html_url": "https://github.com/ashyx/Samsung_Galaxy_Tab_A_kernel",
+      "description": "Permissive kernel for the Samsung Galaxy Tab A - SM-T350/T355/T550/T555",
+      "category": "android-modding",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "HavocFramework/Havoc",
+      "html_url": "https://github.com/HavocFramework/Havoc",
+      "description": "The Havoc Framework",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "sebaubuntu-python/telegramma",
+      "html_url": "https://github.com/sebaubuntu-python/telegramma",
+      "description": "Modular Telegram bot",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "azwhikaru/Action-OFRP-Builder",
+      "html_url": "https://github.com/azwhikaru/Action-OFRP-Builder",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "kimocoder/qualcomm_android_monitor_mode",
+      "html_url": "https://github.com/kimocoder/qualcomm_android_monitor_mode",
+      "description": "Qualcomm QCACLD WiFi monitor mode for Android",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Tornaco/Thanox",
+      "html_url": "https://github.com/Tornaco/Thanox",
+      "description": "I am thanos! 😈 👌",
+      "category": "mobile",
+      "at": "2026-10-05T10:55:16.088Z"
+    }
+  ]
 }
