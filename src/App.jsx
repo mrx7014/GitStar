@@ -3,7 +3,7 @@ import { BookOpen, ChevronDown, ExternalLink, Filter, GitBranch, Globe, Hash, La
 import { siteConfig } from './config'
 import { categoryMeta, categoryOrder } from './category-engine'
 import { translations } from './i18n'
-const root = `${import.meta.env.BASE_URL}data/`; const safeUrl = (value) => /^https?:\/\//i.test(value || '') ? value : ''
+const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`; const root = `${basePath}data/`; const safeUrl = (value) => /^https?:\/\//i.test(value || '') ? value : ''
 const formatDate = (value, locale) => value ? new Intl.DateTimeFormat(locale, { dateStyle: 'medium' }).format(new Date(value)) : '—'
 const relative = (value, locale) => { if (!value) return '—'; const days = Math.max(0, Math.floor((Date.now() - new Date(value)) / 86400000)); return new Intl.RelativeTimeFormat(locale, { numeric: 'auto' }).format(-days, 'day') }
 const colors = { JavaScript:'#f1c84b', TypeScript:'#4d9cdf', Python:'#71b56b', Go:'#65c8d6', Rust:'#d18a5c', Shell:'#91bd74', HTML:'#e87953', CSS:'#6c9eea', Kotlin:'#a97bff', Java:'#df7d53' }
