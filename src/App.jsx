@@ -149,13 +149,10 @@ export default function App() {
   const [locale, setLocale] = useState(() => readStorage('gitstar-language') || siteConfig.defaultLanguage)
   const [theme, setTheme] = useState(initialTheme)
   const [networkEnabled, setNetworkEnabled] = useState(() => readStorage('gitstar-network-background') !== 'off')
-  const [canvasPreviewActive, setCanvasPreviewActive] = useState(false)
+  const [canvasRefreshMode, setCanvasRefreshMode] = useState(() => readStorage('gitstar-canvas-refresh-mode') === 'on')
   const [canvasSettings, setCanvasSettings] = useState(readCanvasSettings)
   const [canvasSettingsOpen, setCanvasSettingsOpen] = useState(false)
   const canvasSettingsRoot = useRef(null)
-  const [canvasBurst, setCanvasBurst] = useState(false)
-  const canvasBurstTimer = useRef(0)
-  const canvasPreviewTimer = useRef(0)
   const [guideOpen, setGuideOpen] = useState(() => readStorage('gitstar-guide-hidden') !== 'true')
   const [dontShowAgain, setDontShowAgain] = useState(false)
   const [data, setData] = useState(() => initialSnapshot?.data || { repositories: [] })
@@ -166,7 +163,6 @@ export default function App() {
   const [sort, setSort] = useState(() => new URLSearchParams(location.search).get('sort') || readStorage('gitstar-sort') || 'newest')
   const [visibleCount, setVisibleCount] = useState(pageSize)
   const [loading, setLoading] = useState(() => !initialSnapshot?.data?.repositories?.length)
-  const [refreshing, setRefreshing] = useState(false)
   const [error, setError] = useState('')
   const [mobile, setMobile] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -184,6 +180,11 @@ export default function App() {
     writeStorage('gitstar-network-background', next ? 'on' : 'off')
     setNetworkEnabled(next)
   }
+  const toggleCanvasRefreshMode = () => setCanvasRefreshMode((current) => {
+    const next = !current
+    writeStorage('gitstar-canvas-refresh-mode', next ? 'on' : 'off')
+    return next
+  })
   const updateCanvasSetting = (key, value) => setCanvasSettings((current) => {
     const next = { ...current, [key]: value }
     writeStorage(canvasSettingsKey, JSON.stringify(next))
@@ -194,32 +195,14 @@ export default function App() {
     setCanvasSettings(next)
     writeStorage(canvasSettingsKey, JSON.stringify(next))
   }
-  const previewCanvasBurst = () => {
-    window.clearTimeout(canvasBurstTimer.current)
-    window.clearTimeout(canvasPreviewTimer.current)
-    setCanvasPreviewActive(true)
-    setCanvasBurst(true)
-    canvasPreviewTimer.current = window.setTimeout(() => {
-      setCanvasBurst(false)
-      setCanvasPreviewActive(false)
-    }, 1450)
-  }
   const toggleTheme = () => setTheme((current) => current === 'dark' ? 'light' : 'dark')
 
-  const load = async ({ refresh = false } = {}) => {
+  const load = async () => {
     setError('')
-    const refreshStartedAt = refresh ? Date.now() : 0
-    if (refresh) {
-      window.clearTimeout(canvasPreviewTimer.current)
-      setCanvasPreviewActive(false)
-      setRefreshing(true)
-      setCanvasBurst(true)
-      window.clearTimeout(canvasBurstTimer.current)
-    }
     if (!repos.length) setLoading(true)
     try {
       const files = ['repos.json', 'meta.json', 'status.json', 'contributors.json']
-      const responses = await Promise.all(files.map((file) => fetch(`${root}${file}`, { cache: refresh ? 'reload' : 'default' })))
+      const responses = await Promise.all(files.map((file) => fetch(`${root}${file}`, { cache: 'default' })))
       const [reposResponse, metaResponse, statusResponse, contributorsResponse] = responses
       if (!reposResponse.ok) throw Error('repos')
       const nextData = await reposResponse.json()
@@ -238,19 +221,10 @@ export default function App() {
       if (!repos.length) setError('load')
     } finally {
       setLoading(false)
-      if (refresh) {
-        setRefreshing(false)
-        const remaining = Math.max(0, 1250 - (Date.now() - refreshStartedAt))
-        canvasBurstTimer.current = window.setTimeout(() => setCanvasBurst(false), remaining)
-      }
     }
   }
 
   useEffect(() => { load() }, [])
-  useEffect(() => () => {
-    window.clearTimeout(canvasBurstTimer.current)
-    window.clearTimeout(canvasPreviewTimer.current)
-  }, [])
   useEffect(() => {
     if (!canvasSettingsOpen) return undefined
     const onPointerDown = (event) => { if (!canvasSettingsRoot.current?.contains(event.target)) setCanvasSettingsOpen(false) }
@@ -341,7 +315,7 @@ export default function App() {
   }
 
   return <div className="app">
-    <AnimatedNetworkCanvas active={networkEnabled || canvasPreviewActive} theme={theme} refreshing={canvasBurst} settings={canvasSettings} />
+    <AnimatedNetworkCanvas active={networkEnabled} theme={theme} refreshing={canvasRefreshMode} settings={canvasSettings} />
     <div className="app-content">
       <a className="skip" href="#main">Skip to content</a>
       <header className={scrolled ? 'has-floating-menu' : ''}>
@@ -360,29 +334,36 @@ export default function App() {
             </button>
             {canvasSettingsOpen && <section className="canvas-settings" id="canvas-settings" role="dialog" aria-labelledby="canvas-settings-title">
               <div className="canvas-settings-heading">
-                <div><p className="canvas-settings-kicker">{t.customizeBackground}</p><h2 id="canvas-settings-title">{t.canvasPanelTitle}</h2><small>{t.canvasPanelHint}</small></div>
+                <h2 id="canvas-settings-title">{t.canvasPanelTitle}</h2>
                 <button className="canvas-settings-close" type="button" aria-label={t.canvasClose} onClick={() => setCanvasSettingsOpen(false)}><X size={16} /></button>
               </div>
-              <button className="canvas-enable" type="button" role="switch" aria-checked={networkEnabled} aria-label={t.canvasOn} onClick={toggleNetworkBackground}>
-                <span>{t.canvasOn}</span><span className="toggle-track" aria-hidden="true"><i /></span>
-              </button>
-              <button className="canvas-preview-burst" type="button" aria-pressed={canvasBurst} title={t.canvasPreviewHint} onClick={previewCanvasBurst}><RefreshCw className={canvasBurst ? 'spin' : ''} size={14} aria-hidden="true" />{t.canvasPreviewEffect}</button>
-              <label className="canvas-setting">
-                <span className="canvas-setting-heading"><span>{t.canvasDensity}</span><output>{Math.round(canvasSettings.density * 100).toLocaleString(formatLocale)}%</output></span>
-                <input id="canvas-density" type="range" min="0.5" max="1.8" step="0.05" value={canvasSettings.density} aria-label={t.canvasDensity} onChange={(event) => updateCanvasSetting('density', Number(event.target.value))} />
-              </label>
-              <label className="canvas-setting">
-                <span className="canvas-setting-heading"><span>{t.canvasLineAmount}</span><output>{Math.round(canvasSettings.lineAmount * 100).toLocaleString(formatLocale)}%</output></span>
-                <input type="range" min="0" max="2" step="0.05" value={canvasSettings.lineAmount} aria-label={t.canvasLineAmount} onChange={(event) => updateCanvasSetting('lineAmount', Number(event.target.value))} />
-              </label>
-              <label className="canvas-setting">
-                <span className="canvas-setting-heading"><span>{t.canvasSize}</span><output>{Math.round(canvasSettings.size * 100).toLocaleString(formatLocale)}%</output></span>
-                <input type="range" min="0.6" max="1.8" step="0.05" value={canvasSettings.size} aria-label={t.canvasSize} onChange={(event) => updateCanvasSetting('size', Number(event.target.value))} />
-              </label>
-              <label className="canvas-setting">
-                <span className="canvas-setting-heading"><span>{t.canvasSpeed}</span><output>{Math.round(canvasSettings.speed * 100).toLocaleString(formatLocale)}%</output></span>
-                <input type="range" min="0.25" max="2.5" step="0.05" value={canvasSettings.speed} aria-label={t.canvasSpeed} onChange={(event) => updateCanvasSetting('speed', Number(event.target.value))} />
-              </label>
+              <div className="canvas-switch-group">
+                <button className="canvas-enable" type="button" role="switch" aria-checked={networkEnabled} aria-label={t.canvasOn} onClick={toggleNetworkBackground}>
+                  <span>{t.canvasOn}</span><span className="toggle-track" aria-hidden="true"><i /></span>
+                </button>
+                <button className={`canvas-mode-toggle${canvasRefreshMode ? ' is-active' : ''}`} type="button" role="switch" aria-checked={canvasRefreshMode} aria-label={t.canvasPreviewEffect} title={t.canvasPreviewHint} onClick={toggleCanvasRefreshMode}>
+                  <span className="canvas-mode-label"><RefreshCw size={14} aria-hidden="true" /><span>{t.canvasPreviewEffect}</span></span>
+                  <span className="toggle-track" aria-hidden="true"><i /></span>
+                </button>
+              </div>
+              <div className="canvas-slider-grid">
+                <label className="canvas-setting">
+                  <span className="canvas-setting-heading"><span>{t.canvasDensity}</span><output>{Math.round(canvasSettings.density * 100).toLocaleString(formatLocale)}%</output></span>
+                  <input id="canvas-density" type="range" min="0.5" max="1.8" step="0.05" value={canvasSettings.density} aria-label={t.canvasDensity} onChange={(event) => updateCanvasSetting('density', Number(event.target.value))} />
+                </label>
+                <label className="canvas-setting">
+                  <span className="canvas-setting-heading"><span>{t.canvasLineAmount}</span><output>{Math.round(canvasSettings.lineAmount * 100).toLocaleString(formatLocale)}%</output></span>
+                  <input type="range" min="0" max="2" step="0.05" value={canvasSettings.lineAmount} aria-label={t.canvasLineAmount} onChange={(event) => updateCanvasSetting('lineAmount', Number(event.target.value))} />
+                </label>
+                <label className="canvas-setting">
+                  <span className="canvas-setting-heading"><span>{t.canvasSize}</span><output>{Math.round(canvasSettings.size * 100).toLocaleString(formatLocale)}%</output></span>
+                  <input type="range" min="0.6" max="1.8" step="0.05" value={canvasSettings.size} aria-label={t.canvasSize} onChange={(event) => updateCanvasSetting('size', Number(event.target.value))} />
+                </label>
+                <label className="canvas-setting">
+                  <span className="canvas-setting-heading"><span>{t.canvasSpeed}</span><output>{Math.round(canvasSettings.speed * 100).toLocaleString(formatLocale)}%</output></span>
+                  <input type="range" min="0.25" max="2.5" step="0.05" value={canvasSettings.speed} aria-label={t.canvasSpeed} onChange={(event) => updateCanvasSetting('speed', Number(event.target.value))} />
+                </label>
+              </div>
               <div className="canvas-setting-block">
                 <span className="canvas-setting-heading"><span><Paintbrush size={14} aria-hidden="true" />{t.canvasColor}</span></span>
                 <div className="canvas-color-options">
@@ -390,18 +371,20 @@ export default function App() {
                 </div>
                 <label className="canvas-custom-color" htmlFor="canvas-custom-color"><span>{t.canvasCustomColor}</span><input id="canvas-custom-color" type="color" value={canvasSettings.color.startsWith('#') ? canvasSettings.color : '#38bdf8'} aria-label={t.canvasCustomColor} onChange={(event) => updateCanvasSetting('color', event.target.value)} /></label>
               </div>
-              <label className="canvas-setting-block canvas-motion-setting">
-                <span className="canvas-setting-heading"><span>{t.canvasMovement}</span></span>
-                <select className="canvas-motion-select" value={canvasSettings.movement} aria-label={t.canvasMovement} onChange={(event) => updateCanvasSetting('movement', event.target.value)}>
-                  <option value="drift">{t.canvasMovementDrift}</option><option value="pulse">{t.canvasMovementPulse}</option><option value="orbit">{t.canvasMovementOrbit}</option><option value="wave">{t.canvasMovementWave}</option><option value="still">{t.canvasMovementStill}</option>
-                </select>
-              </label>
-              <label className="canvas-setting-block canvas-motion-setting">
-                <span className="canvas-setting-heading"><span>{t.canvasShape}</span></span>
-                <select className="canvas-shape-select" value={canvasSettings.shape} aria-label={t.canvasShape} onChange={(event) => updateCanvasSetting('shape', event.target.value)}>
-                  <option value="dots">{t.canvasShapeDots}</option><option value="squares">{t.canvasShapeSquares}</option><option value="diamonds">{t.canvasShapeDiamonds}</option><option value="triangles">{t.canvasShapeTriangles}</option><option value="mixed">{t.canvasShapeMixed}</option>
-                </select>
-              </label>
+              <div className="canvas-select-grid">
+                <label className="canvas-setting-block canvas-motion-setting">
+                  <span className="canvas-setting-heading"><span>{t.canvasMovement}</span></span>
+                  <select className="canvas-motion-select" value={canvasSettings.movement} aria-label={t.canvasMovement} onChange={(event) => updateCanvasSetting('movement', event.target.value)}>
+                    <option value="drift">{t.canvasMovementDrift}</option><option value="pulse">{t.canvasMovementPulse}</option><option value="orbit">{t.canvasMovementOrbit}</option><option value="wave">{t.canvasMovementWave}</option><option value="still">{t.canvasMovementStill}</option>
+                  </select>
+                </label>
+                <label className="canvas-setting-block canvas-motion-setting">
+                  <span className="canvas-setting-heading"><span>{t.canvasShape}</span></span>
+                  <select className="canvas-shape-select" value={canvasSettings.shape} aria-label={t.canvasShape} onChange={(event) => updateCanvasSetting('shape', event.target.value)}>
+                    <option value="dots">{t.canvasShapeDots}</option><option value="squares">{t.canvasShapeSquares}</option><option value="diamonds">{t.canvasShapeDiamonds}</option><option value="triangles">{t.canvasShapeTriangles}</option><option value="mixed">{t.canvasShapeMixed}</option>
+                  </select>
+                </label>
+              </div>
               <div className="canvas-settings-actions"><button type="button" onClick={resetCanvasSettings}><RotateCcw size={14} aria-hidden="true" />{t.canvasReset}</button></div>
             </section>}
           </div>
@@ -419,7 +402,7 @@ export default function App() {
         </aside>
 
         <main id="main">
-          <section className="hero"><div><p className="eyebrow">{siteConfig.siteName} / {t.browse}</p><h1>{t.hero}</h1><p>{t.tagline}</p></div><div className="hero-actions"><span className={`freshness ${status.status === 'error' ? 'failed' : !isStale ? 'fresh' : ''}`}><span>●</span>{status.status === 'error' ? t.syncFailed : isStale ? t.stale : t.synced}</span><button className="refresh" onClick={() => load({ refresh: true })} disabled={refreshing}><RefreshCw className={refreshing ? 'spin' : ''} size={15} />{refreshing ? t.loading : t.refresh}</button></div></section>
+          <section className="hero"><div><p className="eyebrow">{siteConfig.siteName} / {t.browse}</p><h1>{t.hero}</h1><p>{t.tagline}</p></div><div className="hero-actions"><span className={`freshness ${status.status === 'error' ? 'failed' : !isStale ? 'fresh' : ''}`}><span>●</span>{status.status === 'error' ? t.syncFailed : isStale ? t.stale : t.synced}</span></div></section>
           {(status.status === 'rate_limited' || status.status === 'error' || isStale) && <div className={`notice ${status.status === 'error' ? 'danger' : 'warning'}`} role="status">{status.status === 'rate_limited' ? t.rateLimited : status.status === 'error' ? `${t.syncError} ${status.message || ''}` : `${t.stale} ${formatDate(meta.syncedAt, locale === 'ar' ? 'ar-EG' : 'en-US')}.`}</div>}
 
           <div className="summary"><span><strong>{repos.length.toLocaleString(formatLocale)}</strong> {t.repos}</span><span><strong>{totalStars.toLocaleString(formatLocale)}</strong> {t.stars}</span><span><strong>{filtered.length.toLocaleString(formatLocale)}</strong> {query ? t.matching : t.repos}</span></div>
@@ -427,7 +410,7 @@ export default function App() {
             <Select label={t.newest} icon={Star} value={sort} onChange={(value) => { setSort(value); writeStorage('gitstar-sort', value) }} options={[{ value: 'newest', label: t.newest }, { value: 'pushed', label: t.pushed }, { value: 'stars', label: t.stars }, { value: 'alpha', label: t.alpha }]} />
             {query && <button className="clear" onClick={() => setQuery('')}><X size={15} />{t.clearSearch}</button>}
           </div>
-          {loading ? <div className="skeleton">{[1, 2, 3].map((item) => <div key={item} />)}</div> : error ? <div className="empty"><p>Unable to load data</p><button onClick={() => load({ refresh: true })}>{t.refresh}</button></div> : filtered.length === 0 ? <div className="empty"><p>{t.noResults}</p><button onClick={() => setQuery('')}>{t.clearSearch}</button></div> : <>
+          {loading ? <div className="skeleton">{[1, 2, 3].map((item) => <div key={item} />)}</div> : error ? <div className="empty"><p>{t.loadError}</p></div> : filtered.length === 0 ? <div className="empty"><p>{t.noResults}</p><button onClick={() => setQuery('')}>{t.clearSearch}</button></div> : <>
             <div className="groups" id="repository-list">{grouped.map(([id, items]) => <section id={categoryAnchor(id)} key={id}><div className="section-title"><h2>{id === 'other' ? t.categoryOther : t[categoryMeta[id]?.i18nKey]}</h2><span>{(filteredCategoryCounts[id] || 0).toLocaleString(formatLocale)}</span></div>{items.map((repo) => <RepoCard key={repo.full_name} repo={repo} contributors={contributors} t={t} locale={formatLocale} />)}</section>)}</div>
             {filtered.length > visibleCount && <button className="load-more" type="button" onClick={() => setVisibleCount((count) => Math.min(count + pageSize, filtered.length))}>{t.loadMore}<span>+{Math.min(pageSize, filtered.length - visibleCount).toLocaleString(locale === 'ar' ? 'ar-EG' : 'en-US')}</span></button>}
           </>}
