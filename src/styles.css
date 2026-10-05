@@ -19,8 +19,8 @@
   --option-bg: #181818;
   --repo-preview-bg: #1b1b1b;
   --repo-hover: rgba(255,255,255,.025);
-  --repo-card-bg: rgba(23,23,23,.82);
-  --repo-card-hover-bg: rgba(32,32,32,.88);
+  --repo-card-bg: rgba(23,23,23,.68);
+  --repo-card-hover-bg: rgba(32,32,32,.78);
   --overlay-bg: rgba(0,0,0,.76);
   --dialog-bg: #151515;
   --dialog-step-bg: #191919;
@@ -113,12 +113,17 @@ main { min-width: 0; }
 .section-title h2 { margin: 0; color: var(--white); font-size: 16px; font-weight: 600; }
 .section-title span { color: #777; font: 12px var(--font-mono); }
 .repo-preview { grid-column: 1 / -1; display: block; width: 100%; aspect-ratio: 1.91; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: var(--repo-preview-bg); }
-.repo-preview img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.repo-preview img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .28s cubic-bezier(.2,.7,.2,1); }
 .repo-preview-fallback { display: flex; height: 100%; align-items: center; justify-content: center; gap: 9px; color: var(--muted); background: var(--repo-preview-bg); }
 .repo-preview-fallback strong { color: var(--muted); font-size: 12px; font-weight: 500; }
-.repo-card { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 13px 16px; align-items: start; margin: 12px 0; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--repo-card-bg); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); transition: background .18s ease, border-color .18s ease; }
-.repo-card:hover { background: var(--repo-card-hover-bg); border-color: var(--control-border); }
-.repo-avatar { display: grid; flex: 0 0 30px; place-items: center; width: 30px; height: 30px; overflow: hidden; border: 1px solid var(--line); border-radius: 50%; background: var(--avatar-bg); color: var(--white); font-size: 11px; }
+.repo-card { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 13px 16px; align-items: start; margin: 12px 0; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--repo-card-bg); -webkit-backdrop-filter: blur(22px) saturate(1.2); backdrop-filter: blur(22px) saturate(1.2); box-shadow: 0 3px 14px rgba(0,0,0,.1); transition: transform .24s cubic-bezier(.2,.7,.2,1), background .2s ease, border-color .2s ease, box-shadow .24s ease; }
+.repo-card:hover, .repo-card:focus-within { background: var(--repo-card-hover-bg); border-color: var(--control-border); box-shadow: 0 14px 36px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.055); }
+@media (hover: hover) and (pointer: fine) {
+  .repo-card:hover { transform: translateY(-4px); }
+  .repo-card:hover .repo-preview img { transform: scale(1.035); }
+}
+.repo-avatar { display: grid; flex: 0 0 30px; place-items: center; width: 30px; height: 30px; overflow: hidden; border: 1px solid var(--line); border-radius: 50%; background: var(--avatar-bg); color: var(--white); font-size: 11px; transition: transform .22s ease, border-color .22s ease; }
+.repo-card:hover .repo-avatar, .repo-card:focus-within .repo-avatar { transform: scale(1.06); border-color: var(--control-border); }
 .repo-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .repo-avatar span { display: grid; width: 100%; height: 100%; place-items: center; }
 .repo-body { min-width: 0; }
@@ -220,6 +225,9 @@ footer { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 20px 0 32
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .repo-card:hover, .repo-card:focus-within { transform: none; }
+  .repo-card:hover .repo-preview img { transform: none; }
+  .repo-card:hover .repo-avatar, .repo-card:focus-within .repo-avatar { transform: none; }
 }
 
 
@@ -254,8 +262,8 @@ footer { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 20px 0 32
   --option-bg: #ffffff;
   --repo-preview-bg: #eef1f5;
   --repo-hover: rgba(24,34,46,.035);
-  --repo-card-bg: rgba(255,255,255,.82);
-  --repo-card-hover-bg: rgba(255,255,255,.92);
+  --repo-card-bg: rgba(255,255,255,.70);
+  --repo-card-hover-bg: rgba(255,255,255,.84);
   --overlay-bg: rgba(24,32,42,.48);
   --dialog-bg: #ffffff;
   --dialog-step-bg: #f8f9fb;
