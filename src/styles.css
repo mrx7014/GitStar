@@ -85,6 +85,12 @@ main { min-width: 0; }
 .section-title { display: flex; align-items: center; gap: 9px; margin-bottom: 8px; }
 .section-title h2 { margin: 0; color: var(--white); font-size: 16px; font-weight: 600; }
 .section-title span { color: #777; font: 12px var(--font-mono); }
+.repo-preview { grid-column: 1 / -1; display: block; width: 100%; max-height: 180px; aspect-ratio: 2.4; overflow: hidden; border: 1px solid var(--line); background: #1b1b1b; }
+.repo-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.repo-preview-fallback { display: flex; height: 100%; flex-direction: column; justify-content: center; gap: 7px; padding: 18px 22px; color: #d5d5d5; background: linear-gradient(135deg, #242424, #151515); }
+.repo-preview-fallback strong { color: #fff; font-size: 19px; font-weight: 600; overflow-wrap: anywhere; }
+.repo-preview-fallback small { max-width: 680px; overflow: hidden; color: #a0a0a0; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.repo-preview-fallback em { display: flex; align-items: center; gap: 5px; color: #8e8e8e; font: normal 12px var(--font-mono); }
 .repo-card { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto auto; gap: 13px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); }
 .repo-card:hover { background: rgba(255,255,255,.025); }
 .repo-avatar { width: 38px; height: 38px; font-size: 14px; }
@@ -142,6 +148,9 @@ footer { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 20px 0 32
   .check { min-height: 42px; }
   .repo-card { grid-template-columns: 34px minmax(0, 1fr); gap: 9px; }
   .repo-avatar { width: 34px; height: 34px; }
+  .repo-preview { max-height: 150px; aspect-ratio: 1.9; }
+  .repo-preview-fallback { padding: 14px 16px; }
+  .repo-preview-fallback strong { font-size: 16px; }
   .repo-body { min-width: 0; }
   .repo-title a { overflow-wrap: anywhere; }
   .repo-numbers, .repo-links { grid-column: 2; flex-direction: row; align-items: center; }

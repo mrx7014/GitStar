@@ -27,7 +27,12 @@ function Select({ label, value, onChange, options, icon: Icon }) {
 
 function RepoCard({ repo, t, locale, onTopic }) {
   const category = categoryMeta[repo.category]
+  const [imageFailed, setImageFailed] = useState(false)
+  const previewUrl = `https://opengraph.githubassets.com/1/${repo.full_name}`
   return <article className="repo-card">
+    <a className="repo-preview" href={safeUrl(repo.html_url)} target="_blank" rel="noreferrer noopener" aria-label={`${repo.owner}/${repo.name} preview`}>
+      {!imageFailed ? <img src={previewUrl} alt="" loading="lazy" onError={() => setImageFailed(true)} /> : <span className="repo-preview-fallback"><GitBranch size={24} aria-hidden="true" /><strong>{repo.owner}/{repo.name}</strong><small>{repo.description || t.github}</small><em><Star size={12} aria-hidden="true" />{(repo.stars || 0).toLocaleString()} {repo.language || ''}</em></span>}
+    </a>
     <div className="repo-avatar" aria-hidden="true">{repo.owner?.[0]?.toUpperCase() || '?'}</div>
     <div className="repo-body">
       <div className="repo-title">
