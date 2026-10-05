@@ -13,7 +13,8 @@ const safeUrl = (value) => /^https?:\/\//i.test(value || '') ? value : ''
 const readStorage = (key) => { try { return localStorage.getItem(key) } catch { return null } }
 const writeStorage = (key, value) => { try { localStorage.setItem(key, value) } catch { /* Storage may be disabled or full. */ } }
 const canvasSettingsKey = 'gitstar-canvas-settings-v1'
-const defaultCanvasSettings = { density: 1, size: 1, speed: 1, color: 'auto', movement: 'drift' }
+const defaultCanvasSettings = { density: 1, lineAmount: 1, size: 1, speed: 1, color: 'auto', movement: 'drift', shape: 'dots' }
+const canvasShapes = ['dots', 'squares', 'diamonds', 'triangles', 'mixed']
 const boundedSetting = (value, fallback, min, max) => {
   const number = Number(value)
   return Number.isFinite(number) ? Math.min(max, Math.max(min, number)) : fallback
@@ -22,13 +23,16 @@ const readCanvasSettings = () => {
   try {
     const saved = JSON.parse(readStorage(canvasSettingsKey) || '{}')
     const color = saved.color === 'auto' || /^#[0-9a-f]{6}$/i.test(saved.color || '') ? saved.color : defaultCanvasSettings.color
-    const movement = ['drift', 'pulse', 'still'].includes(saved.movement) ? saved.movement : defaultCanvasSettings.movement
+    const movement = ['drift', 'pulse', 'orbit', 'wave', 'still'].includes(saved.movement) ? saved.movement : defaultCanvasSettings.movement
+    const shape = canvasShapes.includes(saved.shape) ? saved.shape : defaultCanvasSettings.shape
     return {
       density: boundedSetting(saved.density, defaultCanvasSettings.density, 0.5, 1.8),
+      lineAmount: boundedSetting(saved.lineAmount, defaultCanvasSettings.lineAmount, 0, 2),
       size: boundedSetting(saved.size, defaultCanvasSettings.size, 0.6, 1.8),
       speed: boundedSetting(saved.speed, defaultCanvasSettings.speed, 0.25, 2.5),
       color,
       movement,
+      shape,
     }
   } catch {
     return { ...defaultCanvasSettings }
@@ -42,6 +46,16 @@ const canvasColorPresets = [
   { value: '#34d399', color: '#34d399', label: 'canvasColorMint' },
   { value: '#fb7185', color: '#fb7185', label: 'canvasColorRose' },
 ]
+const languageIconSlugs = {
+  javascript: 'javascript', typescript: 'typescript', python: 'python', java: 'java', c: 'c',
+  'c++': 'cplusplus', 'c#': 'csharp', go: 'go', rust: 'rust', ruby: 'ruby', php: 'php',
+  kotlin: 'kotlin', swift: 'swift', dart: 'dart', html: 'html5', css: 'css3', scss: 'sass', sass: 'sass',
+  shell: 'bash', bash: 'bash', 'jupyter notebook': 'jupyter', lua: 'lua', haskell: 'haskell', scala: 'scala',
+  perl: 'perl', powershell: 'powershell', dockerfile: 'docker', vue: 'vuejs', svelte: 'svelte',
+  'objective-c': 'objectivec', elixir: 'elixir', erlang: 'erlang', clojure: 'clojure', crystal: 'crystal',
+  julia: 'julia', matlab: 'matlab', nim: 'nim', ocaml: 'ocaml', solidity: 'solidity', zig: 'zig',
+  'vim script': 'vim', markdown: 'markdown', groovy: 'groovy', fortran: 'fortran',
+}
 const readSnapshot = () => {
   try {
     const snapshot = JSON.parse(readStorage(cacheKey) || 'null')
@@ -73,12 +87,24 @@ function Select({ label, value, onChange, options, icon: Icon }) {
   </label>
 }
 
+function LanguageBadge({ language }) {
+  const [iconFailed, setIconFailed] = useState(false)
+  const slug = languageIconSlugs[String(language).toLowerCase()]
+  const iconUrl = slug ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg` : ''
+  return <span className="language" title={language}>
+    {iconUrl && !iconFailed ? <img className="language-logo" src={iconUrl} alt="" aria-hidden="true" loading="lazy" decoding="async" onError={() => setIconFailed(true)} /> : <i className="language-monogram" aria-hidden="true">{String(language).slice(0, 1).toUpperCase()}</i>}
+    <span>{language}</span>
+  </span>
+}
+
 function RepoCard({ repo, contributors, t, locale }) {
   const category = categoryMeta[repo.category]
   const [imageFailed, setImageFailed] = useState(false)
+  const [avatarFailed, setAvatarFailed] = useState(false)
   const generatedPreviewUrl = `https://opengraph.githubassets.com/${repo.id || '1'}/${repo.full_name}`
   const primaryPreviewUrl = safeUrl(repo.preview_url) || generatedPreviewUrl
   const [imageUrl, setImageUrl] = useState(primaryPreviewUrl)
+  const ownerAvatarUrl = safeUrl(repo.owner_avatar_url) || (repo.owner ? `https://github.com/${encodeURIComponent(repo.owner)}.png?size=80` : '')
   useEffect(() => {
     setImageUrl(primaryPreviewUrl)
     setImageFailed(false)
@@ -89,9 +115,9 @@ function RepoCard({ repo, contributors, t, locale }) {
     <a className="repo-preview" href={safeUrl(repo.html_url)} target="_blank" rel="noreferrer noopener" aria-label={`${repo.owner}/${repo.name} preview`}>
       {!imageFailed ? <img src={imageUrl} alt="" loading="lazy" decoding="async" onError={() => { if (imageUrl !== generatedPreviewUrl) setImageUrl(generatedPreviewUrl); else setImageFailed(true) }} /> : <span className="repo-preview-fallback"><GitBranch size={24} aria-hidden="true" /><strong>{t.previewUnavailable}</strong></span>}
     </a>
-    <div className="repo-avatar" aria-hidden="true">{repo.owner?.[0]?.toUpperCase() || '?'}</div>
     <div className="repo-body">
       <div className="repo-title">
+        <div className="repo-avatar" aria-hidden="true">{ownerAvatarUrl && !avatarFailed ? <img src={ownerAvatarUrl} alt="" loading="lazy" decoding="async" onError={() => setAvatarFailed(true)} /> : <span>{repo.owner?.[0]?.toUpperCase() || '?'}</span>}</div>
         <a href={safeUrl(repo.html_url)} target="_blank" rel="noreferrer noopener">{repo.owner}/{repo.name}</a>
         {repo.archived && <span className="badge">{t.archived}</span>}
       </div>
@@ -103,7 +129,7 @@ function RepoCard({ repo, contributors, t, locale }) {
       <p>{repo.description || '—'}</p>
       <div className="chips">
         {(repo.topics || []).slice(0, 4).map((topic) => <span className="topic-chip" key={topic}>#{topic}</span>)}
-        {repo.language && <span className="language"><i aria-hidden="true" />{repo.language}</span>}
+        {repo.language && <LanguageBadge language={repo.language} />}
       </div>
     </div>
     <div className="repo-numbers" aria-label={`${repo.stars || 0} ${t.stars}, ${repo.forks || 0} ${t.forks}, ${contributorValue} ${t.contributors}`}>
@@ -123,11 +149,13 @@ export default function App() {
   const [locale, setLocale] = useState(() => readStorage('gitstar-language') || siteConfig.defaultLanguage)
   const [theme, setTheme] = useState(initialTheme)
   const [networkEnabled, setNetworkEnabled] = useState(() => readStorage('gitstar-network-background') !== 'off')
+  const [canvasPreviewActive, setCanvasPreviewActive] = useState(false)
   const [canvasSettings, setCanvasSettings] = useState(readCanvasSettings)
   const [canvasSettingsOpen, setCanvasSettingsOpen] = useState(false)
   const canvasSettingsRoot = useRef(null)
   const [canvasBurst, setCanvasBurst] = useState(false)
   const canvasBurstTimer = useRef(0)
+  const canvasPreviewTimer = useRef(0)
   const [guideOpen, setGuideOpen] = useState(() => readStorage('gitstar-guide-hidden') !== 'true')
   const [dontShowAgain, setDontShowAgain] = useState(false)
   const [data, setData] = useState(() => initialSnapshot?.data || { repositories: [] })
@@ -166,12 +194,24 @@ export default function App() {
     setCanvasSettings(next)
     writeStorage(canvasSettingsKey, JSON.stringify(next))
   }
+  const previewCanvasBurst = () => {
+    window.clearTimeout(canvasBurstTimer.current)
+    window.clearTimeout(canvasPreviewTimer.current)
+    setCanvasPreviewActive(true)
+    setCanvasBurst(true)
+    canvasPreviewTimer.current = window.setTimeout(() => {
+      setCanvasBurst(false)
+      setCanvasPreviewActive(false)
+    }, 1450)
+  }
   const toggleTheme = () => setTheme((current) => current === 'dark' ? 'light' : 'dark')
 
   const load = async ({ refresh = false } = {}) => {
     setError('')
     const refreshStartedAt = refresh ? Date.now() : 0
     if (refresh) {
+      window.clearTimeout(canvasPreviewTimer.current)
+      setCanvasPreviewActive(false)
       setRefreshing(true)
       setCanvasBurst(true)
       window.clearTimeout(canvasBurstTimer.current)
@@ -207,7 +247,10 @@ export default function App() {
   }
 
   useEffect(() => { load() }, [])
-  useEffect(() => () => window.clearTimeout(canvasBurstTimer.current), [])
+  useEffect(() => () => {
+    window.clearTimeout(canvasBurstTimer.current)
+    window.clearTimeout(canvasPreviewTimer.current)
+  }, [])
   useEffect(() => {
     if (!canvasSettingsOpen) return undefined
     const onPointerDown = (event) => { if (!canvasSettingsRoot.current?.contains(event.target)) setCanvasSettingsOpen(false) }
@@ -298,7 +341,7 @@ export default function App() {
   }
 
   return <div className="app">
-    <AnimatedNetworkCanvas active={networkEnabled} theme={theme} refreshing={canvasBurst} settings={canvasSettings} />
+    <AnimatedNetworkCanvas active={networkEnabled || canvasPreviewActive} theme={theme} refreshing={canvasBurst} settings={canvasSettings} />
     <div className="app-content">
       <a className="skip" href="#main">Skip to content</a>
       <header className={scrolled ? 'has-floating-menu' : ''}>
@@ -323,9 +366,14 @@ export default function App() {
               <button className="canvas-enable" type="button" role="switch" aria-checked={networkEnabled} aria-label={t.canvasOn} onClick={toggleNetworkBackground}>
                 <span>{t.canvasOn}</span><span className="toggle-track" aria-hidden="true"><i /></span>
               </button>
+              <button className="canvas-preview-burst" type="button" aria-pressed={canvasBurst} title={t.canvasPreviewHint} onClick={previewCanvasBurst}><RefreshCw className={canvasBurst ? 'spin' : ''} size={14} aria-hidden="true" />{t.canvasPreviewEffect}</button>
               <label className="canvas-setting">
                 <span className="canvas-setting-heading"><span>{t.canvasDensity}</span><output>{Math.round(canvasSettings.density * 100).toLocaleString(formatLocale)}%</output></span>
                 <input id="canvas-density" type="range" min="0.5" max="1.8" step="0.05" value={canvasSettings.density} aria-label={t.canvasDensity} onChange={(event) => updateCanvasSetting('density', Number(event.target.value))} />
+              </label>
+              <label className="canvas-setting">
+                <span className="canvas-setting-heading"><span>{t.canvasLineAmount}</span><output>{Math.round(canvasSettings.lineAmount * 100).toLocaleString(formatLocale)}%</output></span>
+                <input type="range" min="0" max="2" step="0.05" value={canvasSettings.lineAmount} aria-label={t.canvasLineAmount} onChange={(event) => updateCanvasSetting('lineAmount', Number(event.target.value))} />
               </label>
               <label className="canvas-setting">
                 <span className="canvas-setting-heading"><span>{t.canvasSize}</span><output>{Math.round(canvasSettings.size * 100).toLocaleString(formatLocale)}%</output></span>
@@ -345,7 +393,13 @@ export default function App() {
               <label className="canvas-setting-block canvas-motion-setting">
                 <span className="canvas-setting-heading"><span>{t.canvasMovement}</span></span>
                 <select className="canvas-motion-select" value={canvasSettings.movement} aria-label={t.canvasMovement} onChange={(event) => updateCanvasSetting('movement', event.target.value)}>
-                  <option value="drift">{t.canvasMovementDrift}</option><option value="pulse">{t.canvasMovementPulse}</option><option value="still">{t.canvasMovementStill}</option>
+                  <option value="drift">{t.canvasMovementDrift}</option><option value="pulse">{t.canvasMovementPulse}</option><option value="orbit">{t.canvasMovementOrbit}</option><option value="wave">{t.canvasMovementWave}</option><option value="still">{t.canvasMovementStill}</option>
+                </select>
+              </label>
+              <label className="canvas-setting-block canvas-motion-setting">
+                <span className="canvas-setting-heading"><span>{t.canvasShape}</span></span>
+                <select className="canvas-shape-select" value={canvasSettings.shape} aria-label={t.canvasShape} onChange={(event) => updateCanvasSetting('shape', event.target.value)}>
+                  <option value="dots">{t.canvasShapeDots}</option><option value="squares">{t.canvasShapeSquares}</option><option value="diamonds">{t.canvasShapeDiamonds}</option><option value="triangles">{t.canvasShapeTriangles}</option><option value="mixed">{t.canvasShapeMixed}</option>
                 </select>
               </label>
               <div className="canvas-settings-actions"><button type="button" onClick={resetCanvasSettings}><RotateCcw size={14} aria-hidden="true" />{t.canvasReset}</button></div>

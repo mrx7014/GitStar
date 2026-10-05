@@ -5,6 +5,8 @@ const rgbFor = (color, theme) => {
   return theme === 'light' ? '56,72,91' : '218,228,239'
 }
 
+const nodeShapes = ['dots', 'squares', 'diamonds', 'triangles']
+
 export default function AnimatedNetworkCanvas({ active, theme, refreshing = false, settings }) {
   const canvasRef = useRef(null)
   const refreshingRef = useRef(refreshing)
@@ -38,6 +40,7 @@ export default function AnimatedNetworkCanvas({ active, theme, refreshing = fals
     let lastDrawTime = 0
     let speedFactor = 1
     let flashLevel = 0
+    let lastMovement = settingsRef.current?.movement ?? 'drift'
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     const resize = () => {
@@ -48,14 +51,42 @@ export default function AnimatedNetworkCanvas({ active, theme, refreshing = fals
       canvas.height = Math.round(height * pixelRatio)
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
       const count = Math.max(18, Math.min(150, Math.floor((width * height) / 26000 * (settingsRef.current?.density ?? 1))))
-      points = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 14,
-        vy: (Math.random() - 0.5) * 14,
-        phase: Math.random() * Math.PI * 2,
-      }))
+      points = Array.from({ length: count }, () => {
+        const x = Math.random() * width
+        const y = Math.random() * height
+        const phase = Math.random() * Math.PI * 2
+        return {
+          x, y, anchorX: x, anchorY: y,
+          vx: (Math.random() - 0.5) * 14,
+          vy: (Math.random() - 0.5) * 14,
+          phase,
+          movePhase: phase,
+          orbitRadius: 8 + Math.random() * 28,
+          waveRange: 14 + Math.random() * 42,
+        }
+      })
       if (motionPreference.matches) draw(0, false)
+    }
+
+    const drawShape = (x, y, radius, shape) => {
+      context.beginPath()
+      if (shape === 'squares') {
+        context.rect(x - radius, y - radius, radius * 2, radius * 2)
+      } else if (shape === 'diamonds') {
+        context.moveTo(x, y - radius * 1.35)
+        context.lineTo(x + radius, y)
+        context.lineTo(x, y + radius * 1.35)
+        context.lineTo(x - radius, y)
+        context.closePath()
+      } else if (shape === 'triangles') {
+        context.moveTo(x, y - radius * 1.35)
+        context.lineTo(x + radius * 1.15, y + radius)
+        context.lineTo(x - radius * 1.15, y + radius)
+        context.closePath()
+      } else {
+        context.arc(x, y, radius, 0, Math.PI * 2)
+      }
+      context.fill()
     }
 
     const draw = (time, allowMotion = true) => {
@@ -65,49 +96,78 @@ export default function AnimatedNetworkCanvas({ active, theme, refreshing = fals
       const isRefreshing = refreshingRef.current
       const size = currentSettings.size ?? 1
       const speed = currentSettings.speed ?? 1
+      const lineAmount = currentSettings.lineAmount ?? 1
       const movement = currentSettings.movement ?? 'drift'
+      const shape = currentSettings.shape ?? 'dots'
       const easing = Math.min(1, elapsed * 2.5)
       speedFactor += ((isRefreshing ? 5.5 * speed : speed) - speedFactor) * easing
       flashLevel += ((isRefreshing ? 1 : 0) - flashLevel) * Math.min(1, elapsed * 2.4)
       context.clearRect(0, 0, width, height)
-      const maxDistance = Math.max(85, Math.min(165, width * 0.18)) * size
-      const pulseRate = movement === 'still' && !isRefreshing ? 0 : 1.2 + flashLevel * 11.4
+      const maxDistance = Math.max(85, Math.min(165, width * 0.18)) * Math.sqrt(lineAmount)
+      const pulseRate = movement === 'still' && !isRefreshing ? 0 : 1.2 * speed + flashLevel * 11.4
       const strokeRgb = rgbFor(currentSettings.color, theme)
 
-      if (allowMotion && movement === 'drift' && elapsed > 0) {
+      if (movement !== lastMovement) {
         for (const point of points) {
-          point.x += point.vx * elapsed * speedFactor
-          point.y += point.vy * elapsed * speedFactor
-          if (point.x < -12 || point.x > width + 12) point.vx *= -1
-          if (point.y < -12 || point.y > height + 12) point.vy *= -1
-          point.x = Math.max(-12, Math.min(width + 12, point.x))
-          point.y = Math.max(-12, Math.min(height + 12, point.y))
+          point.anchorX = point.x
+          point.anchorY = point.y
+          point.movePhase = point.phase
+        }
+        lastMovement = movement
+      }
+
+      if (allowMotion && elapsed > 0) {
+        for (let i = 0; i < points.length; i += 1) {
+          const point = points[i]
+          const rate = speedFactor * (0.72 + (i % 5) * 0.12)
+          if (movement === 'drift') {
+            point.x += point.vx * elapsed * rate
+            point.y += point.vy * elapsed * rate
+            if (point.x < -12 || point.x > width + 12) point.vx *= -1
+            if (point.y < -12 || point.y > height + 12) point.vy *= -1
+            point.x = Math.max(-12, Math.min(width + 12, point.x))
+            point.y = Math.max(-12, Math.min(height + 12, point.y))
+          } else if (movement === 'orbit') {
+            point.movePhase += elapsed * rate
+            point.x = point.anchorX + Math.cos(point.movePhase) * point.orbitRadius
+            point.y = point.anchorY + Math.sin(point.movePhase) * point.orbitRadius
+          } else if (movement === 'wave') {
+            point.movePhase += elapsed * rate
+            point.x = point.anchorX + Math.sin(point.movePhase * 0.55) * point.waveRange
+            point.y = point.anchorY + Math.sin(point.movePhase) * point.waveRange * 0.48
+          }
+        }
+      }
+
+      if (maxDistance > 0) {
+        for (let i = 0; i < points.length; i += 1) {
+          const point = points[i]
+          for (let j = i + 1; j < points.length; j += 1) {
+            const other = points[j]
+            const dx = point.x - other.x
+            const dy = point.y - other.y
+            const distance = Math.hypot(dx, dy)
+            if (distance >= maxDistance) continue
+            const proximity = 1 - distance / maxDistance
+            const flicker = (Math.sin(time * 0.001 * pulseRate + point.phase + other.phase) + 1) / 2
+            const opacity = proximity * (0.24 + flashLevel * (0.08 + flicker * 0.37))
+            context.beginPath()
+            context.moveTo(point.x, point.y)
+            context.lineTo(other.x, other.y)
+            context.strokeStyle = `rgba(${strokeRgb},${opacity.toFixed(3)})`
+            context.lineWidth = (0.8 + flashLevel * flicker * 1.1) * size
+            context.stroke()
+          }
         }
       }
 
       for (let i = 0; i < points.length; i += 1) {
         const point = points[i]
-        for (let j = i + 1; j < points.length; j += 1) {
-          const other = points[j]
-          const dx = point.x - other.x
-          const dy = point.y - other.y
-          const distance = Math.hypot(dx, dy)
-          if (distance >= maxDistance) continue
-          const proximity = 1 - distance / maxDistance
-          const flicker = (Math.sin(time * 0.001 * pulseRate + point.phase + other.phase) + 1) / 2
-          const opacity = proximity * (0.24 + flashLevel * (0.08 + flicker * 0.37))
-          context.beginPath()
-          context.moveTo(point.x, point.y)
-          context.lineTo(other.x, other.y)
-          context.strokeStyle = `rgba(${strokeRgb},${opacity.toFixed(3)})`
-          context.lineWidth = (0.8 + flashLevel * flicker * 1.1) * size
-          context.stroke()
-        }
         const pulse = (Math.sin(time * 0.001 * pulseRate + point.phase) + 1) / 2
-        context.beginPath()
-        context.arc(point.x, point.y, (1.1 + pulse * (0.55 + flashLevel * 1.9)) * size, 0, Math.PI * 2)
+        const radius = (1.1 + pulse * (0.55 + flashLevel * 1.9)) * size
+        const selectedShape = shape === 'mixed' ? nodeShapes[i % nodeShapes.length] : shape
         context.fillStyle = `rgba(${strokeRgb},${(0.3 + pulse * 0.25 + flashLevel * (0.15 + pulse * 0.27)).toFixed(3)})`
-        context.fill()
+        drawShape(point.x, point.y, radius, selectedShape)
       }
     }
 
