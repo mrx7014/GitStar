@@ -1,5 +1,5 @@
 export const siteConfig = {
-  githubUsername: 'demo',
+  githubUsername: 'mrx7014',
   siteName: 'GitStar',
   defaultLanguage: 'en',
   tagline: 'Your starred repos, with a point of view.',
