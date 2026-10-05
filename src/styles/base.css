@@ -9,8 +9,7 @@
 @import '@fontsource/dm-mono/500.css';
 
 html { background: var(--bg); }
-body { font-family: var(--font-ui); background: radial-gradient(600px 300px at 10% -10%, rgba(242,198,109,.06), transparent), var(--bg); color: var(--text); }
-*, *::before, *::after { transition: background-color 140ms ease-out, border-color 140ms ease-out, color 140ms ease-out; }
+body { font-family: var(--font-ui); background: var(--bg); color: var(--text); }
 :focus-visible { outline: none; box-shadow: var(--focus); }
 button, a, input, select { min-height: 36px; }
 @media (max-width: 700px) { button, a, select { min-height: 44px; } }
