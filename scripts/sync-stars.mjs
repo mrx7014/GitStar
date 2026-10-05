@@ -1,76 +1,21 @@
+import { createHash } from 'node:crypto'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { siteConfig } from '../src/config.js'
 import { classifyRepo } from '../src/category-engine.js'
-
-const root = new URL('../', import.meta.url)
-const dataDir = new URL('./public/data/', root)
-const snapshotPath = new URL('./public/data/repos.json', root)
-const historyPath = new URL('./public/data/history.json', root)
-const username = process.env.GITHUB_USERNAME || siteConfig.githubUsername
-const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || ''
-
-const headers = { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'GitStar-Sync/1.0' }
-if (token) headers.Authorization = `Bearer ${token}`
-
-async function fetchStars() {
-  const repos = []
-  for (let page = 1; ; page += 1) {
-    const response = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}/starred?per_page=100&page=${page}`, { headers })
-    if (response.status === 403 || response.status === 429) throw new Error('RATE_LIMIT')
-    if (!response.ok) throw new Error(`GitHub API ${response.status}: ${await response.text()}`)
-    const payload = await response.json()
-    if (!payload.length) break
-    repos.push(...payload)
-    if (payload.length < 100) break
-  }
-  return repos
-}
-
-function normalize(raw) {
-  const repo = raw.repo || raw
-  return {
-    id: repo.id,
-    full_name: repo.full_name,
-    name: repo.name,
-    html_url: repo.html_url,
-    homepage: repo.homepage || '',
-    documentation: repo.html_url ? `${repo.html_url}#readme` : '',
-    description: repo.description || '',
-    owner: { login: repo.owner?.login || repo.full_name.split('/')[0], avatar_url: repo.owner?.avatar_url || '' },
-    language: repo.language || '',
-    languageColor: '#74f0c0',
-    topics: repo.topics || [],
-    stargazers_count: repo.stargazers_count || 0,
-    forks_count: repo.forks_count || 0,
-    open_issues_count: repo.open_issues_count || 0,
-    pushed_at: repo.pushed_at,
-    updated_at: repo.updated_at,
-    starred_at: raw.starred_at || repo.starred_at || repo.updated_at,
-    category: classifyRepo(repo, siteConfig.manualCategories),
-  }
-}
-
+const dataDir = new URL('../public/data/', import.meta.url)
+export const paths = { repos: new URL('./repos.json', dataDir), meta: new URL('./meta.json', dataDir), status: new URL('./status.json', dataDir), history: new URL('./history.json', dataDir) }
+const username = process.env.GITHUB_USERNAME || siteConfig.githubUsername; const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || ''
+const headers = { Accept: 'application/vnd.github.star+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'GitStar-Sync/2.0' }; if (token) headers.Authorization = `Bearer ${token}`
+export function classifyResponse(response) { const remaining = response.headers.get('x-ratelimit-remaining'); return response.status === 429 || (response.status === 403 && (remaining === '0' || response.headers.has('retry-after'))) ? 'rate_limited' : 'error' }
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+export async function fetchStars(fetchImpl = fetch) { const repos = []; let url = `https://api.github.com/users/${encodeURIComponent(username)}/starred?per_page=100`; while (url) { let response; for (let attempt = 0; ; attempt += 1) { try { response = await fetchImpl(url, { headers }); if (response.ok || (response.status < 500 && response.status !== 408)) break } catch (error) { if (attempt >= 2) throw error } if (attempt >= 2) break; await sleep(250 * 2 ** attempt) } if (!response.ok) { const error = new Error(`${classifyResponse(response)}:${response.status}`); error.kind = classifyResponse(response); throw error } repos.push(...await response.json()); url = (response.headers.get('link') || '').match(/<([^>]+)>;\s*rel="next"/)?.[1] || '' } return repos }
+export function normalize(raw, overrides = siteConfig.manualCategories) { const repo = raw.repo || raw; const fullName = repo.full_name || ''; return { id: repo.id, full_name: fullName, name: repo.name || fullName.split('/').pop(), owner: repo.owner?.login || fullName.split('/')[0], html_url: repo.html_url || '', homepage: /^https?:\/\//i.test(repo.homepage || '') ? repo.homepage : '', description: repo.description || '', language: repo.language || '', topics: Array.isArray(repo.topics) ? repo.topics : [], stars: repo.stargazers_count || 0, forks: repo.forks_count || 0, pushed_at: repo.pushed_at || null, starred_at: raw.starred_at || null, category: classifyRepo(repo, overrides), archived: Boolean(repo.archived) } }
+export const hashRepos = (repos) => createHash('sha256').update(JSON.stringify([...repos].sort((a,b) => a.full_name.localeCompare(b.full_name)))).digest('hex')
 async function readJson(url, fallback) { try { return JSON.parse(await readFile(url, 'utf8')) } catch { return fallback } }
-
-const previous = await readJson(snapshotPath, { repositories: [], syncedAt: null })
-const previousIds = new Set((previous.repositories || []).map((repo) => repo.full_name))
-let stars
-try { stars = await fetchStars() } catch (error) {
-  const status = error.message === 'RATE_LIMIT' ? 'rate_limited' : 'error'
-  await writeFile(snapshotPath, JSON.stringify({ ...previous, username, status, error: error.message, attemptedAt: new Date().toISOString() }, null, 2) + '\n')
-  console.error(`GitStar sync failed: ${error.message}`)
-  process.exit(1)
-}
-
-const repositories = stars.map(normalize).sort((a, b) => new Date(b.starred_at || 0) - new Date(a.starred_at || 0))
-const currentIds = new Set(repositories.map((repo) => repo.full_name))
-const now = new Date().toISOString()
-const events = []
-for (const repo of repositories) if (!previousIds.has(repo.full_name)) events.push({ type: 'added', full_name: repo.full_name, html_url: repo.html_url, at: now })
-for (const repo of previous.repositories || []) if (!currentIds.has(repo.full_name)) events.push({ type: 'removed', full_name: repo.full_name, html_url: repo.html_url, at: now })
-const oldHistory = await readJson(historyPath, { events: [] })
-const mergedEvents = [...events, ...(oldHistory.events || [])].slice(0, 100)
-await mkdir(dataDir, { recursive: true })
-await writeFile(snapshotPath, JSON.stringify({ username, syncedAt: now, repositories, status: 'ok', count: repositories.length }, null, 2) + '\n')
-await writeFile(historyPath, JSON.stringify({ username, events: mergedEvents }, null, 2) + '\n')
-console.log(`Synced ${repositories.length} starred repositories for @${username}. ${events.length} changes.`)
+function eventFields(repo) { return { full_name: repo.full_name, html_url: repo.html_url, description: repo.description, category: repo.category } }
+async function writeSummary(data) { if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY, `## GitStar sync\n\n- Status: **${data.status}**\n- Repositories: **${data.count}**\n- Added: **${data.added || 0}** · Removed: **${data.removed || 0}**\n- Changed snapshot: **${data.changed ? 'yes' : 'no'}**\n`) }
+async function main() { await mkdir(dataDir, { recursive: true }); const previous = await readJson(paths.repos, { repositories: [] }); const oldMeta = await readJson(paths.meta, {}); const oldHistory = await readJson(paths.history, { events: [] }); const attemptedAt = new Date().toISOString(); let rawStars; try { rawStars = await fetchStars() } catch (error) { const status = error.kind || 'error'; await writeFile(paths.status, JSON.stringify({ status, message: error.message, attemptedAt, lastSuccessAt: oldMeta.syncedAt || null }, null, 2) + '\n'); await writeSummary({ status, count: previous.repositories?.length || 0 }); console.warn(`GitStar sync: ${status} (${error.message})`); return }
+  const repositories = rawStars.map((repo) => normalize(repo)).sort((a,b) => new Date(b.starred_at || 0) - new Date(a.starred_at || 0)); const hash = hashRepos(repositories); const previousIds = new Set((previous.repositories || []).map((r) => r.full_name)); const currentIds = new Set(repositories.map((r) => r.full_name)); const events = [...repositories.filter((r) => !previousIds.has(r.full_name)).map((r) => ({ type: 'added', ...eventFields(r), at: attemptedAt })), ...(previous.repositories || []).filter((r) => !currentIds.has(r.full_name)).map((r) => ({ type: 'removed', ...eventFields(r), at: attemptedAt }))]; const changed = hash !== oldMeta.hash; const meta = { schemaVersion: 2, username, syncedAt: changed ? attemptedAt : (oldMeta.syncedAt || attemptedAt), checkedAt: attemptedAt, count: repositories.length, hash }
+  if (changed) { await writeFile(paths.repos, JSON.stringify({ repositories })); const history = oldMeta.username && oldMeta.username !== username ? events : [...events, ...(oldHistory.events || [])].slice(0, 500); await writeFile(paths.history, JSON.stringify({ events: history }, null, 2) + '\n') }
+  await writeFile(paths.meta, JSON.stringify(meta, null, 2) + '\n'); await writeFile(paths.status, JSON.stringify({ status: 'ok', message: '', attemptedAt, lastSuccessAt: attemptedAt }, null, 2) + '\n'); console.log(`${changed ? 'Synced' : 'No changes'} ${repositories.length} starred repositories for @${username}. ${events.length} changes.`); await writeSummary({ status: 'ok', count: repositories.length, added: events.filter((e) => e.type === 'added').length, removed: events.filter((e) => e.type === 'removed').length, changed }) }
+if (import.meta.url === `file://${process.argv[1]}`) main().catch((error) => { console.error(error); process.exit(1) })
