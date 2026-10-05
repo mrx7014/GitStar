@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { BookOpen, ChevronDown, ExternalLink, GitBranch, GitFork, Globe, Languages, Menu, Moon, Network, RefreshCw, Search, SlidersHorizontal, Star, Sun, Users, X } from 'lucide-react'
+import { BookOpen, ChevronDown, ExternalLink, GitBranch, GitFork, Globe, Languages, Menu, Moon, Network, Paintbrush, RefreshCw, RotateCcw, Search, SlidersHorizontal, Star, Sun, Users, X } from 'lucide-react'
 import { siteConfig } from './config'
 import { categoryMeta, categoryOrder } from './category-engine'
 import { translations } from './i18n'
@@ -12,6 +12,36 @@ const pageSize = 60
 const safeUrl = (value) => /^https?:\/\//i.test(value || '') ? value : ''
 const readStorage = (key) => { try { return localStorage.getItem(key) } catch { return null } }
 const writeStorage = (key, value) => { try { localStorage.setItem(key, value) } catch { /* Storage may be disabled or full. */ } }
+const canvasSettingsKey = 'gitstar-canvas-settings-v1'
+const defaultCanvasSettings = { density: 1, size: 1, speed: 1, color: 'auto', movement: 'drift' }
+const boundedSetting = (value, fallback, min, max) => {
+  const number = Number(value)
+  return Number.isFinite(number) ? Math.min(max, Math.max(min, number)) : fallback
+}
+const readCanvasSettings = () => {
+  try {
+    const saved = JSON.parse(readStorage(canvasSettingsKey) || '{}')
+    const color = saved.color === 'auto' || /^#[0-9a-f]{6}$/i.test(saved.color || '') ? saved.color : defaultCanvasSettings.color
+    const movement = ['drift', 'pulse', 'still'].includes(saved.movement) ? saved.movement : defaultCanvasSettings.movement
+    return {
+      density: boundedSetting(saved.density, defaultCanvasSettings.density, 0.5, 1.8),
+      size: boundedSetting(saved.size, defaultCanvasSettings.size, 0.6, 1.8),
+      speed: boundedSetting(saved.speed, defaultCanvasSettings.speed, 0.25, 2.5),
+      color,
+      movement,
+    }
+  } catch {
+    return { ...defaultCanvasSettings }
+  }
+}
+const canvasColorPresets = [
+  { value: 'auto', color: 'linear-gradient(135deg, #dce8f4 50%, #45576b 50%)', label: 'canvasColorAuto' },
+  { value: '#38bdf8', color: '#38bdf8', label: 'canvasColorCyan' },
+  { value: '#a78bfa', color: '#a78bfa', label: 'canvasColorViolet' },
+  { value: '#fbbf24', color: '#fbbf24', label: 'canvasColorAmber' },
+  { value: '#34d399', color: '#34d399', label: 'canvasColorMint' },
+  { value: '#fb7185', color: '#fb7185', label: 'canvasColorRose' },
+]
 const readSnapshot = () => {
   try {
     const snapshot = JSON.parse(readStorage(cacheKey) || 'null')
@@ -93,6 +123,9 @@ export default function App() {
   const [locale, setLocale] = useState(() => readStorage('gitstar-language') || siteConfig.defaultLanguage)
   const [theme, setTheme] = useState(initialTheme)
   const [networkEnabled, setNetworkEnabled] = useState(() => readStorage('gitstar-network-background') !== 'off')
+  const [canvasSettings, setCanvasSettings] = useState(readCanvasSettings)
+  const [canvasSettingsOpen, setCanvasSettingsOpen] = useState(false)
+  const canvasSettingsRoot = useRef(null)
   const [canvasBurst, setCanvasBurst] = useState(false)
   const canvasBurstTimer = useRef(0)
   const [guideOpen, setGuideOpen] = useState(() => readStorage('gitstar-guide-hidden') !== 'true')
@@ -122,6 +155,16 @@ export default function App() {
     const next = !networkEnabled
     writeStorage('gitstar-network-background', next ? 'on' : 'off')
     setNetworkEnabled(next)
+  }
+  const updateCanvasSetting = (key, value) => setCanvasSettings((current) => {
+    const next = { ...current, [key]: value }
+    writeStorage(canvasSettingsKey, JSON.stringify(next))
+    return next
+  })
+  const resetCanvasSettings = () => {
+    const next = { ...defaultCanvasSettings }
+    setCanvasSettings(next)
+    writeStorage(canvasSettingsKey, JSON.stringify(next))
   }
   const toggleTheme = () => setTheme((current) => current === 'dark' ? 'light' : 'dark')
 
@@ -165,6 +208,20 @@ export default function App() {
 
   useEffect(() => { load() }, [])
   useEffect(() => () => window.clearTimeout(canvasBurstTimer.current), [])
+  useEffect(() => {
+    if (!canvasSettingsOpen) return undefined
+    const onPointerDown = (event) => { if (!canvasSettingsRoot.current?.contains(event.target)) setCanvasSettingsOpen(false) }
+    const onKeyDown = (event) => { if (event.key === 'Escape') setCanvasSettingsOpen(false) }
+    document.addEventListener('pointerdown', onPointerDown)
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [canvasSettingsOpen])
+  useEffect(() => {
+    if (canvasSettingsOpen) document.getElementById('canvas-density')?.focus()
+  }, [canvasSettingsOpen])
   useEffect(() => {
     document.documentElement.dataset.theme = theme
     document.documentElement.style.colorScheme = theme
@@ -254,9 +311,46 @@ export default function App() {
             {theme === 'dark' ? <Sun size={15} aria-hidden="true" /> : <Moon size={15} aria-hidden="true" />}
             <span className="theme-label">{theme === 'dark' ? t.themeLight : t.themeDark}</span>
           </button>
-          <button className="network-toggle" type="button" aria-pressed={networkEnabled} aria-label={networkEnabled ? t.networkOff : t.networkOn} title={networkEnabled ? t.networkOff : t.networkOn} onClick={toggleNetworkBackground}>
-            <SlidersHorizontal size={16} aria-hidden="true" /><span className="network-toggle-label">{t.customizeBackground}</span><span className="toggle-track" aria-hidden="true"><i /></span>
-          </button>
+          <div className="canvas-customizer" ref={canvasSettingsRoot}>
+            <button className="network-toggle customize-trigger" type="button" aria-haspopup="dialog" aria-expanded={canvasSettingsOpen} aria-controls="canvas-settings" aria-label={t.customizeBackground} title={t.customizeBackground} onClick={() => setCanvasSettingsOpen((open) => !open)}>
+              <SlidersHorizontal size={16} aria-hidden="true" /><span className="network-toggle-label">{t.customizeBackground}</span><span className={`canvas-status-dot${networkEnabled ? ' is-active' : ''}`} aria-hidden="true" /><ChevronDown className="customize-chevron" size={13} aria-hidden="true" />
+            </button>
+            {canvasSettingsOpen && <section className="canvas-settings" id="canvas-settings" role="dialog" aria-labelledby="canvas-settings-title">
+              <div className="canvas-settings-heading">
+                <div><p className="canvas-settings-kicker">{t.customizeBackground}</p><h2 id="canvas-settings-title">{t.canvasPanelTitle}</h2><small>{t.canvasPanelHint}</small></div>
+                <button className="canvas-settings-close" type="button" aria-label={t.canvasClose} onClick={() => setCanvasSettingsOpen(false)}><X size={16} /></button>
+              </div>
+              <button className="canvas-enable" type="button" role="switch" aria-checked={networkEnabled} aria-label={t.canvasOn} onClick={toggleNetworkBackground}>
+                <span>{t.canvasOn}</span><span className="toggle-track" aria-hidden="true"><i /></span>
+              </button>
+              <label className="canvas-setting">
+                <span className="canvas-setting-heading"><span>{t.canvasDensity}</span><output>{Math.round(canvasSettings.density * 100).toLocaleString(formatLocale)}%</output></span>
+                <input id="canvas-density" type="range" min="0.5" max="1.8" step="0.05" value={canvasSettings.density} aria-label={t.canvasDensity} onChange={(event) => updateCanvasSetting('density', Number(event.target.value))} />
+              </label>
+              <label className="canvas-setting">
+                <span className="canvas-setting-heading"><span>{t.canvasSize}</span><output>{Math.round(canvasSettings.size * 100).toLocaleString(formatLocale)}%</output></span>
+                <input type="range" min="0.6" max="1.8" step="0.05" value={canvasSettings.size} aria-label={t.canvasSize} onChange={(event) => updateCanvasSetting('size', Number(event.target.value))} />
+              </label>
+              <label className="canvas-setting">
+                <span className="canvas-setting-heading"><span>{t.canvasSpeed}</span><output>{Math.round(canvasSettings.speed * 100).toLocaleString(formatLocale)}%</output></span>
+                <input type="range" min="0.25" max="2.5" step="0.05" value={canvasSettings.speed} aria-label={t.canvasSpeed} onChange={(event) => updateCanvasSetting('speed', Number(event.target.value))} />
+              </label>
+              <div className="canvas-setting-block">
+                <span className="canvas-setting-heading"><span><Paintbrush size={14} aria-hidden="true" />{t.canvasColor}</span></span>
+                <div className="canvas-color-options">
+                  {canvasColorPresets.map((preset) => <button key={preset.value} className="canvas-color-option" type="button" aria-label={t[preset.label]} title={t[preset.label]} aria-pressed={canvasSettings.color === preset.value} onClick={() => updateCanvasSetting('color', preset.value)}><span style={{ background: preset.color }} /></button>)}
+                </div>
+                <label className="canvas-custom-color" htmlFor="canvas-custom-color"><span>{t.canvasCustomColor}</span><input id="canvas-custom-color" type="color" value={canvasSettings.color.startsWith('#') ? canvasSettings.color : '#38bdf8'} aria-label={t.canvasCustomColor} onChange={(event) => updateCanvasSetting('color', event.target.value)} /></label>
+              </div>
+              <label className="canvas-setting-block canvas-motion-setting">
+                <span className="canvas-setting-heading"><span>{t.canvasMovement}</span></span>
+                <select className="canvas-motion-select" value={canvasSettings.movement} aria-label={t.canvasMovement} onChange={(event) => updateCanvasSetting('movement', event.target.value)}>
+                  <option value="drift">{t.canvasMovementDrift}</option><option value="pulse">{t.canvasMovementPulse}</option><option value="still">{t.canvasMovementStill}</option>
+                </select>
+              </label>
+              <div className="canvas-settings-actions"><button type="button" onClick={resetCanvasSettings}><RotateCcw size={14} aria-hidden="true" />{t.canvasReset}</button></div>
+            </section>}
+          </div>
         </div>
       </header>
       {mobile && <button className="menu-scrim" type="button" aria-label={t.closeMenu} onClick={() => setMobile(false)} />}

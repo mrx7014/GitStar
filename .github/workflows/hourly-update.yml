@@ -1,9 +1,9 @@
-name: Hourly site update
+name: GitStar automatic site update
 
 on:
   schedule:
-    # GitHub Actions evaluates scheduled workflows in UTC; run at the top of each hour.
-    - cron: '0 * * * *'
+    # GitHub Actions evaluates scheduled workflows in UTC; check for updates every five minutes.
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -82,7 +82,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No data changes to commit.'
           else
-            git commit -m "chore(data): hourly stars update"
+            git commit -m "chore(data): scheduled stars update"
             git pull --rebase origin "${GITHUB_REF_NAME}"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

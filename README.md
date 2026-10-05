@@ -77,7 +77,7 @@ If step 3 is missing, the workflow stops at its first step with a message tellin
 | `pinned_repos` | No | Repos shown first, e.g. `owner/repo, owner/repo2`. |
 | `featured_repos` | No | Repos with a *Featured* badge. |
 | `manual_categories` | No | Force a category: `owner/repo=security, owner/x=mobile`. |
-| `stale_after_hours` | No | Hours before the site warns that data is old. With hourly sync, `3`–`6` hours is a sensible threshold; use `720` only for intentionally infrequent builds. |
+| `stale_after_hours` | No | Hours before the site warns that data is old. With a five-minute scheduled sync, `3`–`6` hours is a conservative threshold; use `720` only for intentionally infrequent builds. |
 | `save_config` | No (on) | Commit the values you typed into `src/config.js`, so the next run remembers them. |
 | `create_release` | No (on) | Publish a GitHub Release with the live link. |
 
@@ -91,7 +91,7 @@ When the run turns green, the link is in three places: the **Release** notes, th
 https://<your-username>.github.io/<repo-name>/
 ```
 
-The scheduled updater refreshes repository data at minute **00** of each hour in **UTC** (GitHub may queue a scheduled run slightly after its nominal start). You can still run **Build** manually at any time.
+The scheduled updater checks for repository changes every **5 minutes** in **UTC** (GitHub may queue a scheduled run slightly after its nominal start). You can still run **Build** manually at any time.
 
 ## The config file
 

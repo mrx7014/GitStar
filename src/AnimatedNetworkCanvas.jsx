@@ -1,12 +1,22 @@
 import { useEffect, useRef } from 'react'
 
-export default function AnimatedNetworkCanvas({ active, theme, refreshing = false }) {
+const rgbFor = (color, theme) => {
+  if (/^#[0-9a-f]{6}$/i.test(color || '')) return [1, 3, 5].map((index) => Number.parseInt(color.slice(index, index + 2), 16)).join(',')
+  return theme === 'light' ? '56,72,91' : '218,228,239'
+}
+
+export default function AnimatedNetworkCanvas({ active, theme, refreshing = false, settings }) {
   const canvasRef = useRef(null)
   const refreshingRef = useRef(refreshing)
+  const settingsRef = useRef(settings)
+  const density = settings?.density ?? 1
 
   useEffect(() => {
     refreshingRef.current = refreshing
   }, [refreshing])
+  useEffect(() => {
+    settingsRef.current = settings
+  }, [settings])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -29,7 +39,6 @@ export default function AnimatedNetworkCanvas({ active, theme, refreshing = fals
     let speedFactor = 1
     let flashLevel = 0
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const strokeRgb = theme === 'light' ? '56,72,91' : '218,228,239'
 
     const resize = () => {
       width = window.innerWidth
@@ -38,7 +47,7 @@ export default function AnimatedNetworkCanvas({ active, theme, refreshing = fals
       canvas.width = Math.round(width * pixelRatio)
       canvas.height = Math.round(height * pixelRatio)
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
-      const count = Math.max(18, Math.min(96, Math.floor((width * height) / 26000)))
+      const count = Math.max(18, Math.min(150, Math.floor((width * height) / 26000 * (settingsRef.current?.density ?? 1))))
       points = Array.from({ length: count }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -49,17 +58,23 @@ export default function AnimatedNetworkCanvas({ active, theme, refreshing = fals
       if (motionPreference.matches) draw(0, false)
     }
 
-    const draw = (time, movePoints = true) => {
+    const draw = (time, allowMotion = true) => {
       const elapsed = lastDrawTime ? Math.min((time - lastDrawTime) / 1000, 0.05) : 0
       lastDrawTime = time || lastDrawTime
+      const currentSettings = settingsRef.current || {}
+      const isRefreshing = refreshingRef.current
+      const size = currentSettings.size ?? 1
+      const speed = currentSettings.speed ?? 1
+      const movement = currentSettings.movement ?? 'drift'
       const easing = Math.min(1, elapsed * 2.5)
-      speedFactor += ((refreshingRef.current ? 5.5 : 1) - speedFactor) * easing
-      flashLevel += ((refreshingRef.current ? 1 : 0) - flashLevel) * Math.min(1, elapsed * 2.4)
+      speedFactor += ((isRefreshing ? 5.5 * speed : speed) - speedFactor) * easing
+      flashLevel += ((isRefreshing ? 1 : 0) - flashLevel) * Math.min(1, elapsed * 2.4)
       context.clearRect(0, 0, width, height)
-      const maxDistance = Math.max(105, Math.min(165, width * 0.18))
-      const pulseRate = 1.2 + flashLevel * 11.4
+      const maxDistance = Math.max(85, Math.min(165, width * 0.18)) * size
+      const pulseRate = movement === 'still' && !isRefreshing ? 0 : 1.2 + flashLevel * 11.4
+      const strokeRgb = rgbFor(currentSettings.color, theme)
 
-      if (movePoints && elapsed > 0) {
+      if (allowMotion && movement === 'drift' && elapsed > 0) {
         for (const point of points) {
           point.x += point.vx * elapsed * speedFactor
           point.y += point.vy * elapsed * speedFactor
@@ -85,12 +100,12 @@ export default function AnimatedNetworkCanvas({ active, theme, refreshing = fals
           context.moveTo(point.x, point.y)
           context.lineTo(other.x, other.y)
           context.strokeStyle = `rgba(${strokeRgb},${opacity.toFixed(3)})`
-          context.lineWidth = 0.8 + flashLevel * flicker * 1.1
+          context.lineWidth = (0.8 + flashLevel * flicker * 1.1) * size
           context.stroke()
         }
         const pulse = (Math.sin(time * 0.001 * pulseRate + point.phase) + 1) / 2
         context.beginPath()
-        context.arc(point.x, point.y, 1.1 + pulse * (0.55 + flashLevel * 1.9), 0, Math.PI * 2)
+        context.arc(point.x, point.y, (1.1 + pulse * (0.55 + flashLevel * 1.9)) * size, 0, Math.PI * 2)
         context.fillStyle = `rgba(${strokeRgb},${(0.3 + pulse * 0.25 + flashLevel * (0.15 + pulse * 0.27)).toFixed(3)})`
         context.fill()
       }
@@ -140,7 +155,7 @@ export default function AnimatedNetworkCanvas({ active, theme, refreshing = fals
       document.removeEventListener('visibilitychange', onVisibilityChange)
       motionPreference.removeEventListener?.('change', onMotionPreferenceChange)
     }
-  }, [active, theme])
+  }, [active, density, theme])
 
   return <canvas ref={canvasRef} className={`network-canvas${active ? ' is-on' : ''}${active && refreshing ? ' is-refreshing' : ''}`} aria-hidden="true" />
 }

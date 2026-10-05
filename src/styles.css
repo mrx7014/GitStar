@@ -327,3 +327,55 @@ footer { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 20px 0 32
 @media (prefers-reduced-motion: reduce) {
   .floating-menu { animation: none; }
 }
+
+
+/* User-adjustable animated canvas settings */
+.canvas-customizer { position: relative; z-index: 30; display: flex; flex: 0 0 auto; }
+.network-toggle.customize-trigger { gap: 7px; }
+.network-toggle.customize-trigger[aria-expanded="true"] { color: var(--white); background: var(--panel-strong); }
+.canvas-status-dot { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: #686868; transition: background .2s ease, box-shadow .2s ease; }
+.canvas-status-dot.is-active { background: #76d6a0; box-shadow: 0 0 0 3px rgba(118,214,160,.13); }
+.customize-chevron { transition: transform .18s ease; }
+.customize-trigger[aria-expanded="true"] .customize-chevron { transform: rotate(180deg); }
+.canvas-settings { position: absolute; top: calc(100% + 9px); inset-inline-end: 0; z-index: 50; width: min(360px, calc(100vw - 24px)); max-height: min(76vh, 680px); overflow: auto; padding: 16px; border: 1px solid var(--line); background: var(--panel); color: var(--white); box-shadow: 0 18px 55px rgba(0,0,0,.32); animation: canvas-settings-in .16s ease-out both; }
+@keyframes canvas-settings-in { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+.canvas-settings-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding-bottom: 13px; border-bottom: 1px solid var(--line); }
+.canvas-settings-kicker { margin: 0 0 4px; color: var(--muted); font: 500 10px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.canvas-settings-heading h2 { margin: 0; font-size: 17px; line-height: 1.3; }
+.canvas-settings-heading small { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; }
+.canvas-settings-close { display: grid; width: 30px; height: 30px; flex: 0 0 30px; place-items: center; border: 1px solid var(--line); background: transparent; color: var(--muted); }
+.canvas-settings-close:hover { color: var(--white); background: var(--panel-strong); }
+.canvas-enable { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 8px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--white); text-align: start; font-size: 13px; font-weight: 600; }
+.canvas-enable .toggle-track { flex: 0 0 30px; direction: ltr; }
+.canvas-enable[aria-checked="true"] .toggle-track { justify-content: flex-end; border-color: #767676; background: #555; }
+.canvas-enable[aria-checked="true"] .toggle-track i { background: #fff; }
+.canvas-setting { display: block; padding: 12px 0 10px; border-bottom: 1px solid var(--line); }
+.canvas-setting-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; color: var(--soft); font-size: 12px; }
+.canvas-setting-heading > span { display: inline-flex; align-items: center; gap: 7px; }
+.canvas-setting-heading output { color: var(--muted); font: 11px var(--font-mono); }
+.canvas-setting input[type="range"] { display: block; width: 100%; height: 18px; margin: 0; accent-color: var(--white); cursor: pointer; }
+.canvas-setting-block { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.canvas-color-options { display: flex; flex-wrap: wrap; gap: 9px; padding: 2px 0 10px; }
+.canvas-color-option { display: grid; width: 31px; height: 31px; place-items: center; padding: 3px; border: 1px solid transparent; border-radius: 50%; background: transparent; }
+.canvas-color-option span { display: block; width: 21px; height: 21px; border: 1px solid rgba(127,127,127,.25); border-radius: 50%; }
+.canvas-color-option[aria-pressed="true"] { border-color: var(--white); box-shadow: 0 0 0 2px var(--panel), 0 0 0 3px var(--muted); }
+.canvas-color-option:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.canvas-custom-color { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 35px; color: var(--muted); font-size: 11px; }
+.canvas-custom-color input[type="color"] { width: 42px; height: 29px; padding: 2px; border: 1px solid var(--line); background: var(--input-bg); cursor: pointer; }
+.canvas-motion-setting { border-bottom: 0; padding-bottom: 8px; }
+.canvas-motion-select { width: 100%; min-height: 36px; padding: 0 9px; border: 1px solid var(--line); border-radius: 0; background: var(--input-bg); color: var(--white); font-size: 12px; }
+.canvas-settings-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding-top: 11px; border-top: 1px solid var(--line); }
+.canvas-settings-actions > span { color: var(--muted); font-size: 10px; }
+.canvas-settings-actions button { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 5px 8px; border: 1px solid var(--line); background: transparent; color: var(--soft); white-space: nowrap; font-size: 11px; }
+.canvas-settings-actions button:hover { border-color: var(--control-border); color: var(--white); background: var(--panel-strong); }
+:root[data-theme="light"] .canvas-status-dot.is-active { background: #23834e; box-shadow: 0 0 0 3px rgba(35,131,78,.13); }
+:root[data-theme="light"] .canvas-enable[aria-checked="true"] .toggle-track { border-color: #8092a4; background: #8295a8; }
+:root[data-theme="light"] .canvas-settings { box-shadow: 0 18px 55px rgba(24,32,42,.18); }
+:root[data-theme="light"] .canvas-color-option[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--panel), 0 0 0 3px #758395; }
+@media (max-width: 850px) {
+  .canvas-settings { width: min(350px, calc(100vw - 24px)); }
+}
+@media (max-width: 520px) {
+  .canvas-settings { top: calc(100% + 7px); max-height: calc(100vh - 104px); padding: 14px; }
+  .network-toggle.customize-trigger { gap: 5px; }
+}
