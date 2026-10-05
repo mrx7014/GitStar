@@ -15,7 +15,7 @@ jobs:
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: node scripts/sync-stars.mjs
-        env: { GITHUB_TOKEN: ${{ github.token }}, GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME || '' }} }
+        env: { GITHUB_TOKEN: ${{ github.token }}, GITSTAR_USERNAME: ${{ vars.GITSTAR_USERNAME || '' }} }
       - name: Warn on status
         run: |
           status=$(node -e "console.log(require('./public/data/status.json').status)")

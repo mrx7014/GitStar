@@ -4,7 +4,7 @@ import { siteConfig } from '../src/config.js'
 import { classifyRepo } from '../src/category-engine.js'
 const dataDir = new URL('../public/data/', import.meta.url)
 export const paths = { repos: new URL('./repos.json', dataDir), meta: new URL('./meta.json', dataDir), status: new URL('./status.json', dataDir), history: new URL('./history.json', dataDir) }
-const username = process.env.GITHUB_USERNAME || siteConfig.githubUsername; const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || ''
+const username = process.env.GITSTAR_USERNAME || process.env.GITHUB_USERNAME || siteConfig.githubUsername; const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || ''
 const headers = { Accept: 'application/vnd.github.star+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'GitStar-Sync/2.0' }; if (token) headers.Authorization = `Bearer ${token}`
 export function classifyResponse(response) { const remaining = response.headers.get('x-ratelimit-remaining'); return response.status === 429 || (response.status === 403 && (remaining === '0' || response.headers.has('retry-after'))) ? 'rate_limited' : 'error' }
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
