@@ -1,10 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
-import { BarChart3, BookOpen, CalendarDays, ChevronDown, ExternalLink, Filter, GitBranch, GitFork, Globe, Languages, Menu, Moon, Network, RefreshCw, Search, Star, Sun, Tag, Users, X } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { BookOpen, ChevronDown, ExternalLink, GitBranch, GitFork, Globe, Languages, Menu, Moon, Network, RefreshCw, Search, SlidersHorizontal, Star, Sun, Users, X } from 'lucide-react'
 import { siteConfig } from './config'
 import { categoryMeta, categoryOrder } from './category-engine'
 import { translations } from './i18n'
 import AnimatedNetworkCanvas from './AnimatedNetworkCanvas'
-import { summarizeMonthlyLanguages } from './analytics'
 
 const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`
 const root = `${basePath}data/`
@@ -31,6 +30,7 @@ const relative = (value, locale) => {
   const days = Math.max(0, Math.floor((Date.now() - new Date(value)) / 86400000))
   return new Intl.RelativeTimeFormat(locale, { numeric: 'auto' }).format(-days, 'day')
 }
+const categoryAnchor = (value) => `category-${String(value).replace(/[^a-z0-9_-]/gi, '-')}`
 
 function Select({ label, value, onChange, options, icon: Icon }) {
   return <label className="select">
@@ -43,7 +43,7 @@ function Select({ label, value, onChange, options, icon: Icon }) {
   </label>
 }
 
-function RepoCard({ repo, contributors, t, locale, onTopic }) {
+function RepoCard({ repo, contributors, t, locale }) {
   const category = categoryMeta[repo.category]
   const [imageFailed, setImageFailed] = useState(false)
   const generatedPreviewUrl = `https://opengraph.githubassets.com/${repo.id || '1'}/${repo.full_name}`
@@ -72,7 +72,7 @@ function RepoCard({ repo, contributors, t, locale, onTopic }) {
       </div>
       <p>{repo.description || '—'}</p>
       <div className="chips">
-        {(repo.topics || []).slice(0, 4).map((topic) => <button key={topic} onClick={() => onTopic(topic)}>#{topic}</button>)}
+        {(repo.topics || []).slice(0, 4).map((topic) => <span className="topic-chip" key={topic}>#{topic}</span>)}
         {repo.language && <span className="language"><i aria-hidden="true" />{repo.language}</span>}
       </div>
     </div>
@@ -93,6 +93,8 @@ export default function App() {
   const [locale, setLocale] = useState(() => readStorage('gitstar-language') || siteConfig.defaultLanguage)
   const [theme, setTheme] = useState(initialTheme)
   const [networkEnabled, setNetworkEnabled] = useState(() => readStorage('gitstar-network-background') !== 'off')
+  const [canvasBurst, setCanvasBurst] = useState(false)
+  const canvasBurstTimer = useRef(0)
   const [guideOpen, setGuideOpen] = useState(() => readStorage('gitstar-guide-hidden') !== 'true')
   const [dontShowAgain, setDontShowAgain] = useState(false)
   const [data, setData] = useState(() => initialSnapshot?.data || { repositories: [] })
@@ -100,12 +102,7 @@ export default function App() {
   const [meta, setMeta] = useState(() => initialSnapshot?.meta || {})
   const [status, setStatus] = useState(() => initialSnapshot?.status || {})
   const [query, setQuery] = useState(() => new URLSearchParams(location.search).get('q') || '')
-  const [category, setCategory] = useState(() => new URLSearchParams(location.search).get('cat') || 'all')
-  const [language, setLanguage] = useState(() => new URLSearchParams(location.search).get('lang') || 'all')
-  const [dateRange, setDateRange] = useState(() => new URLSearchParams(location.search).get('period') || 'all')
-  const [topic, setTopic] = useState(() => new URLSearchParams(location.search).get('topic') || '')
   const [sort, setSort] = useState(() => new URLSearchParams(location.search).get('sort') || readStorage('gitstar-sort') || 'newest')
-  const [archived, setArchived] = useState(false)
   const [visibleCount, setVisibleCount] = useState(pageSize)
   const [loading, setLoading] = useState(() => !initialSnapshot?.data?.repositories?.length)
   const [refreshing, setRefreshing] = useState(false)
@@ -115,10 +112,7 @@ export default function App() {
   const [profileImageFailed, setProfileImageFailed] = useState(false)
   const t = translations[locale] || translations.en
   const repos = data.repositories || []
-  const monthSummary = useMemo(() => summarizeMonthlyLanguages(repos), [repos])
   const formatLocale = locale === 'ar' ? 'ar-EG' : 'en-US'
-  const monthLabel = new Intl.DateTimeFormat(formatLocale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(monthSummary.monthStart))
-  const monthlyMax = monthSummary.languages[0]?.count || 0
 
   const dismissGuide = () => {
     if (dontShowAgain) writeStorage('gitstar-guide-hidden', 'true')
@@ -133,7 +127,12 @@ export default function App() {
 
   const load = async ({ refresh = false } = {}) => {
     setError('')
-    setRefreshing(true)
+    const refreshStartedAt = refresh ? Date.now() : 0
+    if (refresh) {
+      setRefreshing(true)
+      setCanvasBurst(true)
+      window.clearTimeout(canvasBurstTimer.current)
+    }
     if (!repos.length) setLoading(true)
     try {
       const files = ['repos.json', 'meta.json', 'status.json', 'contributors.json']
@@ -156,11 +155,16 @@ export default function App() {
       if (!repos.length) setError('load')
     } finally {
       setLoading(false)
-      setRefreshing(false)
+      if (refresh) {
+        setRefreshing(false)
+        const remaining = Math.max(0, 1250 - (Date.now() - refreshStartedAt))
+        canvasBurstTimer.current = window.setTimeout(() => setCanvasBurst(false), remaining)
+      }
     }
   }
 
   useEffect(() => { load() }, [])
+  useEffect(() => () => window.clearTimeout(canvasBurstTimer.current), [])
   useEffect(() => {
     document.documentElement.dataset.theme = theme
     document.documentElement.style.colorScheme = theme
@@ -181,14 +185,10 @@ export default function App() {
   useEffect(() => {
     const params = new URLSearchParams()
     if (query) params.set('q', query)
-    if (category !== 'all') params.set('cat', category)
-    if (language !== 'all') params.set('lang', language)
-    if (dateRange !== 'all') params.set('period', dateRange)
-    if (topic) params.set('topic', topic)
     if (sort !== 'newest') params.set('sort', sort)
-    window.history.replaceState(null, '', `${location.pathname}${params.toString() ? `?${params}` : ''}`)
-  }, [query, category, language, dateRange, topic, sort])
-  useEffect(() => { setVisibleCount(pageSize) }, [query, category, language, dateRange, topic, archived, sort])
+    window.history.replaceState(null, '', `${location.pathname}${params.toString() ? `?${params}` : ''}${location.hash}`)
+  }, [query, sort])
+  useEffect(() => { setVisibleCount(pageSize) }, [query, sort])
   useEffect(() => {
     const onKeyDown = (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') { event.preventDefault(); document.querySelector('#global-search')?.focus() }
@@ -207,22 +207,13 @@ export default function App() {
     if (guideOpen) document.getElementById('guide-start')?.focus()
   }, [guideOpen])
 
-  const languages = useMemo(() => ['all', ...new Set(repos.map((repo) => repo.language).filter(Boolean)).values()].sort((a, b) => a === 'all' ? -1 : b === 'all' ? 1 : a.localeCompare(b)), [repos])
   const normalizedQuery = query.trim().toLowerCase()
   const filtered = useMemo(() => {
-    const days = dateRange === '7d' ? 7 : dateRange === '30d' ? 30 : dateRange === '90d' ? 90 : dateRange === 'year' ? 365 : 0
-    const cutoff = days ? Date.now() - days * 86400000 : null
     return repos.filter((repo) => {
       const haystack = [repo.full_name, repo.description, repo.language, repo.category, ...(repo.topics || [])].join(' ').toLowerCase()
-      const starredAt = repo.starred_at ? Date.parse(repo.starred_at) : 0
-      return (!normalizedQuery || haystack.includes(normalizedQuery)) &&
-        (category === 'all' || repo.category === category) &&
-        (language === 'all' || repo.language === language) &&
-        (!cutoff || starredAt >= cutoff) &&
-        (!topic || repo.topics?.includes(topic)) &&
-        (archived || !repo.archived)
+      return !normalizedQuery || haystack.includes(normalizedQuery)
     }).sort((a, b) => sort === 'stars' ? b.stars - a.stars : sort === 'alpha' ? a.name.localeCompare(b.name) : sort === 'pushed' ? new Date(b.pushed_at || 0) - new Date(a.pushed_at || 0) : new Date(b.starred_at || 0) - new Date(a.starred_at || 0))
-  }, [repos, normalizedQuery, category, language, dateRange, topic, archived, sort])
+  }, [repos, normalizedQuery, sort])
   const displayed = useMemo(() => filtered.slice(0, visibleCount), [filtered, visibleCount])
   const categoryCounts = useMemo(() => repos.reduce((counts, repo) => { counts[repo.category] = (counts[repo.category] || 0) + 1; return counts }, {}), [repos])
   const filteredCategoryCounts = useMemo(() => filtered.reduce((counts, repo) => { counts[repo.category] = (counts[repo.category] || 0) + 1; return counts }, {}), [filtered])
@@ -232,20 +223,25 @@ export default function App() {
     for (const repo of displayed) (groups[repo.category] ??= []).push(repo)
     return Object.entries(groups).sort((a, b) => categoryOrder.indexOf(a[0]) - categoryOrder.indexOf(b[0]))
   }, [displayed])
-  const clear = () => { setQuery(''); setCategory('all'); setLanguage('all'); setDateRange('all'); setTopic(''); setArchived(false) }
   const totalStars = useMemo(() => repos.reduce((total, repo) => total + (repo.stars || 0), 0), [repos])
   const isStale = meta.syncedAt && Date.now() - new Date(meta.syncedAt) > siteConfig.staleAfterHours * 3600000
-  const hasFilters = Boolean(query || category !== 'all' || language !== 'all' || dateRange !== 'all' || topic || archived)
-  const dateRangeOptions = [
-    { value: 'all', label: t.anyTime },
-    { value: '7d', label: t.last7Days },
-    { value: '30d', label: t.last30Days },
-    { value: '90d', label: t.last90Days },
-    { value: 'year', label: t.lastYear },
-  ]
+  const jumpToCategory = (id) => {
+    if (id === 'all') {
+      setQuery('')
+      setVisibleCount(pageSize)
+      setMobile(false)
+      window.setTimeout(() => document.getElementById('repository-list')?.scrollIntoView({ block: 'start' }), 80)
+      return
+    }
+    const index = filtered.findIndex((repo) => repo.category === id)
+    if (index < 0) return
+    setVisibleCount(Math.min(filtered.length, Math.max(visibleCount, Math.ceil((index + 1) / pageSize) * pageSize)))
+    setMobile(false)
+    window.setTimeout(() => document.getElementById(categoryAnchor(id))?.scrollIntoView({ block: 'start' }), 80)
+  }
 
   return <div className="app">
-    <AnimatedNetworkCanvas active={networkEnabled} theme={theme} />
+    <AnimatedNetworkCanvas active={networkEnabled} theme={theme} refreshing={canvasBurst} />
     <div className="app-content">
       <a className="skip" href="#main">Skip to content</a>
       <header className={scrolled ? 'has-floating-menu' : ''}>
@@ -259,7 +255,7 @@ export default function App() {
             <span className="theme-label">{theme === 'dark' ? t.themeLight : t.themeDark}</span>
           </button>
           <button className="network-toggle" type="button" aria-pressed={networkEnabled} aria-label={networkEnabled ? t.networkOff : t.networkOn} title={networkEnabled ? t.networkOff : t.networkOn} onClick={toggleNetworkBackground}>
-            <Network size={15} aria-hidden="true" /><span className="network-toggle-label">{t.networkLines}</span><span className="toggle-track" aria-hidden="true"><i /></span>
+            <SlidersHorizontal size={16} aria-hidden="true" /><span className="network-toggle-label">{t.customizeBackground}</span><span className="toggle-track" aria-hidden="true"><i /></span>
           </button>
         </div>
       </header>
@@ -269,8 +265,8 @@ export default function App() {
         <aside className={mobile ? 'drawer open' : 'drawer'} id="site-drawer">
           <div className="profile"><div className="profile-avatar">{!profileImageFailed ? <img src={`https://github.com/${encodeURIComponent(siteConfig.githubUsername)}.png?size=80`} alt="" loading="lazy" decoding="async" onError={() => setProfileImageFailed(true)} /> : <span>{siteConfig.githubUsername[0].toUpperCase()}</span>}</div><div><b>@{siteConfig.githubUsername}</b><small>{t.tagline}</small></div></div>
           <h3>{t.browse}</h3>
-          <button className={category === 'all' ? 'selected' : ''} onClick={() => { setCategory('all'); setMobile(false) }}>{t.all}<em>{repos.length}</em></button>
-          {categories.filter((item) => item.value !== 'all').map((item) => <button key={item.value} className={category === item.value ? 'selected' : ''} onClick={() => { setCategory(item.value); setMobile(false) }}>{item.label}<em>{categoryCounts[item.value] || 0}</em></button>)}
+          <button onClick={() => jumpToCategory('all')}>{t.all}<em>{repos.length.toLocaleString(formatLocale)}</em></button>
+          {categories.filter((item) => item.value !== 'all').map((item) => <button key={item.value} onClick={() => jumpToCategory(item.value)}>{item.label}<em>{(categoryCounts[item.value] || 0).toLocaleString(formatLocale)}</em></button>)}
           <div className="sidebar-foot"><a href={siteConfig.repoUrl} target="_blank" rel="noreferrer noopener">{t.viewSource}<ExternalLink size={13} /></a></div>
         </aside>
 
@@ -278,33 +274,13 @@ export default function App() {
           <section className="hero"><div><p className="eyebrow">{siteConfig.siteName} / {t.browse}</p><h1>{t.hero}</h1><p>{t.tagline}</p></div><div className="hero-actions"><span className={`freshness ${status.status === 'error' ? 'failed' : !isStale ? 'fresh' : ''}`}><span>●</span>{status.status === 'error' ? t.syncFailed : isStale ? t.stale : t.synced}</span><button className="refresh" onClick={() => load({ refresh: true })} disabled={refreshing}><RefreshCw className={refreshing ? 'spin' : ''} size={15} />{refreshing ? t.loading : t.refresh}</button></div></section>
           {(status.status === 'rate_limited' || status.status === 'error' || isStale) && <div className={`notice ${status.status === 'error' ? 'danger' : 'warning'}`} role="status">{status.status === 'rate_limited' ? t.rateLimited : status.status === 'error' ? `${t.syncError} ${status.message || ''}` : `${t.stale} ${formatDate(meta.syncedAt, locale === 'ar' ? 'ar-EG' : 'en-US')}.`}</div>}
 
-          <div className="summary"><span><strong>{repos.length.toLocaleString(formatLocale)}</strong> {t.repos}</span><span><strong>{totalStars.toLocaleString(formatLocale)}</strong> {t.stars}</span><span><strong>{filtered.length.toLocaleString(formatLocale)}</strong> {hasFilters ? t.matching : t.repos}</span></div>
-          <section className="analytics-panel" aria-labelledby="analytics-title">
-            <div className="analytics-heading">
-              <div className="analytics-title-wrap">
-                <p className="eyebrow"><BarChart3 size={14} aria-hidden="true" />{t.analytics}</p>
-                <h2 id="analytics-title">{t.topLanguages}</h2>
-                <p className="analytics-basis">{t.analyticsBasis}</p>
-              </div>
-              <div className="analytics-period"><strong>{monthSummary.totalRepos.toLocaleString(formatLocale)}</strong><span>{t.repositoriesAddedThisMonth}</span><small>{monthLabel} · {t.utc}</small></div>
-            </div>
-            {monthSummary.languages.length ? <ol className="language-chart">
-              {monthSummary.languages.map((entry, index) => <li key={entry.language}>
-                <div className="analytics-row"><span className="language-rank">{String(index + 1).padStart(2, '0')}</span><strong>{entry.language}</strong><span className="analytics-count">{entry.count.toLocaleString(formatLocale)} {t.analyticsRepos}</span></div>
-                <div className="analytics-track" role="progressbar" aria-label={`${entry.language}: ${entry.count} ${t.analyticsRepos}`} aria-valuemin={0} aria-valuemax={monthlyMax} aria-valuenow={entry.count}><span style={{ width: `${(entry.count / monthlyMax) * 100}%` }} /></div>
-              </li>)}
-            </ol> : <p className="analytics-empty">{t.analyticsEmpty}</p>}
-          </section>
+          <div className="summary"><span><strong>{repos.length.toLocaleString(formatLocale)}</strong> {t.repos}</span><span><strong>{totalStars.toLocaleString(formatLocale)}</strong> {t.stars}</span><span><strong>{filtered.length.toLocaleString(formatLocale)}</strong> {query ? t.matching : t.repos}</span></div>
           <div className="toolbar">
-            <Select label={t.allCategories} icon={Filter} value={category} onChange={setCategory} options={categories} />
-            <Select label={t.allLanguages} icon={Tag} value={language} onChange={setLanguage} options={languages} />
-            <Select label={t.timeRange} icon={CalendarDays} value={dateRange} onChange={setDateRange} options={dateRangeOptions} />
             <Select label={t.newest} icon={Star} value={sort} onChange={(value) => { setSort(value); writeStorage('gitstar-sort', value) }} options={[{ value: 'newest', label: t.newest }, { value: 'pushed', label: t.pushed }, { value: 'stars', label: t.stars }, { value: 'alpha', label: t.alpha }]} />
-            <label className="check"><input type="checkbox" checked={archived} onChange={(event) => setArchived(event.target.checked)} />{t.archived}</label>
-            {hasFilters && <button className="clear" onClick={clear}><X size={15} />{t.clear}</button>}
+            {query && <button className="clear" onClick={() => setQuery('')}><X size={15} />{t.clearSearch}</button>}
           </div>
-          {loading ? <div className="skeleton">{[1, 2, 3].map((item) => <div key={item} />)}</div> : error ? <div className="empty"><p>Unable to load data</p><button onClick={() => load({ refresh: true })}>{t.refresh}</button></div> : filtered.length === 0 ? <div className="empty"><p>{t.noResults}</p><button onClick={clear}>{t.clear}</button></div> : <>
-            <div className="groups">{grouped.map(([id, items]) => <section key={id}><div className="section-title"><h2>{id === 'other' ? t.categoryOther : t[categoryMeta[id]?.i18nKey]}</h2><span>{(filteredCategoryCounts[id] || 0).toLocaleString(locale === 'ar' ? 'ar-EG' : 'en-US')}</span></div>{items.map((repo) => <RepoCard key={repo.full_name} repo={repo} contributors={contributors} t={t} locale={locale === 'ar' ? 'ar-EG' : 'en-US'} onTopic={setTopic} />)}</section>)}</div>
+          {loading ? <div className="skeleton">{[1, 2, 3].map((item) => <div key={item} />)}</div> : error ? <div className="empty"><p>Unable to load data</p><button onClick={() => load({ refresh: true })}>{t.refresh}</button></div> : filtered.length === 0 ? <div className="empty"><p>{t.noResults}</p><button onClick={() => setQuery('')}>{t.clearSearch}</button></div> : <>
+            <div className="groups" id="repository-list">{grouped.map(([id, items]) => <section id={categoryAnchor(id)} key={id}><div className="section-title"><h2>{id === 'other' ? t.categoryOther : t[categoryMeta[id]?.i18nKey]}</h2><span>{(filteredCategoryCounts[id] || 0).toLocaleString(formatLocale)}</span></div>{items.map((repo) => <RepoCard key={repo.full_name} repo={repo} contributors={contributors} t={t} locale={formatLocale} />)}</section>)}</div>
             {filtered.length > visibleCount && <button className="load-more" type="button" onClick={() => setVisibleCount((count) => Math.min(count + pageSize, filtered.length))}>{t.loadMore}<span>+{Math.min(pageSize, filtered.length - visibleCount).toLocaleString(locale === 'ar' ? 'ar-EG' : 'en-US')}</span></button>}
           </>}
         </main>
@@ -320,7 +296,7 @@ export default function App() {
         <p className="guide-intro" id="guide-intro">{t.guideIntro}</p>
         <ol className="guide-steps">
           <li><span className="guide-icon"><Search size={17} /></span><div><strong>{t.guideSearchTitle}</strong><p>{t.guideSearchBody}</p></div></li>
-          <li><span className="guide-icon"><Filter size={17} /></span><div><strong>{t.guideCategoriesTitle}</strong><p>{t.guideCategoriesBody}</p></div></li>
+          <li><span className="guide-icon"><Menu size={17} /></span><div><strong>{t.guideCategoriesTitle}</strong><p>{t.guideCategoriesBody}</p></div></li>
           <li><span className="guide-icon"><GitBranch size={17} /></span><div><strong>{t.guideCardsTitle}</strong><p>{t.guideCardsBody}</p></div></li>
         </ol>
         <p className="guide-tip"><Network size={15} aria-hidden="true" />{t.guideNetworkTip}</p>
