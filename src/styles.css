@@ -19,6 +19,8 @@
   --option-bg: #181818;
   --repo-preview-bg: #1b1b1b;
   --repo-hover: rgba(255,255,255,.025);
+  --repo-card-bg: rgba(23,23,23,.82);
+  --repo-card-hover-bg: rgba(32,32,32,.88);
   --overlay-bg: rgba(0,0,0,.76);
   --dialog-bg: #151515;
   --dialog-step-bg: #191919;
@@ -114,8 +116,8 @@ main { min-width: 0; }
 .repo-preview img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .repo-preview-fallback { display: flex; height: 100%; align-items: center; justify-content: center; gap: 9px; color: var(--muted); background: var(--repo-preview-bg); }
 .repo-preview-fallback strong { color: var(--muted); font-size: 12px; font-weight: 500; }
-.repo-card { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 13px 16px; align-items: start; margin: 12px 0; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); transition: background .18s ease, border-color .18s ease; }
-.repo-card:hover { background: var(--repo-hover); border-color: var(--control-border); }
+.repo-card { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 13px 16px; align-items: start; margin: 12px 0; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--repo-card-bg); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); transition: background .18s ease, border-color .18s ease; }
+.repo-card:hover { background: var(--repo-card-hover-bg); border-color: var(--control-border); }
 .repo-avatar { display: grid; flex: 0 0 30px; place-items: center; width: 30px; height: 30px; overflow: hidden; border: 1px solid var(--line); border-radius: 50%; background: var(--avatar-bg); color: var(--white); font-size: 11px; }
 .repo-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .repo-avatar span { display: grid; width: 100%; height: 100%; place-items: center; }
@@ -252,6 +254,8 @@ footer { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 20px 0 32
   --option-bg: #ffffff;
   --repo-preview-bg: #eef1f5;
   --repo-hover: rgba(24,34,46,.035);
+  --repo-card-bg: rgba(255,255,255,.82);
+  --repo-card-hover-bg: rgba(255,255,255,.92);
   --overlay-bg: rgba(24,32,42,.48);
   --dialog-bg: #ffffff;
   --dialog-step-bg: #f8f9fb;
@@ -283,7 +287,7 @@ footer { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 20px 0 32
 :root[data-theme="light"] .repo-preview-fallback strong { color: #17212b; }
 :root[data-theme="light"] .repo-preview-fallback small { color: #596676; }
 :root[data-theme="light"] .repo-preview-fallback em { color: #657384; }
-:root[data-theme="light"] .repo-card:hover { background: var(--repo-hover); }
+:root[data-theme="light"] .repo-card:hover { background: var(--repo-card-hover-bg); }
 :root[data-theme="light"] .badge { border-color: #bbc4ce; color: #596575; }
 :root[data-theme="light"] .repo-meta,
 :root[data-theme="light"] .topic-chip,
