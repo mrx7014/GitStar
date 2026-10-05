@@ -1,0 +1,206 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: GitHub username whose public stars should be shown
+        required: true
+        type: string
+      site_name:
+        description: Optional site name
+        required: false
+        type: string
+      default_language:
+        description: keep, en or ar
+        required: false
+        default: keep
+        type: choice
+        options: [keep, en, ar]
+      tagline:
+        description: Optional tagline
+        required: false
+        type: string
+      pinned_repos:
+        description: Comma-separated owner/repo values
+        required: false
+        type: string
+      featured_repos:
+        description: Comma-separated owner/repo values
+        required: false
+        type: string
+      manual_categories:
+        description: Comma-separated owner/repo=category values
+        required: false
+        type: string
+      stale_after_hours:
+        description: Freshness threshold in hours
+        required: false
+        default: '720'
+        type: string
+      save_config:
+        description: Commit the submitted settings into src/config.js
+        required: false
+        default: true
+        type: boolean
+      create_release:
+        description: Create a GitHub Release with the live site link
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  NODE_VERSION: 22
+
+concurrency:
+  group: gitstar-build
+  cancel-in-progress: false
+
+jobs:
+  sync-and-build:
+    name: Sync and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      site_url: ${{ steps.pages-url.outputs.site_url }}
+      repo_count: ${{ steps.summary.outputs.repo_count }}
+      sync_status: ${{ steps.summary.outputs.sync_status }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh api "repos/${GITHUB_REPOSITORY}/pages" >/dev/null 2>&1; then
+            echo 'GitHub Pages is not ready. Open Settings → Pages and set Source to GitHub Actions, then run Build again.' >&2
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply workflow inputs
+        env:
+          USERNAME: ${{ inputs.username }}
+          SITE_NAME: ${{ inputs.site_name }}
+          DEFAULT_LANGUAGE: ${{ inputs.default_language }}
+          TAGLINE: ${{ inputs.tagline }}
+          PINNED_REPOS: ${{ inputs.pinned_repos }}
+          FEATURED_REPOS: ${{ inputs.featured_repos }}
+          MANUAL_CATEGORIES: ${{ inputs.manual_categories }}
+          STALE_AFTER_HOURS: ${{ inputs.stale_after_hours }}
+          SAVE_CONFIG: ${{ inputs.save_config }}
+          REPO_URL: ${{ github.repository }}
+        run: node scripts/apply-inputs.mjs
+
+      - name: Sync starred repositories
+        run: node scripts/sync-stars.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITSTAR_USERNAME: ${{ inputs.username }}
+          GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
+
+      - name: Warn on sync status
+        run: |
+          status=$(node -e "console.log(JSON.parse(require('fs').readFileSync('public/data/status.json')).status)")
+          if [ "$status" != ok ]; then
+            echo '::warning::Sync not fully successful; the last good snapshot remains deployed.'
+          fi
+
+      - name: Test
+        run: npm test
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        id: pages
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      - name: Set summary outputs
+        id: summary
+        run: |
+          echo "repo_count=$(node -e "console.log(JSON.parse(require('fs').readFileSync('public/data/meta.json')).count)")" >> "$GITHUB_OUTPUT"
+          echo "sync_status=$(node -e "console.log(JSON.parse(require('fs').readFileSync('public/data/status.json')).status)")" >> "$GITHUB_OUTPUT"
+
+      - name: Commit data and optional config
+        if: inputs.save_config
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add public/data/ src/config.js
+          if git diff --cached --quiet; then
+            echo 'No data or config changes to commit.'
+          else
+            git commit -m "chore: build GitStar snapshot"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Commit data
+        if: ${{ !inputs.save_config }}
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add public/data/
+          if git diff --cached --quiet; then
+            echo 'No data changes to commit.'
+          else
+            git commit -m "chore: build GitStar snapshot"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Set Pages URL
+        id: pages-url
+        run: echo "site_url=${{ steps.pages.outputs.base_url }}${{ steps.pages.outputs.base_path }}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: sync-and-build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  release:
+    name: Publish release
+    needs: [sync-and-build, deploy]
+    if: inputs.create_release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SITE_URL: ${{ needs.sync-and-build.outputs.site_url }}
+          REPO_COUNT: ${{ needs.sync-and-build.outputs.repo_count }}
+          SYNC_STATUS: ${{ needs.sync-and-build.outputs.sync_status }}
+        run: |
+          tag="site-$(date -u +%Y.%m.%d)-run${GITHUB_RUN_NUMBER}"
+          gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "GitStar site $tag" --notes "Live site: ${SITE_URL}\n\nUsername: ${{ inputs.username }}\nRepositories: ${REPO_COUNT}\nSync status: ${SYNC_STATUS}\nCommit: ${GITHUB_SHA}"

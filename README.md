@@ -5,11 +5,9 @@
 **Your starred repos, with a point of view.**
 
 A static, bilingual (English / العربية, RTL) shelf for your public GitHub stars.
-Fork it, set your username, run the GitHub Actions manually whenever you want to refresh or deploy it.
+Fork it, run **one** GitHub Action, and your site is live.
 
-[![Sync](https://github.com/mrx7014/GitStar/actions/workflows/sync.yml/badge.svg)](https://github.com/mrx7014/GitStar/actions/workflows/sync.yml)
-[![Deploy](https://github.com/mrx7014/GitStar/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/mrx7014/GitStar/actions/workflows/deploy-pages.yml)
-[![CI](https://github.com/mrx7014/GitStar/actions/workflows/ci.yml/badge.svg)](https://github.com/mrx7014/GitStar/actions/workflows/ci.yml)
+[![Build](https://github.com/mrx7014/GitStar/actions/workflows/build.yml/badge.svg)](https://github.com/mrx7014/GitStar/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f2c66d.svg)](LICENSE)
 
 [Live site](https://mrx7014.github.io/GitStar/) · [التوثيق العربي](docs/README.ar.md) · [Changelog](CHANGELOG.md) · [Issues](https://github.com/mrx7014/GitStar/issues)
@@ -23,106 +21,100 @@ Fork it, set your username, run the GitHub Actions manually whenever you want to
 GitHub's Stars page is a flat list that is hard to search and revisit. GitStar turns it into a categorized, searchable directory:
 
 - **No backend, no database, no secrets.** A Node script reads the public GitHub API, writes JSON into the repo, and a static React site renders it.
-- **Everything runs on GitHub Actions** (manual sync + manual build/deploy). You never run a server.
-- **Failure-safe.** If GitHub rate-limits a sync, the last good snapshot stays on the site and a banner explains what happened.
+- **One workflow does everything.** `build.yml` syncs your stars, tests, builds, deploys to GitHub Pages and publishes a Release with the live link.
+- **Failure-safe.** If GitHub rate-limits a sync, the last good snapshot is used and the site shows a banner.
 
 ## How it works
 
+You open **Actions → Build → Run workflow** and fill a short form. That is the only way to build and publish the site.
+
 ```mermaid
 flowchart LR
-  A[GitHub stars of @username] -->|REST API, hourly| B[sync.yml<br/>scripts/sync-stars.mjs]
-  B -->|only if something changed| C[public/data/*.json<br/>committed to main]
-  C -->|workflow_dispatch| D[deploy-pages.yml<br/>npm ci · test · build]
-  D --> E[GitHub Pages<br/>static site]
+  F["Run workflow form<br/>username required"] --> A[Apply inputs to<br/>src/config.js]
+  A --> B[Sync stars<br/>public/data/*.json]
+  B --> C[Test + Vite build]
+  C --> D[Deploy to<br/>GitHub Pages]
+  D --> E[Publish Release<br/>with the site link]
 ```
 
-1. **`sync.yml`** runs at minute 17 of every hour (and on demand). It calls `GET /users/{username}/starred` with the `star+json` media type (this is what returns the real `starred_at` date), follows `Link` pagination, retries transient errors, and classifies every repo into a category.
-2. The script compares a SHA-256 hash of the result with the previous one. **If nothing changed, nothing is committed**, so your history stays clean.
-3. If data changed, it commits `public/data/` to `main` and **explicitly triggers `deploy-pages.yml`** (pushes made with `GITHUB_TOKEN` do not trigger other workflows on their own).
-4. **`deploy-pages.yml`** installs dependencies, runs the tests, builds with Vite (using the correct Pages base path), and publishes `dist/` to GitHub Pages.
-5. **`ci.yml`** runs tests and a build on every pull request / non-`main` push.
+`.github/workflows/build.yml` has three jobs:
 
-## Quick start (about 5 minutes)
+| Job | What it does |
+|---|---|
+| **Sync and build** | Checks Pages is enabled and the username exists, applies your form values to `src/config.js`, fetches your stars (`star+json` media type, `Link` pagination, retries), classifies every repo, runs the tests, commits the data (and config, if you keep *save_config* on), and builds the site. |
+| **Deploy to GitHub Pages** | Publishes the build and records the live URL as the `github-pages` deployment. |
+| **Publish release** | Creates a GitHub Release (tag `site-YYYY.MM.DD-runN`) whose notes contain the live site link, the username, repo count, sync status and commit. Turn it off with the *create_release* checkbox. |
+
+If a repo is rate-limited during the sync, the build continues with the last good data and a warning is shown in the run.
+
+## Quick start
 
 ### 1. Create your copy
 
 Click **Use this template** (recommended) or **Fork**.
 
-> Note: a fork of a public repository is always public. If you want an independent repo, use the template.
+> A fork of a public repository is always public. Use the template if you want an independent repo.
 
-### 2. Tell it whose stars to show
+### 2. Allow Actions and Pages (one time)
 
-Pick **one** of these (highest priority first):
+1. **Actions tab** → click **I understand my workflows, go ahead and enable them** (new copies start with workflows disabled).
+2. **Settings → Actions → General → Workflow permissions** → **Read and write permissions** → Save. The build commits your data and creates the Release.
+3. **Settings → Pages → Build and deployment → Source** → **GitHub Actions**.
 
-| Method | Where | When to use |
-|---|---|---|
-| Repository variable `GITSTAR_USERNAME` | *Settings → Secrets and variables → Actions → Variables* | Easiest, no code change |
-| `githubUsername` in `src/config.js` | the file in your repo | You prefer config in code |
-| Automatic fallback | none | If both are empty/`demo`, the repository **owner** is used |
+If step 3 is missing, the workflow stops at its first step with a message telling you exactly this.
 
-```js
-// src/config.js
-export const siteConfig = {
-  githubUsername: 'your-github-username',
-  siteName: 'My Star Shelf',
-  defaultLanguage: 'en', // 'en' | 'ar'
-}
-```
+### 3. Run the Build workflow
 
-> GitHub does not allow repository variable names that start with `GITHUB_`, which is why the variable is called `GITSTAR_USERNAME`.
+**Actions → Build → Run workflow**, fill the form, press the green button.
 
-### 3. Enable GitHub Actions
+| Field | Required | What to enter |
+|---|:---:|---|
+| `username` | **Yes** | The GitHub username whose public stars to show. Example: `mrx7014` |
+| `site_name` | No | Site name. Empty keeps `config.js`. |
+| `default_language` | No | `keep` / `en` / `ar`. First language shown to visitors. |
+| `tagline` | No | Short line under the title. Empty keeps `config.js`. |
+| `pinned_repos` | No | Repos shown first, e.g. `owner/repo, owner/repo2`. |
+| `featured_repos` | No | Repos with a *Featured* badge. |
+| `manual_categories` | No | Force a category: `owner/repo=security, owner/x=mobile`. |
+| `stale_after_hours` | No | Hours before the site warns that data is old. Since builds are manual, `720` (30 days) is a good value. |
+| `save_config` | No (on) | Commit the values you typed into `src/config.js`, so the next run remembers them. |
+| `create_release` | No (on) | Publish a GitHub Release with the live link. |
 
-New forks/templates have workflows disabled by default. Open the **Actions** tab and click **I understand my workflows, go ahead and enable them**.
+Optional fields left empty **keep whatever is already in `src/config.js`**. Invalid values fail the run immediately with a clear error before anything is changed.
 
-Then go to **Settings → Actions → General → Workflow permissions** and choose **Read and write permissions**. (The sync job needs this to commit the JSON files.)
+### 4. Open your site
 
-### 4. Turn on GitHub Pages
-
-**Settings → Pages → Build and deployment → Source: GitHub Actions.**
-
-### 5. Run the first sync
-
-**Actions → Sync GitHub Stars → Run workflow.**
-
-The job fetches your stars, commits `public/data/*.json`, and triggers the deploy. When *Deploy GitStar to Pages* turns green, your site is live at:
+When the run turns green, the link is in three places: the **Release** notes, the run **Summary**, and the **Deployments** box on the repo home page. It looks like:
 
 ```
 https://<your-username>.github.io/<repo-name>/
 ```
 
-Run the sync workflow manually whenever you want to refresh the snapshot, then run the deploy workflow manually to publish it.
+To refresh your stars later, run **Build** again. Typing the username again is the only thing you must do.
 
-## Configuration
+## The config file
 
-`src/config.js` (all keys optional except the username):
+`src/config.js` is the single place for site settings. The form above edits it for you, but you can also edit it by hand and run **Build**. You still have to type `username` in the form each run (it must match the account you want).
 
 | Key | Default | Description |
 |---|---|---|
-| `githubUsername` | `'demo'` | Whose public stars to show. Overridden by `GITSTAR_USERNAME`. |
-| `siteName` | `'GitStar'` | Name shown in the header and page title. |
-| `defaultLanguage` | `'en'` | Initial UI language: `'en'` or `'ar'`. Visitors can switch; their choice is remembered. |
+| `githubUsername` | — | Set by the `username` field. |
+| `siteName` | `'GitStar'` | Header and page title. |
+| `defaultLanguage` | `'en'` | `'en'` or `'ar'`. Visitors can switch; their choice is remembered. |
 | `tagline`, `bio` | built-in | Short copy under the title. |
 | `pinnedRepos` | `[]` | `['owner/repo']` shown first in "Start here". Empty = your 6 newest stars. |
-| `featuredRepos` | `[]` | `['owner/repo']` highlighted with a badge. |
-| `manualCategories` | `{}` | Force a category: `{ 'owner/repo': 'android-modding' }`. |
-| `categories` | `undefined` | Optional extra/override category rules. |
+| `featuredRepos` | `[]` | `['owner/repo']` with a badge. |
+| `manualCategories` | `{}` | `{ 'owner/repo': 'android-modding' }`. |
+| `categories` | `undefined` | Optional extra category rules. |
 | `showArchived` | `true` | Allow archived repos to appear. |
-| `repoUrl` | this repo | "View source" link. Set it to your own repo. |
-| `staleAfterHours` | `6` | After this long without a successful sync, the UI shows a "stale" indicator. |
-
-### Repository variables (Settings → Variables → Actions)
-
-| Variable | Default | Description |
-|---|---|---|
-| `GITSTAR_USERNAME` | owner / config | Username to sync. |
-| `GITSTAR_KEEPALIVE` | on | Set to `false` to disable the monthly keep-alive commit. |
+| `repoUrl` | — | Set automatically to the repo running the workflow. |
+| `staleAfterHours` | `6` | Freshness threshold for the "stale" banner. |
 
 ### Categories
 
-Repos are scored per category from whole-word matches: **topics = 5, name = 3, language = 2, description = 1**. The best score wins, a minimum score of 3 is required, otherwise the repo goes to **Other**. Built-in categories: AI & ML, Web & Frontend, Developer Tools, Backend & Data, Mobile, Android Modding, Linux & Shell, Security, DevOps & Self-hosting, Design & Creative, Learning Resources, Other.
+Repos are scored per category from whole-word matches: **topics = 5, name = 3, language = 2, description = 1**. The best score wins; below 3 the repo goes to **other**. Valid ids: `ai-ml`, `web-frontend`, `developer-tools`, `backend-data`, `mobile`, `android-modding`, `linux-shell`, `security`, `devops-selfhost`, `design-creative`, `learning-resources`, `other`.
 
-Fix one repo by hand with `manualCategories`, or add a rule in `src/category-engine.js` so it applies to every future sync.
+Fix one repo with `manual_categories` (or `manualCategories` in the config). Add a rule in `src/category-engine.js` for every future sync.
 
 ## Data files
 
@@ -130,16 +122,14 @@ Everything the site shows lives in `public/data/`:
 
 | File | Content |
 |---|---|
-| `repos.json` | Compact list of repos: name, owner, description, language, topics, stars, forks, `starred_at`, `pushed_at`, category, archived. |
+| `repos.json` | Compact list: name, owner, description, language, topics, stars, forks, `starred_at`, `pushed_at`, category, archived. |
 | `meta.json` | Username, repo count, content hash, last real change (`syncedAt`), last check (`checkedAt`). |
-| `status.json` | `ok`, `rate_limited` or `error`, plus message and timestamps. A failed sync only updates this file. |
-| `history.json` | Up to 500 "added / removed" events shown on the **Changes** page. |
-
-A fresh template ships with a tiny **sample dataset** (`username: demo`) so the UI is not empty before your first sync. Your first successful sync replaces it.
+| `status.json` | `ok`, `rate_limited` or `error`, with message and timestamps. A failed sync only updates this file. |
+| `history.json` | Up to 500 added / removed events for the **Changes** page. |
 
 ## Local development
 
-Requirements: Node.js 20+ (Node 22 is what CI uses).
+Requirements: Node.js 20+ (the workflow uses Node 22).
 
 ```bash
 git clone https://github.com/<you>/GitStar.git && cd GitStar
@@ -153,49 +143,47 @@ npm run dev                                   # http://localhost:3000
 | `npm run dev` | Vite dev server on port 3000. |
 | `npm run build` | Production build into `dist/`. |
 | `npm run preview` | Serve the built site. |
-| `npm run sync` | Fetch stars and write `public/data/*.json`. |
-| `npm test` | Sync classifier tests + category engine tests. |
+| `npm run sync` | Fetch stars into `public/data/*.json` (uses `GITSTAR_USERNAME`, else `githubUsername`). |
+| `npm test` | Category, sync and workflow-input tests. |
 
-For local syncs a token raises the API limit (60 → 5,000 requests/hour). Put it in your shell, never in a file you commit:
+A token raises the API limit for local syncs (60 → 5,000 requests/hour). Keep it in your shell, never in a committed file:
 
 ```bash
 GITHUB_TOKEN=ghp_xxx npm run sync
 ```
 
-See `.env.example` for the variable names.
-
-## Other hosts
-
-The output is plain static files, so any host works: run `npm run build` and publish `dist/`.
-
-- **Vercel / Netlify / Cloudflare Pages:** build command `npm run build`, output directory `dist`. Keep the **sync** workflow on GitHub; each data commit redeploys the site on those platforms automatically.
-- **Project pages base path:** `deploy-pages.yml` passes `VITE_BASE_PATH` for you. For other sub-path hosting, set `VITE_BASE_PATH=/my-subpath/` at build time.
-
 ## Troubleshooting
 
 | Symptom | Cause / fix |
 |---|---|
-| Site shows sample repos (`demo`) | The first sync has not run, or the username is not set. Set `GITSTAR_USERNAME` (or `githubUsername`) and run **Sync GitHub Stars**. |
-| Shows someone else's stars | `githubUsername` still points to another account. |
-| Sync job is red: *push rejected* | Settings → Actions → General → Workflow permissions → **Read and write**. |
-| Nothing happens after a change | The workflows are manual-only. Open the Actions tab and select the workflow, then click **Run workflow**. |
-| Data updated but site is old | Settings → Pages → Source must be **GitHub Actions**; check the *Deploy* run. |
-| 404 on Pages | Same as above, then re-run *Deploy GitStar to Pages*. |
-| Banner says *rate limited* | GitHub API limit hit. The old data stays online; the next hourly run recovers it. |
-| Missing stars | Only **public** stars are returned by the API. |
-| Wrong dates | Needs the `star+json` media type, which the sync script already sends. Re-run the sync. |
+| Run fails at once: *GitHub Pages is not ready* | Settings → Pages → Source → **GitHub Actions**, then run again. |
+| Run fails: *Unknown GitHub user* | The `username` has a typo or the account does not exist. |
+| Run fails: *Invalid workflow input* | Read the message; it names the field and the accepted format. |
+| *push rejected* in the commit step | Settings → Actions → General → Workflow permissions → **Read and write**. If `main` is protected, allow GitHub Actions to push or turn protection off for it. |
+| No **Run workflow** button | Actions are disabled on your copy (enable them) or you are not on the default branch. |
+| Warning: *Sync not fully successful* | GitHub rate limit or API error. The previous data is deployed; run Build again later. |
+| Site says data is *stale* | Builds are manual. Run Build again, or raise `stale_after_hours`. |
+| Missing stars | Only **public** stars are exposed by the GitHub API. |
+| Release step fails | *Read and write* permissions are missing, or a tag with the same name exists (re-run). |
+
+## Other hosts
+
+The output is plain static files: run `npm run build` and publish `dist/` on Vercel, Netlify, Cloudflare Pages or any host (set `VITE_BASE_PATH` if it is served from a sub-path). Run the **Build** workflow on GitHub to refresh the data; the Pages deploy step needs Pages enabled.
 
 ## Project structure
 
 ```
 .
 ├── .github/
-│   ├── workflows/{sync,deploy-pages,ci}.yml
+│   ├── workflows/build.yml          # the one workflow: sync → test → build → deploy → release
 │   ├── ISSUE_TEMPLATE/  PULL_REQUEST_TEMPLATE.md  CODEOWNERS  dependabot.yml
-├── docs/                 # Arabic README, design notes
-├── public/               # favicon, manifest, data/*.json
-├── scripts/              # sync-stars.mjs, classify-test.mjs
-├── src/                  # App.jsx, config.js, i18n.js, category-engine.js, styles.css
+├── docs/                            # Arabic README, design notes
+├── public/                          # favicon, manifest, og image, data/*.json
+├── scripts/
+│   ├── apply-inputs.mjs             # form inputs → src/config.js (validated)
+│   ├── sync-stars.mjs               # GitHub API → public/data/*.json
+│   └── *.test.mjs / classify-test.mjs
+├── src/                             # App.jsx, config.js, i18n.js, category-engine.js, styles/
 ├── vite.config.js
 └── package.json
 ```
