@@ -2,8 +2,8 @@ name: GitStar automatic site update
 
 on:
   schedule:
-    # GitHub Actions evaluates scheduled workflows in UTC; check for updates every ten minutes.
-    - cron: '*/10 * * * *'
+    # Explicit UTC minute marks; keep the workflow scheduled every ten minutes.
+    - cron: '0,10,20,30,40,50 * * * *'
   workflow_dispatch:
 
 permissions:
