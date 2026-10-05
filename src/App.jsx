@@ -298,7 +298,7 @@ export default function App() {
   }
 
   return <div className="app">
-    <AnimatedNetworkCanvas active={networkEnabled} theme={theme} refreshing={canvasBurst} />
+    <AnimatedNetworkCanvas active={networkEnabled} theme={theme} refreshing={canvasBurst} settings={canvasSettings} />
     <div className="app-content">
       <a className="skip" href="#main">Skip to content</a>
       <header className={scrolled ? 'has-floating-menu' : ''}>
