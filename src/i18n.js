@@ -1,6 +1,6 @@
 export const translations = {
   en: {
-    navShelf: 'Shelf', navChanges: 'Changes', navHow: 'How it works',
+    navShelf: 'Browse', navChanges: 'Changes', navHow: 'How it works',
     eyebrow: 'PERSONAL STARRED REPOSITORY SHELF',
     heroTitle: 'Every star has\na place.',
     heroBody: 'GitStar turns your GitHub stars into a calm, searchable library — automatically organized and always ready for the next idea.',
@@ -23,7 +23,7 @@ export const translations = {
     footer: 'Open source, made for curious builders.', viewSource: 'View source', switchLang: 'العربية',
   },
   ar: {
-    navShelf: 'المكتبة', navChanges: 'التغييرات', navHow: 'كيف تعمل',
+    navShelf: 'تصفح', navChanges: 'التغييرات', navHow: 'كيف تعمل',
     eyebrow: 'مكتبة المستودعات التي تستحق نجمة',
     heroTitle: 'كل نجمة\nلها مكان.',
     heroBody: 'GitStar يحوّل نجوم GitHub إلى مكتبة هادئة وقابلة للبحث — منظمة تلقائيًا وجاهزة دائمًا للفكرة التالية.',
