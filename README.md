@@ -12,7 +12,7 @@ Fork it, run **one** GitHub Action, and your site is live.
 [![Build](https://github.com/mrx7014/GitStar/actions/workflows/build.yml/badge.svg)](https://github.com/mrx7014/GitStar/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f2c66d.svg)](LICENSE)
 
-[Live site](https://mrx7014.github.io/GitStar/) · [التوثيق العربي](docs/README.ar.md) · [Changelog](CHANGELOG.md) · [Issues](https://github.com/mrx7014/GitStar/issues)
+[Live site](https://mrx7014.github.io/GitStar/) · [العربيه](docs/README.ar.md) · [Changelog](CHANGELOG.md) · [Issues](https://github.com/mrx7014/GitStar/issues)
 
 </div>
 ---
