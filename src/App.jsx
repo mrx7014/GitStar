@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
-import { BookOpen, CalendarDays, ChevronDown, ExternalLink, Filter, GitBranch, GitFork, Globe, Languages, Menu, Moon, Network, RefreshCw, Search, Star, Sun, Tag, Users, X } from 'lucide-react'
+import { BarChart3, BookOpen, CalendarDays, ChevronDown, ExternalLink, Filter, GitBranch, GitFork, Globe, Languages, Menu, Moon, Network, RefreshCw, Search, Star, Sun, Tag, Users, X } from 'lucide-react'
 import { siteConfig } from './config'
 import { categoryMeta, categoryOrder } from './category-engine'
 import { translations } from './i18n'
+import AnimatedNetworkCanvas from './AnimatedNetworkCanvas'
+import { summarizeMonthlyLanguages } from './analytics'
 
 const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`
 const root = `${basePath}data/`
@@ -44,12 +46,18 @@ function Select({ label, value, onChange, options, icon: Icon }) {
 function RepoCard({ repo, contributors, t, locale, onTopic }) {
   const category = categoryMeta[repo.category]
   const [imageFailed, setImageFailed] = useState(false)
-  const previewUrl = safeUrl(repo.preview_url) || `https://opengraph.githubassets.com/${repo.id || '1'}/${repo.full_name}`
+  const generatedPreviewUrl = `https://opengraph.githubassets.com/${repo.id || '1'}/${repo.full_name}`
+  const primaryPreviewUrl = safeUrl(repo.preview_url) || generatedPreviewUrl
+  const [imageUrl, setImageUrl] = useState(primaryPreviewUrl)
+  useEffect(() => {
+    setImageUrl(primaryPreviewUrl)
+    setImageFailed(false)
+  }, [primaryPreviewUrl])
   const contributorCount = contributors?.[repo.full_name]?.count
   const contributorValue = Number.isFinite(contributorCount) ? contributorCount.toLocaleString(locale) : '—'
   return <article className="repo-card">
     <a className="repo-preview" href={safeUrl(repo.html_url)} target="_blank" rel="noreferrer noopener" aria-label={`${repo.owner}/${repo.name} preview`}>
-      {!imageFailed ? <img src={previewUrl} alt="" loading="lazy" decoding="async" onError={() => setImageFailed(true)} /> : <span className="repo-preview-fallback"><GitBranch size={24} aria-hidden="true" /><strong>{repo.owner}/{repo.name}</strong><small>{repo.description || t.github}</small><em><Star size={12} aria-hidden="true" />{(repo.stars || 0).toLocaleString()} {repo.language || ''}</em></span>}
+      {!imageFailed ? <img src={imageUrl} alt="" loading="lazy" decoding="async" onError={() => { if (imageUrl !== generatedPreviewUrl) setImageUrl(generatedPreviewUrl); else setImageFailed(true) }} /> : <span className="repo-preview-fallback"><GitBranch size={24} aria-hidden="true" /><strong>{t.previewUnavailable}</strong></span>}
     </a>
     <div className="repo-avatar" aria-hidden="true">{repo.owner?.[0]?.toUpperCase() || '?'}</div>
     <div className="repo-body">
@@ -103,9 +111,14 @@ export default function App() {
   const [refreshing, setRefreshing] = useState(false)
   const [error, setError] = useState('')
   const [mobile, setMobile] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const [profileImageFailed, setProfileImageFailed] = useState(false)
   const t = translations[locale] || translations.en
   const repos = data.repositories || []
+  const monthSummary = useMemo(() => summarizeMonthlyLanguages(repos), [repos])
+  const formatLocale = locale === 'ar' ? 'ar-EG' : 'en-US'
+  const monthLabel = new Intl.DateTimeFormat(formatLocale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(monthSummary.monthStart))
+  const monthlyMax = monthSummary.languages[0]?.count || 0
 
   const dismissGuide = () => {
     if (dontShowAgain) writeStorage('gitstar-guide-hidden', 'true')
@@ -159,6 +172,12 @@ export default function App() {
     document.title = `${siteConfig.siteName} — ${t.tagline}`
     writeStorage('gitstar-language', locale)
   }, [locale, t.tagline])
+  useEffect(() => {
+    const updateScrollState = () => setScrolled(window.scrollY > 320)
+    updateScrollState()
+    window.addEventListener('scroll', updateScrollState, { passive: true })
+    return () => window.removeEventListener('scroll', updateScrollState)
+  }, [])
   useEffect(() => {
     const params = new URLSearchParams()
     if (query) params.set('q', query)
@@ -226,12 +245,12 @@ export default function App() {
   ]
 
   return <div className="app">
-    <div className={`network-background${networkEnabled ? ' is-on' : ''}`} aria-hidden="true" />
+    <AnimatedNetworkCanvas active={networkEnabled} theme={theme} />
     <div className="app-content">
       <a className="skip" href="#main">Skip to content</a>
-      <header>
+      <header className={scrolled ? 'has-floating-menu' : ''}>
         <div className="bar">
-          <button className="icon-btn menu" aria-label="Menu" aria-expanded={mobile} onClick={() => setMobile(!mobile)}><Menu /></button>
+          <button className={`icon-btn menu${scrolled ? ' is-hidden' : ''}`} type="button" aria-label={mobile ? t.closeMenu : t.menu} aria-controls="site-drawer" aria-expanded={mobile} onClick={() => setMobile(!mobile)}>{mobile ? <X /> : <Menu />}</button>
           <a className="brand" href="#top"><img className="brand-mark" src={`${basePath}favicon.svg`} width="36" height="36" alt="" /><span>GitStar</span></a>
           <div className="global-search"><Search size={16} aria-hidden="true" /><input id="global-search" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => event.key === 'Escape' && setQuery('')} placeholder={t.search} /><kbd>⌘K</kbd></div>
           <button className="language-toggle" onClick={() => setLocale(locale === 'ar' ? 'en' : 'ar')} aria-label={t.language}><Languages size={15} />{t.language}</button>
@@ -244,13 +263,14 @@ export default function App() {
           </button>
         </div>
       </header>
+      {mobile && <button className="menu-scrim" type="button" aria-label={t.closeMenu} onClick={() => setMobile(false)} />}
 
       <div className="shell" id="top">
-        <aside className={mobile ? 'drawer open' : 'drawer'}>
+        <aside className={mobile ? 'drawer open' : 'drawer'} id="site-drawer">
           <div className="profile"><div className="profile-avatar">{!profileImageFailed ? <img src={`https://github.com/${encodeURIComponent(siteConfig.githubUsername)}.png?size=80`} alt="" loading="lazy" decoding="async" onError={() => setProfileImageFailed(true)} /> : <span>{siteConfig.githubUsername[0].toUpperCase()}</span>}</div><div><b>@{siteConfig.githubUsername}</b><small>{t.tagline}</small></div></div>
           <h3>{t.browse}</h3>
-          <button className={category === 'all' ? 'selected' : ''} onClick={() => setCategory('all')}>{t.all}<em>{repos.length}</em></button>
-          {categories.filter((item) => item.value !== 'all').map((item) => <button key={item.value} className={category === item.value ? 'selected' : ''} onClick={() => setCategory(item.value)}>{item.label}<em>{categoryCounts[item.value] || 0}</em></button>)}
+          <button className={category === 'all' ? 'selected' : ''} onClick={() => { setCategory('all'); setMobile(false) }}>{t.all}<em>{repos.length}</em></button>
+          {categories.filter((item) => item.value !== 'all').map((item) => <button key={item.value} className={category === item.value ? 'selected' : ''} onClick={() => { setCategory(item.value); setMobile(false) }}>{item.label}<em>{categoryCounts[item.value] || 0}</em></button>)}
           <div className="sidebar-foot"><a href={siteConfig.repoUrl} target="_blank" rel="noreferrer noopener">{t.viewSource}<ExternalLink size={13} /></a></div>
         </aside>
 
@@ -258,7 +278,23 @@ export default function App() {
           <section className="hero"><div><p className="eyebrow">{siteConfig.siteName} / {t.browse}</p><h1>{t.hero}</h1><p>{t.tagline}</p></div><div className="hero-actions"><span className={`freshness ${status.status === 'error' ? 'failed' : !isStale ? 'fresh' : ''}`}><span>●</span>{status.status === 'error' ? t.syncFailed : isStale ? t.stale : t.synced}</span><button className="refresh" onClick={() => load({ refresh: true })} disabled={refreshing}><RefreshCw className={refreshing ? 'spin' : ''} size={15} />{refreshing ? t.loading : t.refresh}</button></div></section>
           {(status.status === 'rate_limited' || status.status === 'error' || isStale) && <div className={`notice ${status.status === 'error' ? 'danger' : 'warning'}`} role="status">{status.status === 'rate_limited' ? t.rateLimited : status.status === 'error' ? `${t.syncError} ${status.message || ''}` : `${t.stale} ${formatDate(meta.syncedAt, locale === 'ar' ? 'ar-EG' : 'en-US')}.`}</div>}
 
-          <div className="summary"><span><strong>{repos.length.toLocaleString(locale === 'ar' ? 'ar-EG' : 'en-US')}</strong> {t.repos}</span><span><strong>{totalStars.toLocaleString(locale === 'ar' ? 'ar-EG' : 'en-US')}</strong> {t.stars}</span><span><strong>{filtered.length.toLocaleString(locale === 'ar' ? 'ar-EG' : 'en-US')}</strong> {hasFilters ? t.matching : t.repos}</span></div>
+          <div className="summary"><span><strong>{repos.length.toLocaleString(formatLocale)}</strong> {t.repos}</span><span><strong>{totalStars.toLocaleString(formatLocale)}</strong> {t.stars}</span><span><strong>{filtered.length.toLocaleString(formatLocale)}</strong> {hasFilters ? t.matching : t.repos}</span></div>
+          <section className="analytics-panel" aria-labelledby="analytics-title">
+            <div className="analytics-heading">
+              <div className="analytics-title-wrap">
+                <p className="eyebrow"><BarChart3 size={14} aria-hidden="true" />{t.analytics}</p>
+                <h2 id="analytics-title">{t.topLanguages}</h2>
+                <p className="analytics-basis">{t.analyticsBasis}</p>
+              </div>
+              <div className="analytics-period"><strong>{monthSummary.totalRepos.toLocaleString(formatLocale)}</strong><span>{t.repositoriesAddedThisMonth}</span><small>{monthLabel} · {t.utc}</small></div>
+            </div>
+            {monthSummary.languages.length ? <ol className="language-chart">
+              {monthSummary.languages.map((entry, index) => <li key={entry.language}>
+                <div className="analytics-row"><span className="language-rank">{String(index + 1).padStart(2, '0')}</span><strong>{entry.language}</strong><span className="analytics-count">{entry.count.toLocaleString(formatLocale)} {t.analyticsRepos}</span></div>
+                <div className="analytics-track" role="progressbar" aria-label={`${entry.language}: ${entry.count} ${t.analyticsRepos}`} aria-valuemin={0} aria-valuemax={monthlyMax} aria-valuenow={entry.count}><span style={{ width: `${(entry.count / monthlyMax) * 100}%` }} /></div>
+              </li>)}
+            </ol> : <p className="analytics-empty">{t.analyticsEmpty}</p>}
+          </section>
           <div className="toolbar">
             <Select label={t.allCategories} icon={Filter} value={category} onChange={setCategory} options={categories} />
             <Select label={t.allLanguages} icon={Tag} value={language} onChange={setLanguage} options={languages} />
@@ -275,6 +311,7 @@ export default function App() {
       </div>
       <footer>{t.footer} · {t.lastSync}: {formatDate(meta.syncedAt, locale)}</footer>
     </div>
+    {scrolled && <button className="floating-menu" type="button" aria-label={mobile ? t.closeMenu : t.menu} aria-controls="site-drawer" aria-expanded={mobile} onClick={() => setMobile(!mobile)}>{mobile ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}<span>{mobile ? t.closeMenu : t.menu}</span></button>}
     {guideOpen && <div className="guide-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) dismissGuide() }}>
       <section className="guide-dialog" role="dialog" aria-modal="true" aria-labelledby="guide-title" aria-describedby="guide-intro">
         <button className="guide-close" type="button" aria-label={t.guideClose} onClick={dismissGuide}><X size={18} /></button>
