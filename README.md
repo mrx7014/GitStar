@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="public/banner.svg" alt="GitStar — Your starred repos, with a point of view." width="100%" />
+
 # ⭐ GitStar
 
 **Your starred repos, with a point of view.**
@@ -13,11 +15,6 @@ Fork it, run **one** GitHub Action, and your site is live.
 [Live site](https://mrx7014.github.io/GitStar/) · [التوثيق العربي](docs/README.ar.md) · [Changelog](CHANGELOG.md) · [Issues](https://github.com/mrx7014/GitStar/issues)
 
 </div>
-
-<p align="center">
-  <img src="public/banner.svg" alt="GitStar — Your starred repos, with a point of view." width="100%" />
-</p>
-
 ---
 
 ## What it is
