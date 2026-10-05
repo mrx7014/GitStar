@@ -5,6 +5,7 @@ export const siteConfig = {
   tagline: 'Your starred repos, with a point of view.',
   bio: 'A focused shelf for the tools, ideas, and experiments worth coming back to.',
   featuredRepos: [],
+  pinnedRepos: [],
   manualCategories: {
     // 'owner/repository': 'AI & ML',
   },

@@ -22,7 +22,7 @@ GitStar هو دليل داكن ومتجاوب للمستودعات التي عم
 
 ### 1. اعمل Fork
 
-اعمل Fork لمستودع [mrx7014/GitStar](https://github.com/mrx7014/GitStar) إلى حسابك، ويفضل أن تترك النسخة Public.
+اعمل Fork لمستودع [mrx7014/GitStar](https://github.com/mrx7014/GitStar) إلى حسابك. يمكن أن تظل نسخة المصدر Private؛ خصوصية الكود وخروج الموقع للنشر خياران منفصلان.
 
 ### 2. عدّل ملف الإعداد
 
@@ -33,6 +33,7 @@ export const siteConfig = {
   githubUsername: 'اسم-مستخدمك-على-GitHub',
   siteName: 'مكتبتي',
   defaultLanguage: 'ar', // أو 'en'
+  pinnedRepos: ['owner/important-repository'],
   featuredRepos: [
     'owner/repository',
   ],
@@ -42,7 +43,7 @@ export const siteConfig = {
 }
 ```
 
-في معظم الحالات يكفي تعديل `githubUsername` فقط.
+في معظم الحالات يكفي تعديل `githubUsername` فقط. خيار `pinnedRepos` يحدد المستودعات المهمة التي تظهر في شريط الأولوية أعلى الدليل؛ وإذا تركته فارغًا يعرض GitStar آخر ستة مستودعات عملت لها Star.
 
 ### 3. اسمح للـ Action بالكتابة
 

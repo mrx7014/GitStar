@@ -3,7 +3,6 @@
 > Your starred repos, with a point of view.
 
 [![Live site](https://img.shields.io/badge/live_site-GitStar-f2c66d?style=flat-square)](https://gitstar-jqnfs9qa.manus.space)
-[![GitHub stars](https://img.shields.io/github/stars/mrx7014/GitStar?style=flat-square&color=f2c66d)](https://github.com/mrx7014/GitStar/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-74e0ad?style=flat-square)](LICENSE)
 
 GitStar is a forkable, bilingual, dark-mode directory for GitHub starred repositories. It turns a noisy list of stars into a searchable reference shelf with automatic categories, compact resource rows, and a change log.
@@ -42,7 +41,7 @@ The project is intentionally **static-first**:
 
 ### 1. Fork the repository
 
-Fork [mrx7014/GitStar](https://github.com/mrx7014/GitStar) into your own public GitHub account.
+Fork [mrx7014/GitStar](https://github.com/mrx7014/GitStar) into your own GitHub account. The source repository can remain private; the published static site and its source access are separate choices.
 
 ### 2. Change the central config
 
@@ -53,6 +52,7 @@ export const siteConfig = {
   githubUsername: 'your-github-username',
   siteName: 'Your Star Shelf',
   defaultLanguage: 'en', // or 'ar'
+  pinnedRepos: ['owner/important-repository'],
   featuredRepos: [
     'owner/repository',
   ],
@@ -62,7 +62,7 @@ export const siteConfig = {
 }
 ```
 
-Usually, `githubUsername` is the only value you need to change.
+Usually, `githubUsername` is the only value you need to change. `pinnedRepos` controls the small priority strip shown above the full directory; if it is empty, GitStar automatically uses your six most recently starred repositories.
 
 ### 3. Allow the sync workflow to write data
 
