@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "LiveContainer/LiveContainer",
+      "html_url": "https://github.com/LiveContainer/LiveContainer",
+      "description": "Run iOS apps without actually installing them!",
+      "category": "mobile",
+      "at": "2026-10-06T00:47:01.533Z"
+    },
+    {
+      "type": "added",
       "full_name": "nykooi1/vibe-wise",
       "html_url": "https://github.com/nykooi1/vibe-wise",
       "description": "A Claude Code plugin that helps you learn how to build while AI writes the code.",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/azwhikaru/Action-OFRP-Builder",
       "description": "",
       "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "kimocoder/qualcomm_android_monitor_mode",
-      "html_url": "https://github.com/kimocoder/qualcomm_android_monitor_mode",
-      "description": "Qualcomm QCACLD WiFi monitor mode for Android",
-      "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
