@@ -2,6 +2,22 @@
   "events": [
     {
       "type": "added",
+      "full_name": "lite-xl/lite-xl",
+      "html_url": "https://github.com/lite-xl/lite-xl",
+      "description": "A lightweight text editor written in Lua",
+      "category": "developer-tools",
+      "at": "2026-10-06T14:05:02.878Z"
+    },
+    {
+      "type": "removed",
+      "full_name": "neovim/neovim",
+      "html_url": "https://github.com/neovim/neovim",
+      "description": "Vim-fork focused on extensibility and usability",
+      "category": "developer-tools",
+      "at": "2026-10-06T14:05:02.878Z"
+    },
+    {
+      "type": "added",
       "full_name": "LiveContainer/LiveContainer",
       "html_url": "https://github.com/LiveContainer/LiveContainer",
       "description": "Run iOS apps without actually installing them!",
@@ -3981,22 +3997,6 @@
       "full_name": "HavocFramework/Havoc",
       "html_url": "https://github.com/HavocFramework/Havoc",
       "description": "The Havoc Framework",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "sebaubuntu-python/telegramma",
-      "html_url": "https://github.com/sebaubuntu-python/telegramma",
-      "description": "Modular Telegram bot",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "azwhikaru/Action-OFRP-Builder",
-      "html_url": "https://github.com/azwhikaru/Action-OFRP-Builder",
-      "description": "",
       "category": "other",
       "at": "2026-10-05T10:55:16.088Z"
     }
