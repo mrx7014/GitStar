@@ -2,6 +2,38 @@
   "events": [
     {
       "type": "added",
+      "full_name": "fcetool/fcetool",
+      "html_url": "https://github.com/fcetool/fcetool",
+      "description": "Extract specific files from remote firmware.ZIP archives without downloading the full firmware",
+      "category": "developer-tools",
+      "at": "2026-10-07T09:11:14.390Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Leviidev/Husk",
+      "html_url": "https://github.com/Leviidev/Husk",
+      "description": "Android Emulator for iOS",
+      "category": "mobile",
+      "at": "2026-10-07T09:11:14.390Z"
+    },
+    {
+      "type": "added",
+      "full_name": "thedotmack/claude-mem",
+      "html_url": "https://github.com/thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "category": "ai-ml",
+      "at": "2026-10-07T09:11:14.390Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ayghri/i-have-adhd",
+      "html_url": "https://github.com/ayghri/i-have-adhd",
+      "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "category": "developer-tools",
+      "at": "2026-10-07T09:11:14.390Z"
+    },
+    {
+      "type": "added",
       "full_name": "lite-xl/lite-xl",
       "html_url": "https://github.com/lite-xl/lite-xl",
       "description": "A lightweight text editor written in Lua",
@@ -3966,38 +3998,6 @@
       "html_url": "https://github.com/Mahfuz-THBD/Wifi_Hack_Installer",
       "description": "Hack Wifi With Your Rooted Android Device.",
       "category": "security",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "feravolt/FDE.AI-docs",
-      "html_url": "https://github.com/feravolt/FDE.AI-docs",
-      "description": "Various FDE.AI related texts",
-      "category": "ai-ml",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "GNOME/gnome-disk-utility",
-      "html_url": "https://github.com/GNOME/gnome-disk-utility",
-      "description": "Read-only mirror of https://gitlab.gnome.org/GNOME/gnome-disk-utility",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "ashyx/Samsung_Galaxy_Tab_A_kernel",
-      "html_url": "https://github.com/ashyx/Samsung_Galaxy_Tab_A_kernel",
-      "description": "Permissive kernel for the Samsung Galaxy Tab A - SM-T350/T355/T550/T555",
-      "category": "android-modding",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "HavocFramework/Havoc",
-      "html_url": "https://github.com/HavocFramework/Havoc",
-      "description": "The Havoc Framework",
-      "category": "other",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
