@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "DigitalPlatDev/FreeDomain",
+      "html_url": "https://github.com/DigitalPlatDev/FreeDomain",
+      "description": "Free domain registration and practical DNS learning resources for everyone.",
+      "category": "learning-resources",
+      "at": "2026-10-08T20:39:18.309Z"
+    },
+    {
+      "type": "added",
       "full_name": "Zer0xDev/R1nderPest",
       "html_url": "https://github.com/Zer0xDev/R1nderPest",
       "description": "A12+ Bypass Tool",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/practical-tutorials/project-based-learning",
       "description": "Curated list of project-based tutorials",
       "category": "learning-resources",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "sagar040/proot-distro-nethunter",
-      "html_url": "https://github.com/sagar040/proot-distro-nethunter",
-      "description": "Install Kali NetHunter (Official Version) on Android without root. It is a bash script that enables users to deploy multiple NetHunter instances with a customized toolset in PRoot distro.",
-      "category": "linux-shell",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
