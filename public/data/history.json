@@ -2,6 +2,38 @@
   "events": [
     {
       "type": "added",
+      "full_name": "WebKit/WebKit",
+      "html_url": "https://github.com/WebKit/WebKit",
+      "description": "Home of the WebKit project, the browser engine used by Safari, Mail, App Store and many other applications on macOS, iOS and Linux.",
+      "category": "web-frontend",
+      "at": "2026-10-08T07:40:59.201Z"
+    },
+    {
+      "type": "added",
+      "full_name": "openai/codex-action",
+      "html_url": "https://github.com/openai/codex-action",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-08T07:40:59.201Z"
+    },
+    {
+      "type": "added",
+      "full_name": "xai-org/grok-build",
+      "html_url": "https://github.com/xai-org/grok-build",
+      "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
+      "category": "other",
+      "at": "2026-10-08T07:40:59.201Z"
+    },
+    {
+      "type": "added",
+      "full_name": "brolnickij/emu",
+      "html_url": "https://github.com/brolnickij/emu",
+      "description": "A proof of concept for running native macOS apps on iOS",
+      "category": "other",
+      "at": "2026-10-08T07:40:59.201Z"
+    },
+    {
+      "type": "added",
       "full_name": "fcetool/fcetool",
       "html_url": "https://github.com/fcetool/fcetool",
       "description": "Extract specific files from remote firmware.ZIP archives without downloading the full firmware",
@@ -3966,38 +3998,6 @@
       "html_url": "https://github.com/scrapy/scrapy",
       "description": "Scrapy, a fast high-level web crawling & scraping framework for Python.",
       "category": "web-frontend",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Keinta15/Magisk-iOS-Emoji",
-      "html_url": "https://github.com/Keinta15/Magisk-iOS-Emoji",
-      "description": "Systemlessly replaces emoji font with iOS Emoji ",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "RadwanHegazy/securiy-video",
-      "html_url": "https://github.com/RadwanHegazy/securiy-video",
-      "description": "This is a system that help your videos from download by softwares like idm",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Mahfuz-THBD/Wifi_Hack",
-      "html_url": "https://github.com/Mahfuz-THBD/Wifi_Hack",
-      "description": "You Can H@ck Wifi With Your Rooted Android Device.",
-      "category": "security",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Mahfuz-THBD/Wifi_Hack_Installer",
-      "html_url": "https://github.com/Mahfuz-THBD/Wifi_Hack_Installer",
-      "description": "Hack Wifi With Your Rooted Android Device.",
-      "category": "security",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
