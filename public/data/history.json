@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "Zer0xDev/R1nderPest",
+      "html_url": "https://github.com/Zer0xDev/R1nderPest",
+      "description": "A12+ Bypass Tool",
+      "category": "other",
+      "at": "2026-10-08T14:58:16.709Z"
+    },
+    {
+      "type": "added",
       "full_name": "WebKit/WebKit",
       "html_url": "https://github.com/WebKit/WebKit",
       "description": "Home of the WebKit project, the browser engine used by Safari, Mail, App Store and many other applications on macOS, iOS and Linux.",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/sagar040/proot-distro-nethunter",
       "description": "Install Kali NetHunter (Official Version) on Android without root. It is a bash script that enables users to deploy multiple NetHunter instances with a customized toolset in PRoot distro.",
       "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "scrapy/scrapy",
-      "html_url": "https://github.com/scrapy/scrapy",
-      "description": "Scrapy, a fast high-level web crawling & scraping framework for Python.",
-      "category": "web-frontend",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
