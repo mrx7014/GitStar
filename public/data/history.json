@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "shadany7824/playgta5",
+      "html_url": "https://github.com/shadany7824/playgta5",
+      "description": "A source code for playgta5.com.",
+      "category": "other",
+      "at": "2026-10-09T06:50:11.369Z"
+    },
+    {
+      "type": "added",
       "full_name": "DigitalPlatDev/FreeDomain",
       "html_url": "https://github.com/DigitalPlatDev/FreeDomain",
       "description": "Free domain registration and practical DNS learning resources for everyone.",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/CypherpunkArmory/UserLAnd",
       "description": "Main UserLAnd Repository",
       "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "practical-tutorials/project-based-learning",
-      "html_url": "https://github.com/practical-tutorials/project-based-learning",
-      "description": "Curated list of project-based tutorials",
-      "category": "learning-resources",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
