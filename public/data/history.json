@@ -1,6 +1,14 @@
 {
   "events": [
     {
+      "type": "removed",
+      "full_name": "LiveContainer/LiveContainer",
+      "html_url": "https://github.com/LiveContainer/LiveContainer",
+      "description": "Run iOS apps without actually installing them!",
+      "category": "mobile",
+      "at": "2026-10-09T19:28:40.235Z"
+    },
+    {
       "type": "added",
       "full_name": "orailnoor/NativOS",
       "html_url": "https://github.com/orailnoor/NativOS",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/DumprX/DumprX",
       "description": "DumprX: A Tool to Dump Android ROMs/Firmwares",
       "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Sushrut1101/DumprX-CI",
-      "html_url": "https://github.com/Sushrut1101/DumprX-CI",
-      "description": "Dump Android ROMs/Firmwares via a PR, for free!",
-      "category": "devops-selfhost",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
