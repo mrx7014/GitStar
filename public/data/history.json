@@ -2,6 +2,22 @@
   "events": [
     {
       "type": "added",
+      "full_name": "orailnoor/NativOS",
+      "html_url": "https://github.com/orailnoor/NativOS",
+      "description": "NativOS is an experimental bridging environment designed to run a fully native, untethered GNU/Linux mobile operating system directly on top of Android Kernel.",
+      "category": "mobile",
+      "at": "2026-10-09T13:59:49.045Z"
+    },
+    {
+      "type": "removed",
+      "full_name": "MrR0b0X/Nethunter_audio-archived",
+      "html_url": "https://github.com/MrR0b0X/Nethunter_audio-archived",
+      "description": "A script to start sound session on nethunter",
+      "category": "linux-shell",
+      "at": "2026-10-09T13:59:49.045Z"
+    },
+    {
+      "type": "added",
       "full_name": "shadany7824/playgta5",
       "html_url": "https://github.com/shadany7824/playgta5",
       "description": "A source code for playgta5.com.",
@@ -3982,22 +3998,6 @@
       "html_url": "https://github.com/Sushrut1101/DumprX-CI",
       "description": "Dump Android ROMs/Firmwares via a PR, for free!",
       "category": "devops-selfhost",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "stryker-project/monitorer",
-      "html_url": "https://github.com/stryker-project/monitorer",
-      "description": "4 in 1 open-source multitool for your device wifi! ",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "CypherpunkArmory/UserLAnd",
-      "html_url": "https://github.com/CypherpunkArmory/UserLAnd",
-      "description": "Main UserLAnd Repository",
-      "category": "linux-shell",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
