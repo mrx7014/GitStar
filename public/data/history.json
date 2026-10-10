@@ -1,6 +1,62 @@
 {
   "events": [
     {
+      "type": "added",
+      "full_name": "orailnoor/DroidEye",
+      "html_url": "https://github.com/orailnoor/DroidEye",
+      "description": "A spy-satellite view in your pocket, except the data is real. Live flights, satellites, quakes and weather on a photorealistic 3D globe, now as an Android app with voice control.",
+      "category": "other",
+      "at": "2026-10-10T09:02:41.512Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dqev/reicon",
+      "html_url": "https://github.com/dqev/reicon",
+      "description": "Reicon - Open-Source Icon Library for Designers & Developers",
+      "category": "design-creative",
+      "at": "2026-10-10T09:02:41.512Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MobAI-App/simslim",
+      "html_url": "https://github.com/MobAI-App/simslim",
+      "description": "Run more iOS simulators on one Mac by disabling background daemons a simulator doesn't need",
+      "category": "other",
+      "at": "2026-10-10T09:02:41.512Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Alter-Pixel/liquid_kernel_desktop_x86",
+      "html_url": "https://github.com/Alter-Pixel/liquid_kernel_desktop_x86",
+      "description": "Yet another custom linux kernel for desktop. Build it with \"LLVM=1 LLVM_IAS=1\".",
+      "category": "android-modding",
+      "at": "2026-10-10T09:02:41.512Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Ahmedgayyad/tatheer-campaigns",
+      "html_url": "https://github.com/Ahmedgayyad/tatheer-campaigns",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-10T09:02:41.512Z"
+    },
+    {
+      "type": "added",
+      "full_name": "qemu/qemu",
+      "html_url": "https://github.com/qemu/qemu",
+      "description": "Official QEMU mirror. Please see https://www.qemu.org/contribute/ for how to submit changes to QEMU. Pull Requests are disabled. Please only use release tarballs from the QEMU website.",
+      "category": "other",
+      "at": "2026-10-10T09:02:41.512Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MarbleLabs1/IOS-emulator",
+      "html_url": "https://github.com/MarbleLabs1/IOS-emulator",
+      "description": "Free iOS app testing without Xcode costs. Test your iOS apps on any platform (Linux/Windows/Mac) using QEMU emulation - no Mac required!",
+      "category": "mobile",
+      "at": "2026-10-10T09:02:41.512Z"
+    },
+    {
       "type": "removed",
       "full_name": "LiveContainer/LiveContainer",
       "html_url": "https://github.com/LiveContainer/LiveContainer",
@@ -3942,62 +3998,6 @@
       "html_url": "https://github.com/azwhikaru/Action-TWRP-Builder",
       "description": "",
       "category": "android-modding",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "affggh/Magisk_patcher",
-      "html_url": "https://github.com/affggh/Magisk_patcher",
-      "description": "Patch boot image with magisk on windows/linux/macos",
-      "category": "android-modding",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "pbatard/rufus",
-      "html_url": "https://github.com/pbatard/rufus",
-      "description": "The Reliable USB Formatting Utility",
-      "category": "ai-ml",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "antoine62/android_kernel_samsung_exynos7870",
-      "html_url": "https://github.com/antoine62/android_kernel_samsung_exynos7870",
-      "description": "Halium kernel for the gtaxlwifi.",
-      "category": "android-modding",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "messede-degod/SF-UI",
-      "html_url": "https://github.com/messede-degod/SF-UI",
-      "description": "A GUI Frontend for services provided by https://thc.org/segfault",
-      "category": "backend-data",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "softprops/action-gh-release",
-      "html_url": "https://github.com/softprops/action-gh-release",
-      "description": "📦 :octocat: GitHub Action for creating GitHub Releases",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "dutchcoders/transfer.sh",
-      "html_url": "https://github.com/dutchcoders/transfer.sh",
-      "description": "Easy and fast file sharing from the command-line.",
-      "category": "devops-selfhost",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "DumprX/DumprX",
-      "html_url": "https://github.com/DumprX/DumprX",
-      "description": "DumprX: A Tool to Dump Android ROMs/Firmwares",
-      "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
