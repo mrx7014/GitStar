@@ -2,6 +2,22 @@
   "events": [
     {
       "type": "added",
+      "full_name": "abdubanna/freecomp",
+      "html_url": "https://github.com/abdubanna/freecomp",
+      "description": "A list of websites where users can access computers/terminals/browsers for FREE.",
+      "category": "web-frontend",
+      "at": "2026-10-12T19:16:20.007Z"
+    },
+    {
+      "type": "removed",
+      "full_name": "abdullah-albanna/freecomp",
+      "html_url": "https://github.com/abdullah-albanna/freecomp",
+      "description": "A list of websites where users can access computers/terminals/browsers for FREE.",
+      "category": "web-frontend",
+      "at": "2026-10-12T19:16:20.007Z"
+    },
+    {
+      "type": "added",
       "full_name": "Flow-Tube/Flow",
       "html_url": "https://github.com/Flow-Tube/Flow",
       "description": "A modern, feature-rich YouTube and YouTube  Music client with local recommendation for Android built with Jetpack Compose",
@@ -3982,22 +3998,6 @@
       "html_url": "https://github.com/chrmhoffmann/android_device_samsung_gta4l",
       "description": "",
       "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Ileriayo/markdown-badges",
-      "html_url": "https://github.com/Ileriayo/markdown-badges",
-      "description": "The largest curated collection of markdown badges for your personal developer branding, profile, and projects.",
-      "category": "developer-tools",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "CodeDroid999/CodeDroid999",
-      "html_url": "https://github.com/CodeDroid999/CodeDroid999",
-      "description": "config files for my github profile",
-      "category": "other",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
