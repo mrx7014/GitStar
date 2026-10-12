@@ -181,7 +181,7 @@ jobs:
           echo "site_url=$site_url" >> "$GITHUB_OUTPUT"
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
