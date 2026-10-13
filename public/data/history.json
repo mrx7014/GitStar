@@ -1,6 +1,14 @@
 {
   "events": [
     {
+      "type": "removed",
+      "full_name": "fahadalijaved/SamFonts",
+      "html_url": "https://github.com/fahadalijaved/SamFonts",
+      "description": "",
+      "category": "other",
+      "at": "2026-10-13T16:19:31.144Z"
+    },
+    {
       "type": "added",
       "full_name": "Akshayykadam/PixelBoard",
       "html_url": "https://github.com/Akshayykadam/PixelBoard",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/chrmhoffmann/android_kernel_samsung_sm6115",
       "description": "",
       "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "chrmhoffmann/proprietary_vendor_samsung_gta4l",
-      "html_url": "https://github.com/chrmhoffmann/proprietary_vendor_samsung_gta4l",
-      "description": "",
-      "category": "other",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
