@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "Akshayykadam/PixelBoard",
+      "html_url": "https://github.com/Akshayykadam/PixelBoard",
+      "description": "Unlock Google 11's Gemini \"Rambler\" Natural Voice Dictation & AI Writing Tools on ANY Android phone. No root required.",
+      "category": "ai-ml",
+      "at": "2026-10-13T08:21:27.074Z"
+    },
+    {
+      "type": "added",
       "full_name": "abdubanna/freecomp",
       "html_url": "https://github.com/abdubanna/freecomp",
       "description": "A list of websites where users can access computers/terminals/browsers for FREE.",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/chrmhoffmann/proprietary_vendor_samsung_gta4l",
       "description": "",
       "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "chrmhoffmann/android_device_samsung_gta4l",
-      "html_url": "https://github.com/chrmhoffmann/android_device_samsung_gta4l",
-      "description": "",
-      "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
