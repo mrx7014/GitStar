@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "Dr-TSNG/ZygiskNext",
+      "html_url": "https://github.com/Dr-TSNG/ZygiskNext",
+      "description": "Standalone implementation of Zygisk",
+      "category": "android-modding",
+      "at": "2026-10-14T19:38:08.712Z"
+    },
+    {
+      "type": "added",
       "full_name": "SuperTurtleDev/anland",
       "html_url": "https://github.com/SuperTurtleDev/anland",
       "description": "Protocol For Wayland run on android",
@@ -3989,14 +3997,6 @@
       "full_name": "AzeemIdrisi/PhoneSploit-Pro",
       "html_url": "https://github.com/AzeemIdrisi/PhoneSploit-Pro",
       "description": "An all-in-one hacking tool to remotely take over Android devices.",
-      "category": "security",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "bahaabdelwahed/killshot",
-      "html_url": "https://github.com/bahaabdelwahed/killshot",
-      "description": "A Penetration Testing Framework, Information gathering tool & Website Vulnerability Scanner",
       "category": "security",
       "at": "2026-10-05T10:55:16.088Z"
     }
