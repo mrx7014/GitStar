@@ -2,6 +2,22 @@
   "events": [
     {
       "type": "added",
+      "full_name": "SuperTurtleDev/anland",
+      "html_url": "https://github.com/SuperTurtleDev/anland",
+      "description": "Protocol For Wayland run on android",
+      "category": "other",
+      "at": "2026-10-14T10:30:10.937Z"
+    },
+    {
+      "type": "added",
+      "full_name": "HeheJuice/Intelligent-Widget",
+      "html_url": "https://github.com/HeheJuice/Intelligent-Widget",
+      "description": "Intelligent Widget For Your Galaxy OneUI",
+      "category": "mobile",
+      "at": "2026-10-14T10:30:10.937Z"
+    },
+    {
+      "type": "added",
       "full_name": "LiveContainer/LiveContainer",
       "html_url": "https://github.com/LiveContainer/LiveContainer",
       "description": "Run iOS apps without actually installing them!",
@@ -3982,22 +3998,6 @@
       "html_url": "https://github.com/bahaabdelwahed/killshot",
       "description": "A Penetration Testing Framework, Information gathering tool & Website Vulnerability Scanner",
       "category": "security",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "joshuabragge/twrp-manual-restore",
-      "html_url": "https://github.com/joshuabragge/twrp-manual-restore",
-      "description": "Automate individual app restores from an android TWRP backup",
-      "category": "android-modding",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Mahmud0808/Iconify",
-      "html_url": "https://github.com/Mahmud0808/Iconify",
-      "description": "Iconify lets you customize your Android 12+ device easily. Change icons, colors, shapes, and even the notification panel for a personalized look that suits your style.",
-      "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
