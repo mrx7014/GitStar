@@ -1,6 +1,14 @@
 {
   "events": [
     {
+      "type": "removed",
+      "full_name": "Z4nzu/hackingtool",
+      "html_url": "https://github.com/Z4nzu/hackingtool",
+      "description": "ALL IN ONE Hacking Tool For Hackers",
+      "category": "security",
+      "at": "2026-10-15T19:15:47.669Z"
+    },
+    {
       "type": "added",
       "full_name": "anthropics/claude-plugins-official",
       "html_url": "https://github.com/anthropics/claude-plugins-official",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/Neternels/AnyKernel3",
       "description": "AnyKernel, Evolved",
       "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "c0pt4n/Py_Pass_Generator",
-      "html_url": "https://github.com/c0pt4n/Py_Pass_Generator",
-      "description": "A strong password generator written in python",
-      "category": "other",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
