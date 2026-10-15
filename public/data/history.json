@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "anthropics/claude-plugins-official",
+      "html_url": "https://github.com/anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "category": "other",
+      "at": "2026-10-15T15:17:17.232Z"
+    },
+    {
+      "type": "added",
       "full_name": "naman-chopra/moody-routine",
       "html_url": "https://github.com/naman-chopra/moody-routine",
       "description": "MoodyRoutine - Samsung OneUI Modes & Routines clone for any Android device",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/c0pt4n/Py_Pass_Generator",
       "description": "A strong password generator written in python",
       "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "c0pt4n/Py_Snake_Game",
-      "html_url": "https://github.com/c0pt4n/Py_Snake_Game",
-      "description": "A simple snake game which runs in terminal written in python",
-      "category": "design-creative",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
