@@ -2,6 +2,70 @@
   "events": [
     {
       "type": "added",
+      "full_name": "naman-chopra/moody-routine",
+      "html_url": "https://github.com/naman-chopra/moody-routine",
+      "description": "MoodyRoutine - Samsung OneUI Modes & Routines clone for any Android device",
+      "category": "mobile",
+      "at": "2026-10-15T10:22:48.375Z"
+    },
+    {
+      "type": "added",
+      "full_name": "amir1376/ab-download-manager",
+      "html_url": "https://github.com/amir1376/ab-download-manager",
+      "description": "A Download Manager that speeds up your downloads",
+      "category": "mobile",
+      "at": "2026-10-15T10:22:48.375Z"
+    },
+    {
+      "type": "added",
+      "full_name": "MohamedSayed0573/TubeSize_Extension",
+      "html_url": "https://github.com/MohamedSayed0573/TubeSize_Extension",
+      "description": "Track how much internet data every website uses, and see what a YouTube, Twitch, or Kick video will cost before you press play.",
+      "category": "other",
+      "at": "2026-10-15T10:22:48.375Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DevCat3/Fast-Download-Manager",
+      "html_url": "https://github.com/DevCat3/Fast-Download-Manager",
+      "description": "The Fastest Direck link extractor ",
+      "category": "other",
+      "at": "2026-10-15T10:22:48.375Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ravindu644/Droidspaces-Mali",
+      "html_url": "https://github.com/ravindu644/Droidspaces-Mali",
+      "description": "Native Mali GPU KDE Plasma desktop in a Droidspaces container, via libhybris and Mesa Zink",
+      "category": "other",
+      "at": "2026-10-15T10:22:48.375Z"
+    },
+    {
+      "type": "added",
+      "full_name": "ravindu644/drawablify",
+      "html_url": "https://github.com/ravindu644/drawablify",
+      "description": "Convert SVG, PNG, JPEG and GIF to Android VectorDrawable XML in the browser. No uploads, no build step, works offline.",
+      "category": "other",
+      "at": "2026-10-15T10:22:48.375Z"
+    },
+    {
+      "type": "added",
+      "full_name": "artcraft-android/lightcraft-android",
+      "html_url": "https://github.com/artcraft-android/lightcraft-android",
+      "description": "An open-source, reimplementation of Adobe Lightroom in Rust while using Kotlin as the UI framework.",
+      "category": "mobile",
+      "at": "2026-10-15T10:22:48.375Z"
+    },
+    {
+      "type": "added",
+      "full_name": "tsgrgo/windows-update-disabler",
+      "html_url": "https://github.com/tsgrgo/windows-update-disabler",
+      "description": "Disable/Enable Windows update with a lightweight batch tool.",
+      "category": "other",
+      "at": "2026-10-15T10:22:48.375Z"
+    },
+    {
+      "type": "added",
       "full_name": "Dr-TSNG/ZygiskNext",
       "html_url": "https://github.com/Dr-TSNG/ZygiskNext",
       "description": "Standalone implementation of Zygisk",
@@ -3934,70 +3998,6 @@
       "html_url": "https://github.com/c0pt4n/Py_Snake_Game",
       "description": "A simple snake game which runs in terminal written in python",
       "category": "design-creative",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "EXALAB/Anlinux-Resources",
-      "html_url": "https://github.com/EXALAB/Anlinux-Resources",
-      "description": "Scripts, Rootfs and other content for AnLinux",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "sickcodes/no-sandbox",
-      "html_url": "https://github.com/sickcodes/no-sandbox",
-      "description": "No Sandbox - Applications That Run Chromium and Chrome Without The Sandbox. TL;DR exploits in these browser based applications are already sandboxed escaped: https://no-sandbox.io/",
-      "category": "security",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Mino260806/MessengerPro",
-      "html_url": "https://github.com/Mino260806/MessengerPro",
-      "description": "A mod that enhances Facebook Messenger with loads of powerful features !",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "ish-app/ish",
-      "html_url": "https://github.com/ish-app/ish",
-      "description": "Linux shell for iOS",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "programminghoch10/ViPER4AndroidRepackaged",
-      "html_url": "https://github.com/programminghoch10/ViPER4AndroidRepackaged",
-      "description": "A refined ViPER4Android installer.",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "sileshn/ArchWSL2",
-      "html_url": "https://github.com/sileshn/ArchWSL2",
-      "description": "Archlinux for WSL2 using wsldl",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "ASHWIN990/ADB-Toolkit",
-      "html_url": "https://github.com/ASHWIN990/ADB-Toolkit",
-      "description": "ADB-Toolkit V2 for easy ADB tricks with many perks in all one. ENJOY!",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "AzeemIdrisi/PhoneSploit-Pro",
-      "html_url": "https://github.com/AzeemIdrisi/PhoneSploit-Pro",
-      "description": "An all-in-one hacking tool to remotely take over Android devices.",
-      "category": "security",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
