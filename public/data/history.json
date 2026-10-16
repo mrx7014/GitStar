@@ -1,6 +1,14 @@
 {
   "events": [
     {
+      "type": "removed",
+      "full_name": "newliver666/apk-reverse",
+      "html_url": "https://github.com/newliver666/apk-reverse",
+      "description": "Suitable for Android APK reverse engineering analysis",
+      "category": "security",
+      "at": "2026-10-16T14:43:34.084Z"
+    },
+    {
       "type": "added",
       "full_name": "Hexadecinull/VineOS",
       "html_url": "https://github.com/Hexadecinull/VineOS",
@@ -3989,14 +3997,6 @@
       "full_name": "yt-dlp/yt-dlp",
       "html_url": "https://github.com/yt-dlp/yt-dlp",
       "description": "A feature-rich command-line audio/video downloader",
-      "category": "developer-tools",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "neovim/neovim",
-      "html_url": "https://github.com/neovim/neovim",
-      "description": "Vim-fork focused on extensibility and usability",
       "category": "developer-tools",
       "at": "2026-10-05T10:55:16.088Z"
     }
