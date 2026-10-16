@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "removed",
+      "full_name": "evoker0/AlwaysStrong",
+      "html_url": "https://github.com/evoker0/AlwaysStrong",
+      "description": "Always Strong: Strong Play Integrity in one drop in module TEESimulator-RS + PlayIntegrityFork bundled.",
+      "category": "android-modding",
+      "at": "2026-10-16T21:37:07.050Z"
+    },
+    {
+      "type": "removed",
       "full_name": "newliver666/apk-reverse",
       "html_url": "https://github.com/newliver666/apk-reverse",
       "description": "Suitable for Android APK reverse engineering analysis",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/Heliwrenaid/android-tool",
       "description": "SAT - the unpack/repack tool for Android system images",
       "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "yt-dlp/yt-dlp",
-      "html_url": "https://github.com/yt-dlp/yt-dlp",
-      "description": "A feature-rich command-line audio/video downloader",
-      "category": "developer-tools",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
