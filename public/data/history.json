@@ -2,6 +2,22 @@
   "events": [
     {
       "type": "added",
+      "full_name": "MediaBrowser/Emby",
+      "html_url": "https://github.com/MediaBrowser/Emby",
+      "description": "Emby Server is a personal media server with apps on just about every device.",
+      "category": "other",
+      "at": "2026-10-17T12:21:34.301Z"
+    },
+    {
+      "type": "added",
+      "full_name": "searxng/searxng",
+      "html_url": "https://github.com/searxng/searxng",
+      "description": "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.",
+      "category": "security",
+      "at": "2026-10-17T12:21:34.301Z"
+    },
+    {
+      "type": "added",
       "full_name": "webadderallorg/Recordly",
       "html_url": "https://github.com/webadderallorg/Recordly",
       "description": "Create polished demo videos without editing skills. Mac/Windows/Linux",
@@ -3982,22 +3998,6 @@
       "html_url": "https://github.com/gsioteam/kinoko",
       "description": "An online manga browser.",
       "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "brarcher/video-transcoder",
-      "html_url": "https://github.com/brarcher/video-transcoder",
-      "description": "Android app for video and audio transcoder, based on FFmpeg",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "leonlatsch/Photok",
-      "html_url": "https://github.com/leonlatsch/Photok",
-      "description": "Private photo vault for Android",
-      "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
