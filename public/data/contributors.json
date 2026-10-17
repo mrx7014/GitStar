@@ -6,9 +6,9 @@
       "checkedAt": "2026-10-05T12:28:54.375Z"
     },
     "lz4/lz4": {
-      "count": 213,
-      "pushedAt": "2026-10-15T04:53:25Z",
-      "checkedAt": "2026-10-15T05:44:58.088Z"
+      "count": 215,
+      "pushedAt": "2026-10-17T15:47:22Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "aleixrodriala/newtube": {
       "count": 26,
@@ -36,14 +36,14 @@
       "checkedAt": "2026-10-16T21:37:44.767Z"
     },
     "storytold/photocraft": {
-      "count": 314,
-      "pushedAt": "2026-10-17T02:20:22Z",
-      "checkedAt": "2026-10-17T03:54:12.879Z"
+      "count": 316,
+      "pushedAt": "2026-10-17T14:39:16Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "morluto/rea": {
-      "count": 255,
-      "pushedAt": "2026-10-17T12:21:00Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "count": 258,
+      "pushedAt": "2026-10-17T15:41:53Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "fmhy/FMHY": {
       "count": 4,
@@ -97,8 +97,8 @@
     },
     "Louis-CFM/coucou": {
       "count": 33,
-      "pushedAt": "2026-10-16T21:03:52Z",
-      "checkedAt": "2026-10-16T21:37:44.767Z"
+      "pushedAt": "2026-10-17T15:17:26Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "Rightcod/android_device_samsung_bengal-common": {
       "count": 1,
@@ -151,9 +151,9 @@
       "checkedAt": "2026-10-05T12:28:54.375Z"
     },
     "boykopovar/AnyPS5": {
-      "count": 430,
-      "pushedAt": "2026-10-17T11:57:38Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "count": 433,
+      "pushedAt": "2026-10-17T15:49:45Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "BuSung-dev/Root-My-Galaxy": {
       "count": 15,
@@ -187,13 +187,13 @@
     },
     "PickleHik3/termux-launcher": {
       "count": 99,
-      "pushedAt": "2026-10-17T12:06:07Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:27:35Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "sabamdarif/chroot-distro": {
       "count": 9,
-      "pushedAt": "2026-10-17T07:54:11Z",
-      "checkedAt": "2026-10-17T08:27:22.725Z"
+      "pushedAt": "2026-10-17T13:31:44Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "HoolockLinux/docs": {
       "count": 2,
@@ -232,8 +232,8 @@
     },
     "omacom/try-omarchy": {
       "count": 38,
-      "pushedAt": "2026-10-17T10:40:30Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T13:33:58Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "aorumbayev/awesome-omarchy": {
       "count": 34,
@@ -287,8 +287,8 @@
     },
     "hxreborn/PixelInjector": {
       "count": 3,
-      "pushedAt": "2026-10-17T10:52:59Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T13:47:48Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "soranerai/vpnhide_next": {
       "count": 2,
@@ -407,8 +407,8 @@
     },
     "maxsteeel/nomount": {
       "count": 23,
-      "pushedAt": "2026-10-16T16:30:42Z",
-      "checkedAt": "2026-10-16T18:27:33.276Z"
+      "pushedAt": "2026-10-17T15:46:04Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "Rove24/Enable-MD3E-UI-For-Google-Digital-Wellbeing": {
       "count": 1,
@@ -451,9 +451,9 @@
       "checkedAt": "2026-10-15T05:44:58.088Z"
     },
     "QwenLM/qwen-code": {
-      "count": 613,
-      "pushedAt": "2026-10-17T12:21:21Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "count": 615,
+      "pushedAt": "2026-10-17T15:38:58Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "termux/proot-distro": {
       "count": 45,
@@ -487,8 +487,8 @@
     },
     "Goldzxcbug/Droidspaces-rootfs-Desktop-builder": {
       "count": 13,
-      "pushedAt": "2026-10-17T11:47:01Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:12:33Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "theori-io/copy-fail-CVE-2026-31431": {
       "count": 2,
@@ -552,8 +552,8 @@
     },
     "ravindu644/Droidspaces-OSS": {
       "count": 55,
-      "pushedAt": "2026-10-17T08:18:58Z",
-      "checkedAt": "2026-10-17T08:27:22.725Z"
+      "pushedAt": "2026-10-17T14:58:12Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "C70246247/AOSPStackingRecent": {
       "count": 1,
@@ -566,9 +566,9 @@
       "checkedAt": "2026-10-05T12:28:54.375Z"
     },
     "ReSo7200/InstaEclipse": {
-      "count": 22,
-      "pushedAt": "2026-10-17T12:07:19Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "count": 25,
+      "pushedAt": "2026-10-17T14:45:46Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "thedjchi/Shizuku": {
       "count": 139,
@@ -582,8 +582,8 @@
     },
     "D4Vinci/Scrapling": {
       "count": 32,
-      "pushedAt": "2026-10-16T19:47:08Z",
-      "checkedAt": "2026-10-16T21:37:44.767Z"
+      "pushedAt": "2026-10-17T14:55:29Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "orailnoor/DroidDesk": {
       "count": 2,
@@ -597,8 +597,8 @@
     },
     "dpejoh/specter": {
       "count": 18,
-      "pushedAt": "2026-10-16T10:27:51Z",
-      "checkedAt": "2026-10-16T14:44:19.039Z"
+      "pushedAt": "2026-10-17T15:11:01Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "Loukious/FacebookAppAdsRemover": {
       "count": 1,
@@ -642,8 +642,8 @@
     },
     "Mahmud0808/PixelLauncherEnhanced": {
       "count": 9,
-      "pushedAt": "2026-10-17T11:08:18Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:29:08Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "IslamAlorabI/ShafeeZekr": {
       "count": 1,
@@ -746,9 +746,9 @@
       "checkedAt": "2026-10-05T12:28:54.375Z"
     },
     "MobileFirstLLC/social-media-hacker-list": {
-      "count": 63,
-      "pushedAt": "2026-10-16T18:21:18Z",
-      "checkedAt": "2026-10-16T18:27:33.276Z"
+      "count": 64,
+      "pushedAt": "2026-10-17T14:44:12Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "spike0en/nothing_archive": {
       "count": 35,
@@ -872,8 +872,8 @@
     },
     "videolan/vlc": {
       "count": 1159,
-      "pushedAt": "2026-10-16T22:49:37Z",
-      "checkedAt": "2026-10-16T23:53:39.199Z"
+      "pushedAt": "2026-10-17T12:48:52Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "Mygod/VPNHotspot": {
       "count": 12,
@@ -897,8 +897,8 @@
     },
     "zen-browser/desktop": {
       "count": 268,
-      "pushedAt": "2026-10-17T08:46:00Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T13:45:25Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "PerformanC/ReZygisk": {
       "count": 37,
@@ -917,8 +917,8 @@
     },
     "microsoft/vscode": {
       "count": 3272,
-      "pushedAt": "2026-10-17T12:11:22Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:48:32Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "atom/atom": {
       "count": 641,
@@ -1002,8 +1002,8 @@
     },
     "n8n-io/n8n": {
       "count": 829,
-      "pushedAt": "2026-10-17T11:25:42Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T14:08:30Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "AtlanPrime/customromguide": {
       "count": 3,
@@ -1032,8 +1032,8 @@
     },
     "EKA2L1/EKA2L1": {
       "count": 23,
-      "pushedAt": "2026-10-17T12:21:12Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T14:25:26Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "nozwock/packet": {
       "count": 27,
@@ -1042,8 +1042,8 @@
     },
     "ShadowHackrs/Jailbreaks-GPT-Gemini-deepseek-": {
       "count": 1,
-      "pushedAt": "2026-09-16T21:17:13Z",
-      "checkedAt": "2026-10-05T12:28:54.375Z"
+      "pushedAt": "2026-10-17T14:22:58Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "xodiosx/XoDos": {
       "count": 3,
@@ -1237,8 +1237,8 @@
     },
     "tw93/Pake": {
       "count": 99,
-      "pushedAt": "2026-10-17T05:43:11Z",
-      "checkedAt": "2026-10-17T08:27:22.725Z"
+      "pushedAt": "2026-10-17T15:45:29Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "0xfff0800/TikTok-Back": {
       "count": 2,
@@ -1271,9 +1271,9 @@
       "checkedAt": "2026-10-05T12:28:54.375Z"
     },
     "timschneeb/awesome-shizuku": {
-      "count": 62,
-      "pushedAt": "2026-10-17T01:08:30Z",
-      "checkedAt": "2026-10-17T03:54:12.879Z"
+      "count": 63,
+      "pushedAt": "2026-10-17T14:38:52Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "xemu-project/xemu": {
       "count": 3217,
@@ -1361,9 +1361,9 @@
       "checkedAt": "2026-10-05T12:28:54.375Z"
     },
     "hrydgard/ppsspp": {
-      "count": 591,
-      "pushedAt": "2026-10-17T12:06:40Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "count": 592,
+      "pushedAt": "2026-10-17T15:50:52Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "dessant/buster": {
       "count": 3,
@@ -1382,8 +1382,8 @@
     },
     "tgdrive/teldrive": {
       "count": 14,
-      "pushedAt": "2026-10-17T11:32:21Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T13:31:07Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "Cyber-Dioxide/CyberPhish": {
       "count": 1,
@@ -1442,8 +1442,8 @@
     },
     "xroche/httrack": {
       "count": 26,
-      "pushedAt": "2026-10-17T12:03:22Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T14:58:35Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "awesome-android-root/awesome-android-root": {
       "count": 39,
@@ -1532,8 +1532,8 @@
     },
     "flutter/flutter": {
       "count": 2442,
-      "pushedAt": "2026-10-17T02:12:43Z",
-      "checkedAt": "2026-10-17T03:54:12.879Z"
+      "pushedAt": "2026-10-17T15:42:33Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "vipulyaara/Kafka": {
       "count": 2,
@@ -1727,13 +1727,13 @@
     },
     "warpdotdev/warp": {
       "count": 171,
-      "pushedAt": "2026-10-17T07:20:04Z",
-      "checkedAt": "2026-10-17T08:27:22.725Z"
+      "pushedAt": "2026-10-17T15:20:59Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "florisboard/florisboard": {
       "count": 132,
-      "pushedAt": "2026-10-15T15:08:25Z",
-      "checkedAt": "2026-10-15T15:18:03.625Z"
+      "pushedAt": "2026-10-17T15:13:49Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "AndroidDumps/dumpyara": {
       "count": 37,
@@ -1752,8 +1752,8 @@
     },
     "freeCodeCamp/freeCodeCamp": {
       "count": 6946,
-      "pushedAt": "2026-10-17T10:55:28Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T13:27:43Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "jwasham/coding-interview-university": {
       "count": 355,
@@ -2152,8 +2152,8 @@
     },
     "leonlatsch/Photok": {
       "count": 46,
-      "pushedAt": "2026-10-17T12:09:58Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:16:09Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "bregman-arie/devops-exercises": {
       "count": 220,
@@ -2207,8 +2207,8 @@
     },
     "rclone/rclone": {
       "count": 1254,
-      "pushedAt": "2026-10-16T16:43:49Z",
-      "checkedAt": "2026-10-16T18:27:33.276Z"
+      "pushedAt": "2026-10-17T15:47:00Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "0n1cOn3/FluxER": {
       "count": 3,
@@ -2392,8 +2392,8 @@
     },
     "scrapy/scrapy": {
       "count": 752,
-      "pushedAt": "2026-10-16T16:32:55Z",
-      "checkedAt": "2026-10-16T18:27:33.276Z"
+      "pushedAt": "2026-10-17T14:36:25Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "Keinta15/Magisk-iOS-Emoji": {
       "count": 5,
@@ -2592,8 +2592,8 @@
     },
     "JosefNemec/Playnite": {
       "count": 80,
-      "pushedAt": "2026-10-16T14:27:07Z",
-      "checkedAt": "2026-10-16T14:44:19.039Z"
+      "pushedAt": "2026-10-17T15:45:28Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "osm0sis/AnyKernel3": {
       "count": 22,
@@ -2627,8 +2627,8 @@
     },
     "agalwood/Motrix": {
       "count": 82,
-      "pushedAt": "2026-10-17T12:02:20Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:50:59Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "PitchBlackRecoveryProject/xda-template": {
       "count": 4,
@@ -2692,8 +2692,8 @@
     },
     "c0pt4n/.dotfiles": {
       "count": 2,
-      "pushedAt": "2026-10-17T12:09:13Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T13:27:08Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "recloudstream/cloudstream": {
       "count": 159,
@@ -2767,8 +2767,8 @@
     },
     "bottlesdevs/Bottles": {
       "count": 562,
-      "pushedAt": "2026-10-17T07:22:02Z",
-      "checkedAt": "2026-10-17T08:27:22.725Z"
+      "pushedAt": "2026-10-17T13:47:11Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "terroo/wallset": {
       "count": 3,
@@ -3977,8 +3977,8 @@
     },
     "Leviidev/Husk": {
       "count": 5,
-      "pushedAt": "2026-10-17T11:21:51Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T14:25:20Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "ayghri/i-have-adhd": {
       "count": 53,
@@ -3992,8 +3992,8 @@
     },
     "thedotmack/claude-mem": {
       "count": 281,
-      "pushedAt": "2026-10-17T12:01:15Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:50:47Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "openai/codex-action": {
       "count": 11,
@@ -4002,8 +4002,8 @@
     },
     "WebKit/WebKit": {
       "count": 2670,
-      "pushedAt": "2026-10-17T09:42:30Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:47:31Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "xai-org/grok-build": {
       "count": 1,
@@ -4067,8 +4067,8 @@
     },
     "Flow-Tube/Flow": {
       "count": 127,
-      "pushedAt": "2026-10-17T11:56:44Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "pushedAt": "2026-10-17T15:45:18Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "abdubanna/freecomp": {
       "count": 1,
@@ -4157,13 +4157,13 @@
     },
     "Droid-Deck/DroidDeck": {
       "count": 45,
-      "pushedAt": "2026-10-17T05:19:03Z",
-      "checkedAt": "2026-10-17T08:27:22.725Z"
+      "pushedAt": "2026-10-17T15:44:59Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "z3r0n3br4instorm/ztOS": {
       "count": 1,
-      "pushedAt": "2026-10-17T04:20:03Z",
-      "checkedAt": "2026-10-17T08:27:22.725Z"
+      "pushedAt": "2026-10-17T15:50:17Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "Jakeschincariol/replica-skill": {
       "count": 1,
@@ -4211,9 +4211,9 @@
       "checkedAt": "2026-10-17T08:27:22.725Z"
     },
     "NousResearch/hermes-agent": {
-      "count": 4568,
-      "pushedAt": "2026-10-17T12:15:27Z",
-      "checkedAt": "2026-10-17T12:22:11.375Z"
+      "count": 4592,
+      "pushedAt": "2026-10-17T15:49:31Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     },
     "MediaBrowser/Emby": {
       "count": 137,
@@ -4224,6 +4224,11 @@
       "count": 359,
       "pushedAt": "2026-10-17T09:19:07Z",
       "checkedAt": "2026-10-17T12:22:11.375Z"
+    },
+    "MediaBrowser/Emby.Releases": {
+      "count": 4,
+      "pushedAt": "2026-10-17T03:09:51Z",
+      "checkedAt": "2026-10-17T15:51:40.799Z"
     }
   }
 }

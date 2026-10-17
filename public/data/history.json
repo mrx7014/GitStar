@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "MediaBrowser/Emby.Releases",
+      "html_url": "https://github.com/MediaBrowser/Emby.Releases",
+      "description": "Contains binary releases",
+      "category": "other",
+      "at": "2026-10-17T15:51:05.149Z"
+    },
+    {
+      "type": "added",
       "full_name": "MediaBrowser/Emby",
       "html_url": "https://github.com/MediaBrowser/Emby",
       "description": "Emby Server is a personal media server with apps on just about every device.",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/bromite/bromite",
       "description": "Bromite is a Chromium fork with ad blocking and privacy enhancements; take back your browser!",
       "category": "security",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "gsioteam/kinoko",
-      "html_url": "https://github.com/gsioteam/kinoko",
-      "description": "An online manga browser.",
-      "category": "other",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
