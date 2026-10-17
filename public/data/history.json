@@ -1,6 +1,102 @@
 {
   "events": [
     {
+      "type": "added",
+      "full_name": "webadderallorg/Recordly",
+      "html_url": "https://github.com/webadderallorg/Recordly",
+      "description": "Create polished demo videos without editing skills. Mac/Windows/Linux",
+      "category": "linux-shell",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Droid-Deck/DroidDeck",
+      "html_url": "https://github.com/Droid-Deck/DroidDeck",
+      "description": "DroidDeck brings the SteamOS experience to Android",
+      "category": "mobile",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Jakeschincariol/replica-skill",
+      "html_url": "https://github.com/Jakeschincariol/replica-skill",
+      "description": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+      "category": "security",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "z3r0n3br4instorm/ztOS",
+      "html_url": "https://github.com/z3r0n3br4instorm/ztOS",
+      "description": "ztOS: a phone OS with the ztMETRO shell (Windows Phone 8.1 look and motion) on Arch Linux ARM; Galaxy S9 port, SDK and installer",
+      "category": "other",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "xtool-org/xtool",
+      "html_url": "https://github.com/xtool-org/xtool",
+      "description": "Cross-platform Xcode replacement. Build and deploy iOS apps with SwiftPM on Linux, Windows, macOS.",
+      "category": "mobile",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "abi/screenshot-to-code",
+      "html_url": "https://github.com/abi/screenshot-to-code",
+      "description": "Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)",
+      "category": "web-frontend",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "NousResearch/hermes-agent",
+      "html_url": "https://github.com/NousResearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "category": "ai-ml",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "x8BitRain/webXash",
+      "html_url": "https://github.com/x8BitRain/webXash",
+      "description": "Half-Life in your browser powered by webxash3d-fwgs",
+      "category": "other",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "THU-MAIC/OpenMAIC",
+      "html_url": "https://github.com/THU-MAIC/OpenMAIC",
+      "description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+      "category": "ai-ml",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "iv-org/invidious",
+      "html_url": "https://github.com/iv-org/invidious",
+      "description": "Invidious is an alternative front-end to YouTube",
+      "category": "other",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Twigpine/openclaude",
+      "html_url": "https://github.com/Twigpine/openclaude",
+      "description": "runs anywhere. uses anything",
+      "category": "ai-ml",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
+      "type": "added",
+      "full_name": "DevCat3/Auto_Target",
+      "html_url": "https://github.com/DevCat3/Auto_Target",
+      "description": "https://t.me/DevCat3Releases",
+      "category": "linux-shell",
+      "at": "2026-10-17T08:26:49.929Z"
+    },
+    {
       "type": "removed",
       "full_name": "evoker0/AlwaysStrong",
       "html_url": "https://github.com/evoker0/AlwaysStrong",
@@ -3901,102 +3997,6 @@
       "full_name": "leonlatsch/Photok",
       "html_url": "https://github.com/leonlatsch/Photok",
       "description": "Private photo vault for Android",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "bregman-arie/devops-exercises",
-      "html_url": "https://github.com/bregman-arie/devops-exercises",
-      "description": "Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions",
-      "category": "devops-selfhost",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "KieronQuinn/DarQ",
-      "html_url": "https://github.com/KieronQuinn/DarQ",
-      "description": "DarQ provides a per-app selectable force dark option for Android 10 and above",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "sdras/awesome-actions",
-      "html_url": "https://github.com/sdras/awesome-actions",
-      "description": "A curated list of awesome actions to use on GitHub",
-      "category": "learning-resources",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "xct/kali-clean",
-      "html_url": "https://github.com/xct/kali-clean",
-      "description": "my kali desktop setup",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "purpl3f0xsecur1ty/useful_random_stuff",
-      "html_url": "https://github.com/purpl3f0xsecur1ty/useful_random_stuff",
-      "description": "Just some things that have some cool uses",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "fikrado-orgnasation/sweat-kali",
-      "html_url": "https://github.com/fikrado-orgnasation/sweat-kali",
-      "description": "",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "axel358/smartdock",
-      "html_url": "https://github.com/axel358/smartdock",
-      "description": "A user-friendly desktop mode launcher that offers a modern and customizable user interface",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "AndronixApp/AndronixOrigin",
-      "html_url": "https://github.com/AndronixApp/AndronixOrigin",
-      "description": "Andronix: Linux distros on Android without root (Termux + proot), with desktops in Termux:X11. App 8.x scripts are on the master branch.",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "aydinnyunus/Keylogger",
-      "html_url": "https://github.com/aydinnyunus/Keylogger",
-      "description": "Get Keyboard,Mouse,ScreenShot,Microphone Inputs from Target Computer and Send to your Mail.",
-      "category": "security",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "rclone/rclone",
-      "html_url": "https://github.com/rclone/rclone",
-      "description": "\"rsync for cloud storage\" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Azure Blob, Azure Files, Yandex Files",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "0n1cOn3/FluxER",
-      "html_url": "https://github.com/0n1cOn3/FluxER",
-      "description": "FluxER - The bash script which installs and runs the Fluxion tool inside Termux. The wireless security auditing tool used to perform WPA/WPA2 auditing and MITM auditing.",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Heliwrenaid/android-tool",
-      "html_url": "https://github.com/Heliwrenaid/android-tool",
-      "description": "SAT - the unpack/repack tool for Android system images",
       "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }
