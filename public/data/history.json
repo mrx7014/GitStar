@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "morluto/awesome-reverse-engineering",
+      "html_url": "https://github.com/morluto/awesome-reverse-engineering",
+      "description": "Curated reverse-engineering tools and learning resources for binaries, apps, firmware, formats, and protocols.",
+      "category": "security",
+      "at": "2026-10-18T09:32:50.883Z"
+    },
+    {
+      "type": "added",
       "full_name": "MediaBrowser/Emby.Releases",
       "html_url": "https://github.com/MediaBrowser/Emby.Releases",
       "description": "Contains binary releases",
@@ -3989,14 +3997,6 @@
       "full_name": "Hackplayers/evil-winrm",
       "html_url": "https://github.com/Hackplayers/evil-winrm",
       "description": "The ultimate WinRM shell for hacking/pentesting",
-      "category": "security",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "bromite/bromite",
-      "html_url": "https://github.com/bromite/bromite",
-      "description": "Bromite is a Chromium fork with ad blocking and privacy enhancements; take back your browser!",
       "category": "security",
       "at": "2026-10-05T10:55:16.088Z"
     }
