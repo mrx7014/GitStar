@@ -7,8 +7,8 @@
     },
     "lz4/lz4": {
       "count": 217,
-      "pushedAt": "2026-10-17T22:33:51Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-18T00:01:08Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "aleixrodriala/newtube": {
       "count": 26,
@@ -37,13 +37,13 @@
     },
     "storytold/photocraft": {
       "count": 317,
-      "pushedAt": "2026-10-17T21:55:54Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-17T23:21:00Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "morluto/rea": {
       "count": 260,
-      "pushedAt": "2026-10-17T22:35:32Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-18T00:25:43Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "fmhy/FMHY": {
       "count": 4,
@@ -57,8 +57,8 @@
     },
     "anthropics/claude-code": {
       "count": 59,
-      "pushedAt": "2026-10-16T20:53:06Z",
-      "checkedAt": "2026-10-16T21:37:44.767Z"
+      "pushedAt": "2026-10-17T23:14:51Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "SimoneAvogadro/android-reverse-engineering-skill": {
       "count": 9,
@@ -66,9 +66,9 @@
       "checkedAt": "2026-10-12T09:27:24.088Z"
     },
     "DietrichGebert/ponytail": {
-      "count": 127,
-      "pushedAt": "2026-10-16T23:04:42Z",
-      "checkedAt": "2026-10-16T23:53:39.199Z"
+      "count": 129,
+      "pushedAt": "2026-10-18T00:26:56Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "guillaumemeyer/watermarks-remover": {
       "count": 54,
@@ -87,8 +87,8 @@
     },
     "NarYuki/Dextop": {
       "count": 7,
-      "pushedAt": "2026-10-17T16:32:46Z",
-      "checkedAt": "2026-10-17T18:20:16.868Z"
+      "pushedAt": "2026-10-17T23:05:57Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "robbietilton/Compositor": {
       "count": 24,
@@ -151,9 +151,9 @@
       "checkedAt": "2026-10-05T12:28:54.375Z"
     },
     "boykopovar/AnyPS5": {
-      "count": 439,
-      "pushedAt": "2026-10-17T22:18:56Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "count": 444,
+      "pushedAt": "2026-10-18T00:26:45Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "BuSung-dev/Root-My-Galaxy": {
       "count": 15,
@@ -317,13 +317,13 @@
     },
     "sameerasw/essentials": {
       "count": 157,
-      "pushedAt": "2026-10-17T22:27:14Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-17T23:05:10Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "dragonked2/alphacode": {
       "count": 2,
-      "pushedAt": "2026-10-16T18:50:56Z",
-      "checkedAt": "2026-10-16T21:37:44.767Z"
+      "pushedAt": "2026-10-17T23:13:43Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "Hope2333/opencode-termux": {
       "count": 5,
@@ -452,8 +452,8 @@
     },
     "QwenLM/qwen-code": {
       "count": 615,
-      "pushedAt": "2026-10-17T22:39:42Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-18T00:26:44Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "termux/proot-distro": {
       "count": 45,
@@ -482,8 +482,8 @@
     },
     "MorpheApp/morphe-manager": {
       "count": 24,
-      "pushedAt": "2026-10-17T22:36:44Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-18T00:24:09Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "Goldzxcbug/Droidspaces-rootfs-Desktop-builder": {
       "count": 13,
@@ -497,8 +497,8 @@
     },
     "usestrix/strix": {
       "count": 75,
-      "pushedAt": "2026-10-17T19:01:07Z",
-      "checkedAt": "2026-10-17T20:47:27.572Z"
+      "pushedAt": "2026-10-17T23:48:45Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "ahmedbarakat207/nano-alpine": {
       "count": 1,
@@ -777,8 +777,8 @@
     },
     "PranshulGG/WeatherMaster": {
       "count": 13,
-      "pushedAt": "2026-10-17T17:25:52Z",
-      "checkedAt": "2026-10-17T18:20:16.868Z"
+      "pushedAt": "2026-10-17T23:31:14Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "MDP43140/LTECleanerFOSS": {
       "count": 30,
@@ -917,8 +917,8 @@
     },
     "microsoft/vscode": {
       "count": 3272,
-      "pushedAt": "2026-10-17T22:39:38Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-18T00:26:35Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "atom/atom": {
       "count": 641,
@@ -1032,8 +1032,8 @@
     },
     "EKA2L1/EKA2L1": {
       "count": 23,
-      "pushedAt": "2026-10-17T14:25:26Z",
-      "checkedAt": "2026-10-17T15:51:40.799Z"
+      "pushedAt": "2026-10-18T00:19:00Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "nozwock/packet": {
       "count": 27,
@@ -1282,8 +1282,8 @@
     },
     "ublue-os/bazzite": {
       "count": 216,
-      "pushedAt": "2026-10-17T22:27:18Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-17T23:56:35Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "librepods-org/librepods": {
       "count": 57,
@@ -1362,8 +1362,8 @@
     },
     "hrydgard/ppsspp": {
       "count": 592,
-      "pushedAt": "2026-10-17T18:36:34Z",
-      "checkedAt": "2026-10-17T20:47:27.572Z"
+      "pushedAt": "2026-10-18T00:09:18Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "dessant/buster": {
       "count": 3,
@@ -1752,8 +1752,8 @@
     },
     "freeCodeCamp/freeCodeCamp": {
       "count": 6948,
-      "pushedAt": "2026-10-17T19:09:20Z",
-      "checkedAt": "2026-10-17T20:47:27.572Z"
+      "pushedAt": "2026-10-18T00:23:25Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "jwasham/coding-interview-university": {
       "count": 355,
@@ -1767,8 +1767,8 @@
     },
     "EbookFoundation/free-programming-books": {
       "count": 3582,
-      "pushedAt": "2026-10-16T01:18:57Z",
-      "checkedAt": "2026-10-16T05:10:54.288Z"
+      "pushedAt": "2026-10-18T00:26:58Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "EdwardLab/flyos": {
       "count": 8,
@@ -1927,8 +1927,8 @@
     },
     "T8RIN/ImageToolbox": {
       "count": 256,
-      "pushedAt": "2026-10-17T22:15:12Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-18T00:25:06Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "brunodev85/winlator": {
       "count": 8,
@@ -2112,8 +2112,8 @@
     },
     "tiann/KernelSU": {
       "count": 284,
-      "pushedAt": "2026-10-16T13:31:42Z",
-      "checkedAt": "2026-10-16T14:44:19.039Z"
+      "pushedAt": "2026-10-17T23:05:48Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "anbox/anbox": {
       "count": 87,
@@ -2152,8 +2152,8 @@
     },
     "leonlatsch/Photok": {
       "count": 46,
-      "pushedAt": "2026-10-17T22:00:23Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-17T23:00:53Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "bregman-arie/devops-exercises": {
       "count": 220,
@@ -2602,8 +2602,8 @@
     },
     "LawnchairLauncher/lawnchair": {
       "count": 792,
-      "pushedAt": "2026-10-17T02:09:11Z",
-      "checkedAt": "2026-10-17T03:54:12.879Z"
+      "pushedAt": "2026-10-18T00:20:14Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "saitamasahil/Pixel-Launcher-Extended": {
       "count": 10,
@@ -2697,8 +2697,8 @@
     },
     "recloudstream/cloudstream": {
       "count": 159,
-      "pushedAt": "2026-10-16T19:59:04Z",
-      "checkedAt": "2026-10-16T21:37:44.767Z"
+      "pushedAt": "2026-10-18T00:14:13Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "Unrud/remote-touchpad": {
       "count": 6,
@@ -3111,9 +3111,9 @@
       "checkedAt": "2026-10-05T12:28:54.375Z"
     },
     "iptv-org/iptv": {
-      "count": 418,
-      "pushedAt": "2026-10-17T00:16:17Z",
-      "checkedAt": "2026-10-17T03:54:12.879Z"
+      "count": 419,
+      "pushedAt": "2026-10-18T00:17:59Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "davidchisnall/dtc": {
       "count": 26,
@@ -3977,8 +3977,8 @@
     },
     "Leviidev/Husk": {
       "count": 5,
-      "pushedAt": "2026-10-17T21:34:57Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-17T23:20:56Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "ayghri/i-have-adhd": {
       "count": 53,
@@ -3992,8 +3992,8 @@
     },
     "thedotmack/claude-mem": {
       "count": 281,
-      "pushedAt": "2026-10-17T19:32:04Z",
-      "checkedAt": "2026-10-17T20:47:27.572Z"
+      "pushedAt": "2026-10-18T00:01:34Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "openai/codex-action": {
       "count": 11,
@@ -4002,8 +4002,8 @@
     },
     "WebKit/WebKit": {
       "count": 2670,
-      "pushedAt": "2026-10-17T22:29:50Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-18T00:17:00Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "xai-org/grok-build": {
       "count": 1,
@@ -4067,8 +4067,8 @@
     },
     "Flow-Tube/Flow": {
       "count": 128,
-      "pushedAt": "2026-10-17T22:10:09Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-17T22:59:57Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "abdubanna/freecomp": {
       "count": 1,
@@ -4157,8 +4157,8 @@
     },
     "Droid-Deck/DroidDeck": {
       "count": 45,
-      "pushedAt": "2026-10-17T21:44:43Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-17T23:34:50Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "z3r0n3br4instorm/ztOS": {
       "count": 1,
@@ -4212,8 +4212,8 @@
     },
     "NousResearch/hermes-agent": {
       "count": 4594,
-      "pushedAt": "2026-10-17T22:22:54Z",
-      "checkedAt": "2026-10-17T22:43:52.407Z"
+      "pushedAt": "2026-10-18T00:11:08Z",
+      "checkedAt": "2026-10-18T00:28:07.590Z"
     },
     "MediaBrowser/Emby": {
       "count": 137,
