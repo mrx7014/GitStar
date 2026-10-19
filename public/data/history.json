@@ -2,6 +2,46 @@
   "events": [
     {
       "type": "added",
+      "full_name": "0xSojalSec/Telegram-OSINT",
+      "html_url": "https://github.com/0xSojalSec/Telegram-OSINT",
+      "description": "A Curated List of Awesome Telegram OSINT Tools, Sites & Resources",
+      "category": "other",
+      "at": "2026-10-19T14:58:34.220Z"
+    },
+    {
+      "type": "added",
+      "full_name": "PawanOsman/OpenCursor",
+      "html_url": "https://github.com/PawanOsman/OpenCursor",
+      "description": "Open-source Cursor-like AI coding agent for VS Code - agentic chat, multi-provider LLMs (OpenAI, Ollama, llama.cpp), semantic search, and MCP support",
+      "category": "ai-ml",
+      "at": "2026-10-19T14:58:34.220Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Gabriel2392/brokkr-flash",
+      "html_url": "https://github.com/Gabriel2392/brokkr-flash",
+      "description": "Odin but better (and open-source).",
+      "category": "other",
+      "at": "2026-10-19T14:58:34.220Z"
+    },
+    {
+      "type": "added",
+      "full_name": "dipa-studio/ios-sweet",
+      "html_url": "https://github.com/dipa-studio/ios-sweet",
+      "description": "iOS 16 userland + XNU on Redmi Note 10 Pro (sweet, SM7150)",
+      "category": "mobile",
+      "at": "2026-10-19T14:58:34.220Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Z4nzu/hackingtool",
+      "html_url": "https://github.com/Z4nzu/hackingtool",
+      "description": "ALL IN ONE Hacking Tool For Hackers",
+      "category": "security",
+      "at": "2026-10-19T14:58:34.220Z"
+    },
+    {
+      "type": "added",
       "full_name": "morluto/awesome-reverse-engineering",
       "html_url": "https://github.com/morluto/awesome-reverse-engineering",
       "description": "Curated reverse-engineering tools and learning resources for binaries, apps, firmware, formats, and protocols.",
@@ -3958,46 +3998,6 @@
       "html_url": "https://github.com/thelinuxuser-choice/hidephish",
       "description": "python script that hide phishing url like a pro \"masking url technique\"",
       "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "sepandhaghighi/art",
-      "html_url": "https://github.com/sepandhaghighi/art",
-      "description": "🎨 ASCII art library for Python",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "anbox/anbox",
-      "html_url": "https://github.com/anbox/anbox",
-      "description": "Anbox is a container-based approach to boot a full Android system on a regular GNU/Linux system ",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "C0MPL3XDEV/E4GL30S1NT",
-      "html_url": "https://github.com/C0MPL3XDEV/E4GL30S1NT",
-      "description": "E4GL30S1NT - Simple Information Gathering Tool",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "wh04M1i/One-Liners",
-      "html_url": "https://github.com/wh04M1i/One-Liners",
-      "description": "A collection of awesome one-liners for bug bounty hunting.",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Hackplayers/evil-winrm",
-      "html_url": "https://github.com/Hackplayers/evil-winrm",
-      "description": "The ultimate WinRM shell for hacking/pentesting",
-      "category": "security",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
