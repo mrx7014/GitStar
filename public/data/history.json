@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "gxrxv1/a22nnxx-ril-rollback",
+      "html_url": "https://github.com/gxrxv1/a22nnxx-ril-rollback",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-21T15:30:57.089Z"
+    },
+    {
+      "type": "added",
       "full_name": "ExTV/Podroid",
       "html_url": "https://github.com/ExTV/Podroid",
       "description": "A rootless Android app that boots Alpine Linux: run containers (Podman/Docker/LXC) and GUI desktop apps.",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/DarkLycn1976/CEH-Practical-Notes-and-Tools",
       "description": "My Personal Notes that I used on the Exam as a Cheatsheet",
       "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "tiann/KernelSU",
-      "html_url": "https://github.com/tiann/KernelSU",
-      "description": "A Kernel based root solution for Android",
-      "category": "android-modding",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
