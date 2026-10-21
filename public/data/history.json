@@ -1,6 +1,14 @@
 {
   "events": [
     {
+      "type": "removed",
+      "full_name": "HanSoBored/Auto-Linux",
+      "html_url": "https://github.com/HanSoBored/Auto-Linux",
+      "description": "A TUI application to install and manage Linux (chroot) environments on rooted Android devices. Fast, lightweight, and has zero dependencies (No Termux/Busybox required).",
+      "category": "linux-shell",
+      "at": "2026-10-21T19:36:43.529Z"
+    },
+    {
       "type": "added",
       "full_name": "gxrxv1/a22nnxx-ril-rollback",
       "html_url": "https://github.com/gxrxv1/a22nnxx-ril-rollback",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/sebaubuntu-python/aospdtgen",
       "description": "LineageOS device tree generator",
       "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "DarkLycn1976/CEH-Practical-Notes-and-Tools",
-      "html_url": "https://github.com/DarkLycn1976/CEH-Practical-Notes-and-Tools",
-      "description": "My Personal Notes that I used on the Exam as a Cheatsheet",
-      "category": "other",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
