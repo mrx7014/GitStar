@@ -2,6 +2,14 @@
   "events": [
     {
       "type": "added",
+      "full_name": "WeWaffles/OneLineage",
+      "html_url": "https://github.com/WeWaffles/OneLineage",
+      "description": "Hot-switch a rooted Samsung phone between One UI and a LineageOS 23.2 GSI via a userspace pivot_root container",
+      "category": "linux-shell",
+      "at": "2026-10-22T16:06:07.605Z"
+    },
+    {
+      "type": "added",
       "full_name": "oosexgang/hackios-xnu-kernel",
       "html_url": "https://github.com/oosexgang/hackios-xnu-kernel",
       "description": "",
@@ -3990,14 +3998,6 @@
       "html_url": "https://github.com/jangrewe/gitlab-ci-android",
       "description": "GitLab CI image for building Android apps",
       "category": "devops-selfhost",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "EntySec/Ghost",
-      "html_url": "https://github.com/EntySec/Ghost",
-      "description": "Ghost Framework is an Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device.",
-      "category": "linux-shell",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
