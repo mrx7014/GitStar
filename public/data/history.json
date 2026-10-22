@@ -1,6 +1,22 @@
 {
   "events": [
     {
+      "type": "added",
+      "full_name": "oosexgang/hackios-xnu-kernel",
+      "html_url": "https://github.com/oosexgang/hackios-xnu-kernel",
+      "description": "",
+      "category": "android-modding",
+      "at": "2026-10-22T11:45:50.231Z"
+    },
+    {
+      "type": "added",
+      "full_name": "bradautomates/claude-video",
+      "html_url": "https://github.com/bradautomates/claude-video",
+      "description": "Give Claude the ability to watch any video. /watch downloads, extracts frames, transcribes, hands it all to Claude.",
+      "category": "other",
+      "at": "2026-10-22T11:45:50.231Z"
+    },
+    {
       "type": "removed",
       "full_name": "HanSoBored/Auto-Linux",
       "html_url": "https://github.com/HanSoBored/Auto-Linux",
@@ -3982,22 +3998,6 @@
       "html_url": "https://github.com/EntySec/Ghost",
       "description": "Ghost Framework is an Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device.",
       "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Astrako/AstrakoBot",
-      "html_url": "https://github.com/Astrako/AstrakoBot",
-      "description": "A modular telegram group management bot based in SaitamaRobot.",
-      "category": "other",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "sebaubuntu-python/aospdtgen",
-      "html_url": "https://github.com/sebaubuntu-python/aospdtgen",
-      "description": "LineageOS device tree generator",
-      "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
