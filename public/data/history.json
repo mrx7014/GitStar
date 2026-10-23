@@ -2,6 +2,30 @@
   "events": [
     {
       "type": "added",
+      "full_name": "AbuZar-Ansarii/Ultron",
+      "html_url": "https://github.com/AbuZar-Ansarii/Ultron",
+      "description": "Autonomous desktop intelligence with MCU Ultron persona, mood-aware workspace orchestration, cyber security sentry, and full PC control.",
+      "category": "security",
+      "at": "2026-10-23T12:08:15.632Z"
+    },
+    {
+      "type": "added",
+      "full_name": "Keeperorowner/NagramXF",
+      "html_url": "https://github.com/Keeperorowner/NagramXF",
+      "description": "A fork of NagramX with additional features.",
+      "category": "other",
+      "at": "2026-10-23T12:08:15.632Z"
+    },
+    {
+      "type": "removed",
+      "full_name": "gxrxv1/a22nnxx-ril-rollback",
+      "html_url": "https://github.com/gxrxv1/a22nnxx-ril-rollback",
+      "description": "",
+      "category": "linux-shell",
+      "at": "2026-10-23T12:08:15.632Z"
+    },
+    {
+      "type": "added",
       "full_name": "WeWaffles/OneLineage",
       "html_url": "https://github.com/WeWaffles/OneLineage",
       "description": "Hot-switch a rooted Samsung phone between One UI and a LineageOS 23.2 GSI via a userspace pivot_root container",
@@ -3974,30 +3998,6 @@
       "html_url": "https://github.com/Psyhackological/AAA",
       "description": ":iphone: Curated list of THE BEST FOSS Android apps to maximize your freedom & privacy!",
       "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "4xmen/anubias",
-      "html_url": "https://github.com/4xmen/anubias",
-      "description": "Developed mobile apps so easy and native with GUI 📱",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "psteiger/LocationFetcher",
-      "html_url": "https://github.com/psteiger/LocationFetcher",
-      "description": "Easy Location fetching for Android apps.",
-      "category": "mobile",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "jangrewe/gitlab-ci-android",
-      "html_url": "https://github.com/jangrewe/gitlab-ci-android",
-      "description": "GitLab CI image for building Android apps",
-      "category": "devops-selfhost",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
