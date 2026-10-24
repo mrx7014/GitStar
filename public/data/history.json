@@ -2,6 +2,22 @@
   "events": [
     {
       "type": "added",
+      "full_name": "Spottq/OneUisland",
+      "html_url": "https://github.com/Spottq/OneUisland",
+      "description": "Dynamic Island LSPosed module for One UI 9",
+      "category": "other",
+      "at": "2026-10-24T11:58:42.088Z"
+    },
+    {
+      "type": "added",
+      "full_name": "kaleedtc/Nitterium",
+      "html_url": "https://github.com/kaleedtc/Nitterium",
+      "description": "An Android app for Nitter and Teapot, with local subscriptions, grouped feeds, and no Twitter/X account required.",
+      "category": "mobile",
+      "at": "2026-10-24T11:58:42.088Z"
+    },
+    {
+      "type": "added",
       "full_name": "AbuZar-Ansarii/Ultron",
       "html_url": "https://github.com/AbuZar-Ansarii/Ultron",
       "description": "Autonomous desktop intelligence with MCU Ultron persona, mood-aware workspace orchestration, cyber security sentry, and full PC control.",
@@ -3982,22 +3998,6 @@
       "html_url": "https://github.com/robinmoisson/staticrypt",
       "description": "Password protect a static HTML page, decrypted in-browser in JS with no dependency. No server logic needed.",
       "category": "web-frontend",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "RandomCoderOrg/ubuntu-on-android",
-      "html_url": "https://github.com/RandomCoderOrg/ubuntu-on-android",
-      "description": "Run Ubuntu with pre-installed Desktop Environments in android/termux with ease! Everything is preinstalled so just download install and done🚀🚀",
-      "category": "linux-shell",
-      "at": "2026-10-05T10:55:16.088Z"
-    },
-    {
-      "type": "added",
-      "full_name": "Psyhackological/AAA",
-      "html_url": "https://github.com/Psyhackological/AAA",
-      "description": ":iphone: Curated list of THE BEST FOSS Android apps to maximize your freedom & privacy!",
-      "category": "mobile",
       "at": "2026-10-05T10:55:16.088Z"
     }
   ]
